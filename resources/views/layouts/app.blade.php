@@ -26,6 +26,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <style>
+            .card-img {
+                object-fit: none; /* Do not scale the image */
+                object-position: center; /* Center the image within the element */
+                width: 100%;
+                max-height: 250px;
+                margin-bottom: 1rem;
+              }
+    </style>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

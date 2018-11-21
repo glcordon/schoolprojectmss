@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Event;
+use App\Category;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $events = Event::where([
+            ['is_private', 0],
+            ['end_date', '<=', today(),]
+        ])->get();
+        $categories = Category::get();
+        return view('dashboard', compact('events', 'categories'));
     }
 }

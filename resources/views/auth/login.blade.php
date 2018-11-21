@@ -71,7 +71,7 @@
         <div class="card text-white bg-primary py-5 d-md-down-none">
             <div class="card-body text-center">
                 <div>
-                    <img src="svg/modulr.svg" class="mb-5" width="150" alt="Modulr Logo">
+                    <img src="{{asset('img/mss-logo.png')}}" class="mb-5" width="250" alt="Mss Logo">
                     <h2>{{ __('Sign up') }}</h2>
                     <p>If you don't have account create one.</p>
                     <a class="btn btn-primary active mt-2" href="{{ route('register') }}">{{ __('Register Now!') }}</a>

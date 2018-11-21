@@ -23,10 +23,13 @@
         <meta name="theme-color" content="#ffffff">
 
         <title>MSS</title>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-         <!-- Fonts -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -108,88 +111,30 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Dashboard</a>
+                        <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
-                        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Add New</button>
                 </div>
             @endif
             <div class="content">
-                <div class="title m-b-md">
-                Discover Sports Events, Mentors &amp; Trainers
-                <form action="" class="form-inline">
-                    <input type="text" class="form-control">
-                    <input type="text" class="form-control">
-                    <input type="text" class="form-control">
-                    <button class="btn btn-primary">Search</button>
-                </form>
-                </div>
+                
+            
+              @yield('content')
             </div>
         </div>
-        <div class="content">
-                <div class="container" style="padding-top:20px">
-                     <div class="row">
-                        <div class="card-deck">
-                        @foreach ($events as $event )
-                            @include('partials.event-card')
-                        @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content">
-                    <div class="container" style="padding-top:20px; text-align:left">
-                        
-                            <h4>Categories</h4> 
-                            <div class="row">
-                            <div class="card-deck">
-                            @foreach ($categories as $category )
-                            <div class="card" style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
-                                    <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="Card image cap" >
-                                        <div class="card-body">
-                                            
-                                            <h4 class="card-title">{{$category->category_name   }}</h4>
-                                        </div>  
-                                        <div class="card-footer">
-                                        </div>
-                                    </div>  
-                                
-                            @endforeach
-                        </div>
-                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    
-        <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Create New Event</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        @auth
-           @include('events.event-create')
-            @else
-             Please Register first
-        @endauth
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<footer style="width:100%; min-height:20vh; background-color:black; margin-bottom:0; margin-top:30px; color:#fff">
-        hey
-</footer>
-    </body>
-
+    <script>
+            $(function() {
+              $('input[name="datetimes"]').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                  format: 'M/DD hh:mm A'
+                }
+              });
+            });
+            </script>
+</body>
 </html>
