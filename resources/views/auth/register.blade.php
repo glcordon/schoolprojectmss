@@ -35,6 +35,7 @@
                         </span>
                     @endif
                 </div>
+                
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">
@@ -49,6 +50,7 @@
                         </span>
                     @endif
                 </div>
+                
                 <div class="input-group mb-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text">
@@ -57,6 +59,14 @@
                     </div>
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
                 </div>
+                <div class="input-group mb-4">
+                        <select name="register_type" id="" class="form-control">
+                            <option value="fan">Select Registration Type</option>
+                            <option value="fan">Fan</option>
+                            <option value="mentor">Mentor</option>
+                            <option value="org">Organization</option>
+                        </select>
+                    </div>
                 <button type="submit" class="btn btn-block btn-success btn-primary">
                     {{ __('Create Account') }}
                 </button>

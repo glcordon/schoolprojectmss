@@ -21,9 +21,10 @@
 </p>
 @endforeach
 
-<p><button class="btn btn-primary">Purchase $</button></p>
+{{-- <p><button class="btn btn-primary">Purchase $</button></p> --}}
 <form action="/make-payment" method="POST">
     {{ csrf_field() }}
+    <input type="hidden" name="user_id" value="{{$event->user_id}}">
 <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ"
@@ -34,9 +35,10 @@
     data-locale="auto">
 </script>
 </form>
-<a href="https://connect.stripe.com/express/oauth/authorize?redirect_uri=http://localhost:8000&client_id=ca_DvC9zEGyWxdAhCspTWfmf2hBo7GX78LR&state=new"> connect</a>
 
 @if(Auth::id() == $event->user_id)
+<a href="https://connect.stripe.com/express/oauth/authorize?redirect_uri=http://localhost:8000&client_id=ca_DvC9zEGyWxdAhCspTWfmf2hBo7GX78LR&state=new"> connect</a>
+
 Edit Event <br>
 
 <!-- Button trigger modal -->

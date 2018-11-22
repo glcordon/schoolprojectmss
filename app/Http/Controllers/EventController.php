@@ -141,10 +141,10 @@ class EventController extends Controller
 
     public function makePayment(Request $request)
     {
-        
-        $customer = $vendor;
+        $vendor = User::find($request->user_id);
+        $customer = \Auth::id();
         $token = $request->stripeToken;
-        StripeConnect::createAccount($vendor);
+        // StripeConnect::createAccount($vendor);
         StripeConnect::transaction($token)
             ->amount(1000, 'usd')
             ->fee(50)
