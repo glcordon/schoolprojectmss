@@ -25,6 +25,7 @@
 <form action="/make-payment" method="POST">
     {{ csrf_field() }}
     <input type="hidden" name="user_id" value="{{$event->user_id}}">
+    <input type="hidden" name="stripeToken" value="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ">
 <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ"
