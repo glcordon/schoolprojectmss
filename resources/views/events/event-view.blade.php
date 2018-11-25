@@ -31,7 +31,7 @@
     data-amount="1000"
     data-name="{{ $event->title}} Tickets"
     data-description="MSS Tickets."
-    data-image="{{ asset(icon.jpg)}}"
+    {{--  data-image="url({{ asset('img/icon.jpg') }})"  --}}
     data-locale="auto">
 </script>
 </form>
