@@ -29,9 +29,9 @@
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ"
     data-amount="1000"
-    data-name="Demo Book"
-    data-description="This is good start up book."
-    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-name="{{ $event->title}} Tickets"
+    data-description="MSS Tickets."
+    data-image="{{ asset(icon.jpg)}}"
     data-locale="auto">
 </script>
 </form>

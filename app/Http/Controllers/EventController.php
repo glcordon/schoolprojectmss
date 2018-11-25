@@ -141,8 +141,11 @@ class EventController extends Controller
 
     public function makePayment(Request $request)
     {
+        //get user id of the person that created the event
         $vendor = User::find($request->user_id);
+        //get the id of the current user
         $customer = \Auth::id();
+        //get stripe token from 
         $token = $request->stripeToken;
         // StripeConnect::createAccount($vendor);
         StripeConnect::transaction($token)
@@ -157,9 +160,10 @@ class EventController extends Controller
 
     public function makeVendor()
     {
-        $vendor = User::find(\Auth::id());
+        //set the vendor to the current user that requested
+        $vendor = User::find(\Auth::id())->first();
         StripeConnect::createAccount($vendor);
-        dd($_GET);
+        return view('/');
     }
 
 }
