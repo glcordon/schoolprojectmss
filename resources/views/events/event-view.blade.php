@@ -31,7 +31,7 @@
     data-amount="1000"
     data-name="{{ $event->title}} Tickets"
     data-description="MSS Tickets."
-    data-image="url({{ asset('img/icon.jpg') }})"
+    data-image="{{ asset('img/icon.jpg') }}"
     data-billing-address="true"
     data-allow-remember-me="true"	
     data-locale="auto">
