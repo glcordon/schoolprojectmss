@@ -19,11 +19,11 @@ class CreateTicketsTable extends Migration
             $t->nullableTimestamps();
             //$t->softDeletes();
 
-            $t->unsignedInteger('edited_by_user_id')->nullable();
-            $t->unsignedInteger('account_id');
-            $t->unsignedInteger('order_id')->nullable();
+            $t->Integer('edited_by_user_id')->nullable();
+            $t->Integer('account_id');
+            $t->Integer('order_id')->nullable();
 
-            $t->integer('event_id');
+            $t->integer('event_id'); 
             //$t->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
 
             $t->string('title');
