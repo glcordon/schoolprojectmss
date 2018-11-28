@@ -86,7 +86,7 @@
                 margin-bottom: 60px;
             }
             .hero{
-                height:20vh;
+                height:40vh;
                 background-size:cover;
                 color:#fff;
                 background: url({{ Storage::url($event->image) ?? asset('img/baseball-field.jpg') }});
