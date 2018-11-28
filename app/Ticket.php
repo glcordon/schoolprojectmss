@@ -8,6 +8,7 @@ class Ticket extends Model
 {
     //
     protected $guarded = [];
+    protected $table = 'ticket';
     
     public function events()
     {

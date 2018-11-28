@@ -13,7 +13,7 @@ class CreateTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function ($t) {
+        Schema::create('ticket', function (Blueprint $t) {
 
             $t->increments('id');
             $t->nullableTimestamps();
