@@ -40,7 +40,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $path = Storage::putFile('categories', $request->image_url);
+        $path = $request->image_url->store('category_images');
         $category = new Category;
         $category->category_name = $request->category_name;
         $category->image_url = $path;

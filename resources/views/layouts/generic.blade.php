@@ -89,7 +89,13 @@
                 height:40vh;
                 background-size:cover;
                 color:#fff;
-                background: url({{ Storage::url($event->image) ?? asset('img/baseball-field.jpg') }});
+                background: url(
+                    @if (isset($event))
+                        {{ Storage::url($event->image) }}
+                    @else
+                        {{ asset('img/baseball-field.jpg') }}
+                    @endif
+                    );
             }
             .top-right.links a{color:white}
             .card-img {
@@ -114,7 +120,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
