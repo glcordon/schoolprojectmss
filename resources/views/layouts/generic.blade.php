@@ -89,7 +89,7 @@
                 height:20vh;
                 background-size:cover;
                 color:#fff;
-                background: url({{ asset('img/baseball-field.jpg') }});
+                background: url({{ Storage::url($event->image) ?? asset('img/baseball-field.jpg') }});
             }
             .top-right.links a{color:white}
             .card-img {
@@ -102,7 +102,7 @@
         </style>
     </head>
     <body>
-     <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ Storage::url($event->image) ?? asset('img/mss-logo.png')}}" alt=""> <a>
+     <a class="navbar-brand" href="{{ url('/') }}"><img src="{{  asset('img/mss-logo.png')}}" alt=""> <a>
         <div class="flex-center position-ref hero">
        
             @if (Route::has('login'))
