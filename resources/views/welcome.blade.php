@@ -129,7 +129,13 @@
                 <form action="" class="form-inline">
                     <input type="text" class="form-control">
                     <input type="text" class="form-control">
-                    <input type="text" class="form-control">
+                    <select name="category" id="category" class="form-control">
+                            <option value="">Select</option>
+                            @foreach ($categories as $category )
+                            <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                
+                            @endforeach
+                        </select>
                     <button class="btn btn-primary">Search</button>
                 </form>
                 </div>
