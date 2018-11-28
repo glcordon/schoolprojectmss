@@ -1,6 +1,6 @@
 
     <div class="card" style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
-    <img class="card-img" src="{{ asset('img/baseball-field.jpg') }}" alt="Card image cap" >
+    <img class="card-img" src="{{ Storage::url($event->image) ?? asset('img/baseball-field.jpg') }}" alt="Card image cap" >
         <div class="card-body">
             
             <h4 class="card-title">{{$event->title}}</h4>

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Ticket;
 use Rap2hpoutre\LaravelStripeConnect\StripeConnect;
+use Illuminate\Support\Facades\Storage;
+
 
 class EventController extends Controller
 {
@@ -49,6 +51,8 @@ class EventController extends Controller
         // dd($endDate);
         $start_date = Carbon::create($startDate->format('Y'), $startDate->format('m'), $startDate->format('d'), $request->start_hour, $request->start_minute, 00);
         $end_date = Carbon::create($endDate->format('Y'), $endDate->format('m'), $endDate->format('d'), $request->end_hour, $request->end_minute, 00);
+        $extension = $request->file('event_image')->getClientOriginalExtension();
+        $path = $request->event_image->store('event_image');
         
         $event = new Event;
         $event->title = $request->title;
@@ -57,7 +61,7 @@ class EventController extends Controller
         $event->city = '';
         $event->start_sale_date = $start_date;
         $event->end_sale_date = $end_date;
-        $event->image = '';
+        $event->image = $path;
         $event->website = '';
         $event->venu_id = '0';
         $event->description = $request->description;
@@ -69,6 +73,7 @@ class EventController extends Controller
         $event->end_date = $end_date;
         $event->is_private = 0;
         $event->save();
+
         // return $dt;
         return back();
     }

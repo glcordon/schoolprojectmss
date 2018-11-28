@@ -1,4 +1,4 @@
-<form method="POST" action="/create-event" accept-charset="UTF-8" class="ajax gf"><input name="_token" type="hidden" value="{{ csrf_token()}}">
+<form method="POST" action="/create-event" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf"><input name="_token" type="hidden" value="{{ csrf_token()}}">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">

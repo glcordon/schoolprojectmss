@@ -102,7 +102,7 @@
         </style>
     </head>
     <body>
-     <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('img/mss-logo.png')}}" alt=""> <a>
+     <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ ?? asset('img/mss-logo.png')}}" alt=""> <a>
         <div class="flex-center position-ref hero">
        
             @if (Route::has('login'))
