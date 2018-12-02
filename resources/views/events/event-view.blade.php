@@ -151,7 +151,7 @@ Edit Event <br>
     </div>
   </div>
 </div>
-
+</div>
 @endif
 
 @endsection
