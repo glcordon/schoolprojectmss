@@ -42,4 +42,8 @@ class User extends Authenticatable
     {
         return Storage::url('avatars/'.$this->id.'/'.$this->avatar);
     }
+    public function event()
+    {
+        return $this->belongsTo('App\Event', 'user_id', 'id');
+    }
 }

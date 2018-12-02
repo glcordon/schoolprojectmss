@@ -89,7 +89,10 @@ class EventController extends Controller
         //
         $event = Event::find($id);
         $ticket = Ticket::where('event_id', $id)->get();
-        return view('events.event-view', compact('event', 'ticket'));
+        $user = $event->users->name;
+        $date = Carbon::parse($event->created_at)->diffForHumans();
+        
+        return view('events.event-view', compact('event', 'ticket', 'user', 'date'));
     }
 
     /**
