@@ -2,42 +2,53 @@
 
 @section('content')
 <br>
-<h3>Event Title: {{ $event->title}}</h3>{{ $event->start_date}} - {{ $event->end_date}}
-<p> </p><p>{{ $event->description }}</p>
+<div class="content">
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Event Title: {{ $event->title}}</h3>{{ $event->start_date}} - {{ $event->end_date}}
+      <p> </p><p>{{ $event->description }}</p>
 
-<h3>Venue Information</h3>
-<p>{{$event->venu_name}} </p>
-<p>{{$event->street}} </p>
-<p>{{$event->state}}, {{$event->zip}} </p>
-<p></p>
-<h3>Tickets</h3>
-@foreach ($ticket as $tick )
-<p>{{$tick->title}} - ${{$tick->price}}
-    <select name="$tick->id" id="">
-        @for ($i = 0; $i <= ($tick->quantity_available - $tick->quantity_sold); $i++)
-            <option value="{{$i}}">{{$i}}</option>
-        @endfor
-    </select>
-</p>
-@endforeach
+      <h3>Venue Information</h3>
+      <p>{{$event->venu_name}} </p>
+      <p>{{$event->street}} </p>
+      <p>{{$event->state}}, {{$event->zip}} </p>
+      <p></p>
+    </div>
+    <div class="col-md-4">
+          <h3>Tickets</h3>
+          @foreach ($ticket as $tick )
+          <p>{{$tick->title}} - ${{$tick->price}}
+              <select name="$tick->id" id="">
+                  @for ($i = 0; $i <= ($tick->quantity_available - $tick->quantity_sold); $i++)
+                      <option value="{{$i}}">{{$i}}</option>
+                  @endfor
+              </select>
+          </p>
+          @endforeach
 
-{{-- <p><button class="btn btn-primary">Purchase $</button></p> --}}
-<form action="/make-payment" method="POST">
-    {{ csrf_field() }}
-    <input type="hidden" name="user_id" value="{{$event->user_id}}">
-    <input type="hidden" name="stripeToken" value="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ">
-<script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ"
-    data-amount="1000"
-    data-name="{{ $event->title}} Tickets"
-    data-description="MSS Tickets."
-    data-image="{{ asset('img/icon.jpg') }}"
-    data-billing-address="true"
-    data-allow-remember-me="true"	
-    data-locale="auto">
-</script>
-</form>
+          {{-- <p><button class="btn btn-primary">Purchase $</button></p> --}}
+          <form action="/make-payment" method="POST">
+              {{ csrf_field() }}
+              <input type="hidden" name="user_id" value="{{$event->user_id}}">
+              <input type="hidden" name="stripeToken" value="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ">
+          <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_Dx3GM5FEhPWgCx6CvstMnJBQ"
+              data-amount="1000"
+              data-name="{{ $event->title}} Tickets"
+              data-description="MSS Tickets."
+              data-image="{{ asset('img/icon.jpg') }}"
+              data-billing-address="true"
+              data-allow-remember-me="true"	
+              data-locale="auto">
+          </script>
+          </form>
+
+
+    </div>
+  </div>
+</div>
+
 
 @if(Auth::id() == $event->user_id)
 <a href="https://connect.stripe.com/express/oauth/authorize?redirect_uri=http://localhost:8000&client_id=ca_DvC9zEGyWxdAhCspTWfmf2hBo7GX78LR&state=new"> connect</a>
