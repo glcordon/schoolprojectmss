@@ -170,16 +170,14 @@
                             <div class="row">
                             <div class="card-deck">
                             @foreach ($categories as $category )
-                            <div class="card" style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
-                                    <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="{{$category->category_name }}" >
-                                        <div class="card-body">
-                                            
-                                            <h4 class="card-title">{{$category->category_name }}</h4>
-                                        </div>  
-                                        <div class="card-footer">
-                                        </div>
-                                    </div>  
-                                
+                             
+                                    <div class="card bg-dark text-white"  style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
+                                            <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="Card image">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">{{$category->category_name }}</h5>
+                                              <p class="card-text"></p>
+                                            </div>
+                                          </div>
                             @endforeach
                         </div>
                     </div>

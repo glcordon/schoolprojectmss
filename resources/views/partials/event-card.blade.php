@@ -4,7 +4,7 @@
         <div class="card-body">
             
             <h4 class="card-title">{{$event->title}}</h4>
-            <p class="card-text">{{date_format($event->start_date, 'm/d/Y H:i')}} - {{date_format($event->end_date, 'm/d/Y H:i')}} </p>
+            <p class="card-text">{{date_format($event->start_date, 'M d, Y H:i')}} - {{date_format($event->end_date, 'M d, Y  H:i')}} </p>
         </div>  
         <div class="card-footer">
             <a href="/view-event/{{ $event->id }}" class="card-link"><small><em>Ticket Price: from $</em></small> </a>
