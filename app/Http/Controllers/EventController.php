@@ -48,9 +48,11 @@ class EventController extends Controller
     {
         $startDate = Carbon::createFromFormat("Y-m-d", $request->start_date);
         $endDate = Carbon::createFromFormat("Y-m-d", $request->end_date);
-        // dd($endDate);
-        $start_date = Carbon::create($startDate->format('Y'), $startDate->format('m'), $startDate->format('d'), $request->start_hour, $request->start_minute, 00);
-        $end_date = Carbon::create($endDate->format('Y'), $endDate->format('m'), $endDate->format('d'), $request->end_hour, $request->end_minute, 00);
+        $start_time = $request->start_hour + $request->am_pm;
+        $end_time = $request->end_hour + $request->end_am_pm;
+       
+        $start_date = Carbon::create($startDate->format('Y'), $startDate->format('m'), $startDate->format('d'), $start_time, $request->start_minute, 00);
+        $end_date = Carbon::create($endDate->format('Y'), $endDate->format('m'), $endDate->format('d'), $end_time, $request->end_minute, 00);
         $extension = $request->file('event_image')->getClientOriginalExtension();
         $path = $request->event_image->store('event_image');
         
@@ -176,7 +178,7 @@ class EventController extends Controller
 
     public function search(Request $request)
     {
-        $search = Event::all();
+        $search = Event::where('end_date', '>', now())->orderBy('end_date', 'DESC')->get();
        
         if(!empty($request->search))
         {
@@ -186,7 +188,6 @@ class EventController extends Controller
         {
             $search->where('category_id', $request->category);
         }
-        
         return view('events.events-page', compact('search'));
     }
 
