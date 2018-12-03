@@ -103,40 +103,51 @@
     </head>
     <body>
             <div class="row">
-                <div class="topbar col-md-12" style="background-color:#036" >
+                <div class="topbar col-md-12" style="background-color:#036; padding:5px 10px;" >
                 <div class="col-md-6"><a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('img/mss-logo.png')}}" alt=""> </a></div>
-                <div class="col-md-6 top-right links"></div>
+                <div class="col-md-6 top-right links">
+                        <ul class="nav justify-content-end">
+                                @if (Route::has('login'))
+                
+                    @auth
+                    <li class="nav-item">
+                            <a class="nav-link active" href="{{ url('/home') }}">Dashboard</a>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('register') }}">Register</a>
+                    </li>
+                    @endauth
+                    <li class="nav-item">
+                        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Add New</button>
+                    </li>
+            @endif
+                              </ul>
+                </div>
      
             </div>
             </div>
             
         <div class="flex-center position-ref hero">
        
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Add New</button>
-                </div>
-            @endif
+           
             <div class="content">
                 <div class="title m-b-md">
                 Discover Sports Events, Mentors &amp; Trainers
-                <form action="" class="form-inline">
-                    <input type="text" class="form-control">
-                    <input type="text" class="form-control">
-                    <select name="category" id="category" class="form-control">
+                <form action="/search" class="form-inline" method="POST">
+                    {{ @csrf_field() }}
+                    <input type="text" class="form-control col-md-6" placeholder="Search" name="search">
+                    <select name="category" id="category" class="form-control col-md-4">
                             <option value="">Select</option>
                             @foreach ($categories as $category )
                             <option value="{{$category->id}}">{{$category->category_name}}</option>
                                 
                             @endforeach
                         </select>
-                    <button class="btn btn-primary">Search</button>
+                    <button class="btn btn-primary col-md-2">Search</button>
                 </form>
                 </div>
             </div>

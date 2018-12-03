@@ -174,4 +174,20 @@ class EventController extends Controller
         return view('/');
     }
 
+    public function search(Request $request)
+    {
+        $search = Event::all();
+       
+        if(!empty($request->search))
+        {
+            $search->where('title', 'like', '%'.$request->search.'%');
+        }
+        if(!empty($request->category))
+        {
+            $search->where('category_id', $request->category);
+        }
+        
+        return view('events.events-page', compact('search'));
+    }
+
 }

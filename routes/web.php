@@ -50,6 +50,8 @@ Route::post('/store-category', 'CategoryController@store');
 
 Route::get('/dashboard', 'DashboardController@index')->name('home');
 
+Route::post('/search', 'EventController@search');
+
 require __DIR__ . '/profile/profile.php';
 require __DIR__ . '/users/users.php';
 require __DIR__ . '/roles/roles.php';
