@@ -51,6 +51,7 @@
                             <p class="small mb-3 text-muted"><i class="mdi mdi-clock"></i> Posted {{ $date }}</p>
                                                 {{--  <h3 class="mb-3 h2">£100.25 <i class="widget-indicator fa fa-circle-o-notch p-1 fa-spin float-right" style="display:none"></i></h3>  --}}
                             <h3 class="text-muted">Tickets</h3>
+                            @if(count($ticket))
                                 @foreach ($ticket as $tick )
                                 <p>{{$tick->title}} - ${{$tick->price}}
                                     <select name="$tick->id" id="">
@@ -60,7 +61,9 @@
                                     </select>
                                 </p>
                                 @endforeach
-                            <p >ticket</p>
+                            @else
+                            No Tickets Available
+                            @endif
                             
                             
                         </div>
@@ -71,6 +74,7 @@
         
                 <div class="card-footer bg-whites ">
                     <div class="row">
+                        @auth
                         <div class="col-sm-12 mx-auto text-center">
                                     {{--  <a href="http://142.93.195.141/login" class="btn btn-primary btn-block pop" data-target="webuiPopover0"><i class="mdi mdi-share mr-1"></i> Contact seller</a>  --}}
                                     <form action="/make-payment" method="POST">
@@ -90,6 +94,7 @@
                                   </script>
                                   </form>
                                     </div>
+                                @endauth
         
                     </div>
                 </div>
