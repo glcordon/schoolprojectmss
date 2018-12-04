@@ -178,7 +178,8 @@ class EventController extends Controller
 
     public function search(Request $request)
     {
-        $search = Event::where('end_date', '>', now())->orderBy('end_date', 'DESC')->get();
+        // $search = Event::where('end_date', '>', now())->orderBy('end_date', 'DESC');
+        $search = Event::all();
        
         if(!empty($request->search))
         {
@@ -190,5 +191,15 @@ class EventController extends Controller
         }
         return view('events.events-page', compact('search'));
     }
+
+    public function category($id)
+    {
+        // $search = Event::where('end_date', '>', now())->orderBy('end_date', 'DESC');
+        $search = Event::where('category_id', $id)->get();
+       
+        
+        return view('events.events-page', compact('search'));
+    }
+
 
 }

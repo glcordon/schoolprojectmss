@@ -46,6 +46,7 @@ Route::get('/make-vendor', 'EventController@makeVendor');
 Route::get('/view-category', 'CategoryController@index');
 
 Route::post('/store-category', 'CategoryController@store');
+Route::get('/category/{id}', 'EventController@category');
 
 
 Route::get('/dashboard', 'DashboardController@index')->name('home');

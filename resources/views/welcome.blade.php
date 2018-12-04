@@ -153,8 +153,15 @@
             </div>
         </div>
         <div class="content">
+            
                 <div class="container" style="padding-top:20px">
-                     <div class="row">
+                    <div class="row">
+                        <div class="col-md-9" style="text-align:left"><h3>Upcoming Events</h3> </div>
+                        <div class="col-md-3"><a href="/view-all"> Browse All &raquo;</a> </div>
+                        <div class="col-md-12"><hr /></div>
+                    </div>
+                     <div class="row" style="padding-top:20px">
+                         <hr>
                         <div class="card-deck">
                         @foreach ($events as $event )
                             @include('partials.event-card')
@@ -164,13 +171,13 @@
                 </div>
             </div>
             <div class="content">
-                    <div class="container" style="padding-top:20px; text-align:left">
+                    <div class="container" style="padding-top:40px; text-align:left">
                         
                             <h4>Categories</h4> 
-                            <div class="row">
+                            <div class="row" style="padding-top:40px; text-align:left">
                             <div class="card-deck">
                             @foreach ($categories as $category )
-                             
+                             <a href="/category/{{$category->id}}">
                                     <div class="card bg-dark text-white"  style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
                                             <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="Card image">
                                             <div class="card-img-overlay">
@@ -178,6 +185,7 @@
                                               <p class="card-text"></p>
                                             </div>
                                           </div>
+                                        </a>
                             @endforeach
                         </div>
                     </div>
