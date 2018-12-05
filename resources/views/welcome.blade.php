@@ -172,19 +172,19 @@
             <div class="content">
                     <div class="container" style="padding-top:40px; text-align:left">
                         
-                            <h4>Categories</h4> 
-                            <div class="row" style="padding-top:40px; text-align:left">
+                        <h4>Categories</h4> 
+                        <div class="row" style="padding-top:40px; text-align:left">
                             <div class="card-deck">
                             @foreach ($categories as $category )
-                             <a href="/category/{{$category->id}}">
+                                <a href="/category/{{$category->id}}" style="position:relative;">
                                     <div class="card bg-dark text-white"  style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
-                                            <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="Card image">
-                                            <div class="card-img-overlay">
-                                              <h5 class="card-title">{{$category->category_name }}</h5>
-                                              <p class="card-text"></p>
-                                            </div>
-                                          </div>
-                                        </a>
+                                        <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="Card image">
+                                        <div class="card-img-overlay">
+                                            <h5 class="card-title" style="position:absolute; top:50%; left:50%;">{{$category->category_name }}</h5>
+                                            <p class="card-text"></p>
+                                        </div>
+                                    </div>
+                                </a>
                             @endforeach
                         </div>
                     </div>
