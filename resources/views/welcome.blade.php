@@ -99,6 +99,9 @@
                 max-height: 150px;
                 margin-bottom: 1rem;
               }
+            .text-divider{margin: 1em 0 1.5em; line-height: 0; text-align: left;}
+            .text-divider span{background-color: #fff; padding: 0.4em;}
+            .text-divider:before{ content: " "; display: block; border-top: 1px solid #e3e3e3; border-bottom: 1px solid #f7f7f7;}
         </style>
     </head>
     <body>
@@ -129,11 +132,12 @@
             
                 <div class="container" style="padding-top:20px">
                     <div class="row">
-                        <div class="col-md-9" style="text-align:left"><h3>Upcoming Events</h3> </div>
+                        <div class="col-md-9" style="text-align:left">
+                                <h3 class="text-divider"><span>Upcoming Events</span></h3>
+                        </div>
                         <div class="col-md-3"><a href="/view-all"> Browse All &raquo;</a> </div>
-                        <div class="col-md-12"><hr /></div>
                     </div>
-                     <div class="row" style="padding-top:20px">
+                     <div class="row" style="padding-top:10px">
                         <div class="card-deck">
                         @foreach ($events as $event )
                             @include('partials.event-card')
@@ -143,9 +147,9 @@
                 </div>
             </div>
             <div class="content">
-                    <div class="container" style="padding-top:40px; text-align:left">
+                    <div class="container" style="padding-top:10px; text-align:left">
                         
-                        <h4>Categories</h4> 
+                            <h3 class="text-divider"><span>Categories</h3> 
                         <div class="row" style="padding-top:40px; text-align:left">
                             <div class="card-deck">
                             @foreach ($categories as $category )
