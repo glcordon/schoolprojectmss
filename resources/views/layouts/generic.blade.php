@@ -136,8 +136,8 @@
             
          </div>
         </div></div>
-         <footer style="width:100%; min-height:20vh; background-color:black; margin-bottom:0; margin-top:30px; color:#fff">
-                hey
+         <footer style="width:100%; min-height:20vh; background-color:black; margin-bottom:0; margin-top:80px; color:#fff">
+                
         </footer>
 </body>
 </html>

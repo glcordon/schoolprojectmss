@@ -5,8 +5,8 @@
 <div class="content">
   <div class="row">
     <div class="col-md-8">
-      <h3>Event Title: {{ $event->title}}</h3>{{ $event->start_date}} - {{ $event->end_date}}
-      
+      <h3>Event Title: {{ $event->title}}</h3>{{date_format($event->start_date, 'M d, Y H:i')}} - {{date_format($event->end_date, 'M d, Y H:i')}}
+      <br><br>
       <div class="card">
           <h5 class="card-header">Overview</h5>
           <div class="card-body">
@@ -94,6 +94,8 @@
                                   </script>
                                   </form>
                                     </div>
+                                    @else
+                                   <a href="/login" class="btn btn-primary col-md-12">Register/Login</a> 
                                 @endauth
         
                     </div>

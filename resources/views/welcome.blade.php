@@ -161,7 +161,6 @@
                         <div class="col-md-12"><hr /></div>
                     </div>
                      <div class="row" style="padding-top:20px">
-                         <hr>
                         <div class="card-deck">
                         @foreach ($events as $event )
                             @include('partials.event-card')
