@@ -179,9 +179,9 @@
                                 <a href="/category/{{$category->id}}" style="position:relative;">
                                     <div class="card bg-dark text-white"  style="align:flex;text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
                                         <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="Card image">
-                                        <div class="card-img-overlay">
-                                            <h5 class="card-title" style="align-items: center;width:100%; height:100%; background-color:rgba(0,0,0,0.5); position:absolute; top:0; left:0;">
-                                              <span style=" align-items: center;justify-content: center;flex-direction: column"></span>  {{$category->category_name }}
+                                        <div class="card-img-overlay" style="align-items: center;width:100%; height:100%; background-color:rgba(0,0,0,0.5); position:absolute; top:0; left:0;">
+                                            <h5 class="card-title" >
+                                              <span style=" align-items: center;justify-content: center;flex-direction: column"> {{$category->category_name }}</span> 
                                             </h5>
                                             <p class="card-text"></p>
                                         </div>
