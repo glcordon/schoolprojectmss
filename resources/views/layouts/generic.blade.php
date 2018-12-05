@@ -108,25 +108,9 @@
         </style>
     </head>
     <body>
-            <div class="row">
-                    <div class="topbar col-md-12" style="background-color:#036" >
-                    <div class="col-md-6"><a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('img/mss-logo.png')}}" alt=""> </a></div>
-                    <div class="col-md-6 top-right links"></div>
-         
-                </div>
-                </div>              
+            @include('partials.menu')
+             
         <div class="flex-center position-ref hero">
-       
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
            
         </div>
         <div class="content">
