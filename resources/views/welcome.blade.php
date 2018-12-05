@@ -180,7 +180,7 @@
                                     <div class="card bg-dark text-white"  style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
                                         <img class="card-img" src="{{ Storage::url($category->image_url) }}" alt="Card image">
                                         <div class="card-img-overlay">
-                                            <h5 class="card-title" style="width:100%; height:100%; background-color:rgba(0,0,0,0.5); position:absolute; top:50%; left:50%;">{{$category->category_name }}</h5>
+                                            <h5 class="card-title" style="width:100%; height:100%; background-color:rgba(0,0,0,0.5); position:absolute; top:0; left:0;">{{$category->category_name }}</h5>
                                             <p class="card-text"></p>
                                         </div>
                                     </div>
