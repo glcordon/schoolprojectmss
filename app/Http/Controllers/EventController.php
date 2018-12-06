@@ -163,8 +163,10 @@ class EventController extends Controller
             ->fee(50)
             ->from($customer)
             ->to($vendor)
-            ->create(); 
-
+            ->create();
+           $name = $request->stripeBillingName;
+           $email = $request->stripeEmail;
+           return view('events.receipt', compact('name', 'email'));
         dd($request->all());
     }
 
