@@ -5,7 +5,7 @@
 <div class="content">
   <div class="row">
     <div class="col-md-8">
-      <h3>Event Title: {{ $event->title}}</h3>{{date_format($event->start_date, 'M d, Y H:i')}} - {{date_format($event->end_date, 'M d, Y H:i')}}
+      {{--  <h3>Event Title: {{ $event->title}}</h3>{{date_format($event->start_date, 'M d, Y H:i')}} - {{date_format($event->end_date, 'M d, Y H:i')}}
       <br><br>
       <div class="card">
           <h5 class="card-header">Overview</h5>
@@ -15,7 +15,7 @@
       <p>{{$event->venu_name}} </p>
       <p>{{$event->street}} </p>
       <p>{{$event->state}}, {{$event->zip}} </p>
-      <p></p>
+      <p></p>  --}}
           </div>
         </div>
       
@@ -50,22 +50,7 @@
                         <div class="col-sm-12 mx-auto text-center">
         
                             <p class="small mb-3 text-muted"><i class="mdi mdi-clock"></i> Posted {{ $date }}</p>
-                                                {{--  <h3 class="mb-3 h2">£100.25 <i class="widget-indicator fa fa-circle-o-notch p-1 fa-spin float-right" style="display:none"></i></h3>  --}}
-                            <h3 class="text-muted">Tickets</h3>
-                            @if(count($ticket))
-                                @foreach ($ticket as $tick )
-                                <p>{{$tick->title}} - ${{$tick->price}}
-                                    <select name="$tick->id" id="">
-                                        @for ($i = 0; $i <= ($tick->quantity_available - $tick->quantity_sold); $i++)
-                                            <option value="{{$i}}">{{$i}}</option>
-                                        @endfor
-                                    </select>
-                                </p>
-                                @endforeach
-                            @else
-                            No Tickets Available
-                            @endif
-                            
+                                                {{--  <h3 class="mb-3 h2">£100.25 <i class="widget-indicator fa fa-circle-o-notch p-1 fa-spin float-right" style="display:none"></i></h3>  --}}                           
                             
                         </div>
         
