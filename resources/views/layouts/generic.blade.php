@@ -90,7 +90,7 @@
                 background-size:cover;
                 color:#fff;
                 background: url(
-                    @if ($event->image)
+                    @if (isset($event))
                         {{ Storage::url($event->image) }}
                     @else
                         {{ asset('img/baseball-field.jpg') }}
