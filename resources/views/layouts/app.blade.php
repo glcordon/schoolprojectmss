@@ -34,6 +34,10 @@
                 max-height: 250px;
                 margin-bottom: 1rem;
               }
+              .hidden
+              {
+                  display:none;
+              }
     </style>
 
     <!-- Scripts -->

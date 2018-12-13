@@ -90,7 +90,7 @@
                 background-size:cover;
                 color:#fff;
                 background: url(
-                    @if (isset($event))
+                    @if ($event->image)
                         {{ Storage::url($event->image) }}
                     @else
                         {{ asset('img/baseball-field.jpg') }}
@@ -104,6 +104,10 @@
                 width: 100%;
                 max-height: 150px;
                 margin-bottom: 1rem;
+              }
+              .hidden
+              {
+                  display:none;
               }
         </style>
     </head>

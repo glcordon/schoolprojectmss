@@ -16,10 +16,10 @@ use App\User;
 
 class ProfileController extends Controller
 {
-    public function getAuthUser ()
-    {
-        return Auth::user();
-    }
+    // public function getAuthUser ()
+    // {
+    //     return Auth::user();
+    // }
 
     public function updateAuthUser (Request $request)
     {

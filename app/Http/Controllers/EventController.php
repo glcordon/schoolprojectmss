@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Ticket;
 use Rap2hpoutre\LaravelStripeConnect\StripeConnect;
 use Illuminate\Support\Facades\Storage;
+use App\Category;
 
 
 class EventController extends Controller
@@ -46,38 +47,40 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $now = Carbon::now();
         $startDate = Carbon::createFromFormat("Y-m-d", $request->start_date);
         $endDate = Carbon::createFromFormat("Y-m-d", $request->end_date);
         $start_time = $request->start_hour + $request->am_pm;
         $end_time = $request->end_hour + $request->end_am_pm;
+        $categories = Category::get();
        
         $start_date = Carbon::create($startDate->format('Y'), $startDate->format('m'), $startDate->format('d'), $start_time, $request->start_minute, 00);
-        $end_date = Carbon::create($endDate->format('Y'), $endDate->format('m'), $endDate->format('d'), $end_time, $request->end_minute, 00);
-        $extension = $request->file('event_image')->getClientOriginalExtension();
-        $path = $request->event_image->store('event_image');
+        // $end_date = Carbon::create($endDate->format('Y'), $endDate->format('m'), $endDate->format('d'), $end_time, $request->end_minute, 00);
+        // $extension = $request->file('event_image')->getClientOriginalExtension();
+        // $path = $request->event_image->store('event_image');
         
         $event = new Event;
         $event->title = $request->title;
-        $event->state = $request->location_state;
-        $event->zip = $request->location_post_code;
+        $event->state = $request->location_state ?? ' ';
+        $event->zip = $request->location_post_code ?? ' ';;
         $event->city = '';
         $event->start_sale_date = $start_date;
-        $event->end_sale_date = $end_date;
-        $event->image = $path;
+        $event->end_sale_date = $end_date ?? $now;
+        $event->image = $path ?? '';
         $event->website = '';
         $event->venu_id = '0';
         $event->description = $request->description;
         $event->event_image = $request->event_image;
         $event->venu_name = $request->location_venue_name;
-        $event->street = $request->location_address_line_1;
-        $event->user_id = $request->organiser_id;
+        $event->street = $request->location_address_line_1 ?? '';
+        $event->user_id = $request->organiser_id ?? \Auth::user()->id;
         $event->start_date = $start_date;
-        $event->end_date = $end_date;
+        $event->end_date = $end_date ?? $now;
         $event->is_private = 0;
         $event->save();
 
         // return $dt;
-        return back();
+        return view('events.event-create2', compact('event','categories'));
     }
 
     /**
@@ -105,7 +108,12 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        $event = Event::find($id);
+        $ticket = Ticket::where('event_id', $id)->get();
+        $user = $event->users->name;
+        $date = Carbon::parse($event->created_at)->diffForHumans();
+        
+        return view('events.event-create2', compact('event', 'ticket', 'user', 'date'));    
     }
 
     /**

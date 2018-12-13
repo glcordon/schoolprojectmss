@@ -24,7 +24,6 @@ class CreateTicketsTable extends Migration
             $t->Integer('order_id')->nullable();
 
             $t->integer('event_id'); 
-            //$t->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
 
             $t->string('title');
             $t->text('description');
@@ -44,14 +43,9 @@ class CreateTicketsTable extends Migration
 
             $t->tinyInteger('is_paused')->default(0);
 
-            //$t->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
-            //$t->foreign('order_id')->references('id')->on('orders');
-            //$t->foreign('edited_by_user_id')->references('id')->on('users');
-
             $t->integer('public_id')->nullable();
 
             $t->integer('user_id');
-            //$t->foreign('user_id')->references('id')->on('users');
         });
     }
 

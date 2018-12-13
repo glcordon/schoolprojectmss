@@ -16,7 +16,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
         $categories = Category::get(['id','category_name', 'image_url']);
         return view('categories.category-view', compact('categories'));
     }

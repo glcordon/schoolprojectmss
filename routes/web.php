@@ -31,6 +31,8 @@ Route::get('/home', function () {
 Route::get('/events', 'EventController@index');
 Route::get('/events/create', 'EventController@create');
 Route::post('/create-event', 'EventController@store');
+Route::post('/create-event2', 'EventController@edit')->name('event.edit');
+
 Route::get('/view-event/{id}', 'EventController@show');
 Route::get('/delete-event/{id}', function($id){
     \App\Category::find($id)->delete();
