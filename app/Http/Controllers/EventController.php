@@ -47,6 +47,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        
         $now = Carbon::now();
         $startDate = Carbon::createFromFormat("Y-m-d", $request->start_date);
         $endDate = Carbon::createFromFormat("Y-m-d", $request->end_date);
@@ -67,6 +68,7 @@ class EventController extends Controller
         $event->start_sale_date = $start_date;
         $event->end_sale_date = $end_date ?? $now;
         $event->image = $path ?? '';
+        $event->event_type = $request->event_type;
         $event->website = '';
         $event->venu_id = '0';
         $event->description = $request->description;
@@ -78,8 +80,11 @@ class EventController extends Controller
         $event->end_date = $end_date ?? $now;
         $event->is_private = 0;
         $event->save();
-
-        // return $dt;
+        
+        $startDate = $event->start_date->year;
+        $startHour = $event->start_date->hour;
+        $startMinute = $event->start_date->minute;
+        
         return view('events.event-create2', compact('event','categories'));
     }
 

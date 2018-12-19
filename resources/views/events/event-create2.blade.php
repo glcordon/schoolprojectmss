@@ -3,39 +3,45 @@
 @section('content')
 
 <form action="" method="POST" class="form">
-
+{{ @csrf_field() }}
     <div class="form-group">
         <label for="title">Event Title</label>
         <input type="text" class="title form-control" name="title" value="{{ $event->title ?? old('title') }}">
     </div>
     <div class="form-group">
         <label for="description" class="control-label required">Event Description</label><br />
-        <textarea class="form-control  editable" rows="5" name="description" cols="50" id="description" >
-            {{ $event->description ?? old('description') }}
-        </textarea>
+        <textarea class="form-control  editable" rows="5" name="description" cols="50" id="description" >{{ $event->description ?? old('description') }}</textarea>
     </div>
     
     <div class="row">
         <div class="col-sm-6">
-            <div class="form-group">
-                <label for="start_date" class="required control-label">Event Start Date</label>
-                <input type="date" class="form-control start hasDatepicker " data-field="datetime" data-startend="start" data-startendelem=".end"  name="start_date" type="text" id="start_date">
-                <select name="start_hour" id="start_hour">
-                        @for ($i = 1 ; $i <= 12 ; $i++)
-                            <option value= "{{ $i }}">{{ $i }}</option>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="date" class="form-control start hasDatepicker " data-field="datetime" data-startend="start" data-startendelem=".end"  name="start_date" type="text" id="start_date">
+                    <label for="start_date" class="required control-label">Event Start Date</label>
+                </div>
+                <div class="col-md-4">
+                    <select name="start_hour" id="start_hour" class="form-control">
+                        <option value=""></option>
+                        @for ($i = 1 ; $i <= 24 ; $i++)
+                            <option value= "{{ $i }}" {{ $event->start_hour == $i ? 'selected' : '' }}>{{ $i>12 ? $i-12 .' PM' : $i . ' AM' }}</option>
                         @endfor
                 </select>
-                <select name="start_minute" id="start_minute">
+                <label for="">Hour</label>
+                </div>
+                <div class="col-md-4">
+                <select name="start_minute" id="start_minute" class="form-control">
                         <option value="00">00</option>
                         <option value="15">15</option>
                         <option value="30">30</option>
                         <option value="45">45</option>
                 </select>
-                <select name="start_am_pm" id="am_pm">
+                <label for="">Minute</label>
+                {{--  <select name="start_am_pm" id="am_pm">
                         <option value="12">PM</option>
                         <option value="00">AM</option>
-                </select>
-                                    
+                </select>  --}}
+                 </div>                   
             </div>
         </div>
 
@@ -44,21 +50,19 @@
                 <label for="end_date" class="required control-label ">Event End Date</label>
 
                 <input class="form-control end hasDatepicker " data-field="datetime" data-startend="end" data-startendelem=".start" name="end_date" type="date" id="end_date">
-                <select name="end_hour" id="end_hour">
-                        @for ($i = 1 ; $i <= 12 ; $i++)
-                            <option value= "{{ $i }}">{{ $i }}</option>
+                <select name="end_hour" id="end_hour" class="form-control">
+                        <option value=""></option>
+                        @for ($i = 1 ; $i <= 24 ; $i++)
+                            <option value= "{{ $i }}" {{ $event->start_hour == $i ? 'selected' : '' }}>{{ $i>12 ? $i-12 .' PM' : $i . ' AM' }}</option>
                         @endfor
                 </select>
-                <select name="end_minute" id="end_minute">
+                <select name="end_minute" id="end_minute" class="form-control">
                         <option value="00">00</option>
                         <option value="15">15</option>
                         <option value="30">30</option>
                         <option value="45">45</option>
                 </select>
-                <select name="end_am_pm" id="end_am_pm">
-                        <option value="12">PM</option>
-                        <option value="00">AM</option>
-                </select>
+                
             </div>
         </div>
     </div>
@@ -77,17 +81,17 @@
             <label for="event_type">Event Type</label>
                 <select name="event_type" id="event_type" class="form-control" required>
                     <option value=""></option>
-                    <option value="Physical" {{ $event->event_type = 'Physical' ? 'selected' : '' }}>Physical</option>
-                    <option value="Online" {{ $event->event_type = 'Online' ? 'selected' : '' }}>Online</option>
+                    <option value="Physical" {{ $event->event_type == 'Physical' ? 'selected' : '' }}>Physical</option>
+                    <option value="Online" {{ $event->event_type == 'Online' ? 'selected' : '' }}>Online</option>
                 </select>
         </div>
         <div class="col-md-6">
             <label for="Event Privacy">Event Privacy</label>
             <select name="event_visibility" id="event_visibility" class="form-control" required>
                 <option value=""></option>
-                <option value="public" {{ $event->event_visibility = 'public' ? 'selected' : '' }}>Public</option>
-                <option value="private" {{ $event->event_visibility = 'private' ? 'selected' : '' }}>Private</option>
-                <option value="subscribers" {{ $event->event_visibility = 'subscribers' ? 'selected' : '' }}>Subscribers Only</option>
+                <option value="public" {{ $event->event_visibility == 'public' ? 'selected' : '' }}>Public</option>
+                <option value="private" {{ $event->event_visibility == 'private' ? 'selected' : '' }}>Private</option>
+                <option value="subscribers" {{ $event->event_visibility == 'subscribers' ? 'selected' : '' }}>Subscribers Only</option>
                 
             </select>
         </div>

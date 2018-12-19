@@ -11,6 +11,7 @@
 |
 */
 use App\Event;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     $events = Event::where([
@@ -54,6 +55,15 @@ Route::get('/category/{id}', 'EventController@category');
 Route::get('/dashboard', 'DashboardController@index')->name('home');
 
 Route::post('/search', 'EventController@search');
+
+// Route::get('/my-profile', 'profile\ProfileController@MyProfile');
+// Route::get('/profile/{id}', 'profile\ProfileController@viewPublicProfile')->name('view.profile');
+// Route::get('/profile-create', function(){
+//     $user = Auth::user();
+//     return view('profile.create-profile', compact('user'));
+// });
+
+// Route::post('/store-profile', 'profile\ProfileController@storeMyProfile');
 
 require __DIR__ . '/profile/profile.php';
 require __DIR__ . '/users/users.php';

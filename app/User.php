@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Event', 'user_id', 'id');
     }
+    public function profile()
+    {
+        return $this->hasOne('\App\Profile', 'id', 'user_id');
+    }
+    
 }

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-
+use App\Profile as MyProfile;
 use App\Http\Helpers\Upload;
 use Avatar;
 
@@ -79,5 +79,29 @@ class ProfileController extends Controller
         $user->save();
 
         return $user;
+    }
+    public function myProfile()
+    {
+        return view('profile.my-profile');
+    }
+
+    public function viewPublicProfile($id)
+    {
+        $profile = \App\Profile::find($id);
+        return view('profile.my-profile', compact('profile'));
+    }
+
+    public function storeMyProfile(Request $request){
+        
+        $myProfile = MyProfile::where('user_id', $request->user_id)->first();
+        if($myProfile){
+            $myProfile->cover_img = $request->file('cover_img')->store(
+                'covers/'.$request->user()->id, 'public'
+            );
+            $myProfile->save();
+            return($myProfile);
+           return $myProfile->update($request->except('_token'));
+        }
+        return MyProfile::create($request->all());
     }
 }
