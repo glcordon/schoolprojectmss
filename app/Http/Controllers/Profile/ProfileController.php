@@ -104,4 +104,9 @@ class ProfileController extends Controller
         }
         return MyProfile::create($request->all());
     }
+    public function createMyProfile(){
+        $user = Auth::user();
+        $myProfile = MyProfile::where('user_id', Auth::user()->id)->first();
+        return view('profile.create-profile', compact('user', 'myProfile'));
+    }
 }
