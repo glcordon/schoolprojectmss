@@ -1,5 +1,5 @@
 <?php
-use App\Profile as MyProfile;
+use \App\Profile as MyProfile;
 
 Route::middleware('auth')->group(function () {
     Route::get('/my-profile', 'profile\ProfileController@MyProfile');
