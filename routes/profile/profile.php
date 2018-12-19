@@ -3,8 +3,8 @@ use \App\Profile as MyProfile;
 
 Route::middleware('auth')->group(function () {
     Route::get('/my-profile', 'profile\ProfileController@MyProfile');
-Route::get('/profile/{id}', 'profile\ProfileController@viewPublicProfile')->name('view.profile');
-Route::get('/profile-create', 'profile\ProfileController@createMyProfile');
+Route::get('/profile/{id}', 'ProfileController@viewPublicProfile')->name('view.profile');
+Route::get('/profile-create', 'ProfileController@createMyProfile');
 
 Route::post('/store-profile', 'profile\ProfileController@storeMyProfile');
 
