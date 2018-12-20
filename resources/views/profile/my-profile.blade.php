@@ -3,7 +3,7 @@
 @section('content')
 
    <section class="row" style="margin-top:40px">
-       <div class="col-md-3">
+       <div class="col-md-2">
           <div class="card" style="margin-top:-80px">
               <img class="card-img-top" src="{{ Storage::disk('public')->url($myProfile->profile_img) ?? 'https://html.crumina.net/html-olympus/img/author-main1.jpg' }}">
               <div class="card-block">
