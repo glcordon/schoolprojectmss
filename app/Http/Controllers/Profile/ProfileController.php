@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use App\Profile as MyProfile;
+use \App\Profile as MyProfile;
 use App\Http\Helpers\Upload;
 use Avatar;
 
