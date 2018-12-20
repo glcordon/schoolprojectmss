@@ -18,12 +18,12 @@
                         <label for="">Cover Photo</label>
                         <input type="file" name="cover_img" id="cover_img" class="form-control">
                     </div>
-                    {{--  <div class="form-group">
-                    <input type="text" value="" data-role="tagsinput" class="form-control" placeholder="My Name" required>
+                    <div class="form-group">
+                    <input type="text" value="" name="first_name" data-role="tagsinput" class="form-control" placeholder="First Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="my_email" required placeholder="My Email">
-                </div>  --}}
+                    <input type="text" class="form-control" name="last_name"  required placeholder="Last Name">
+                </div>
                 <div class="form-group"><label for="">About Me</label>
                 <textarea name="bio" class="form-control">{{ $user->profile->bio ?? '' }}</textarea>
                 </div>
