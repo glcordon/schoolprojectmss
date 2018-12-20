@@ -82,7 +82,9 @@ class ProfileController extends Controller
     }
     public function myProfile()
     {
-        return view('profile.my-profile');
+        $myProfile = MyProfile::where('user_id', Auth::id())->first();
+
+        return view('profile.my-profile', compact('myProfile'));
     }
 
     public function viewPublicProfile($id)
