@@ -95,14 +95,21 @@ class ProfileController extends Controller
         
         $myProfile = MyProfile::where('user_id', $request->user_id)->first();
         if($myProfile){
+            $myProfile->update($request->except(['_token', 'cover_img', 'profile_img']));
             $myProfile->cover_img = $request->file('cover_img')->store(
                 'covers/'.$request->user()->id, 'public'
             );
+            $myProfile->profile_img = $request->file('profile_img')->store(
+                'profile/'.$request->user()->id, 'public'
+            );
             $myProfile->save();
-            return($myProfile);
-           return $myProfile->update($request->except('_token'));
+           
         }
-        return MyProfile::create($request->all());
+        else{
+            MyProfile::create($request->all());
+
+        }
+        return redirect('/my-profile');
     }
     public function createMyProfile(){
         $user = Auth::user();
