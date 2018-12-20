@@ -6,7 +6,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/profile/{id}', 'Profile\ProfileController@viewPublicProfile')->name('view.profile');
 Route::get('/profile-create', 'Profile\ProfileController@createMyProfile');
 
-Route::post('/store-profile', 'profile\ProfileController@storeMyProfile');
+Route::post('/store-profile', 'Profile\ProfileController@storeMyProfile');
 
     Route::group(['namespace' => 'Profile'], function() {
 
