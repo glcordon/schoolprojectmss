@@ -29,9 +29,14 @@
                 </div>
             </div>
             <div class="col-md-5">
+                @if ($user->profile_img)
+                    <img src="{{ Storage::disk('public')->url($myProfile->profile_img) }}" alt="">
+                    @else
                     <div class="image-placeholder col-md-12">
                             <h4>image placeholder text</h4>
                         </div>
+                @endif
+                    
             </div>
             </div>
             
