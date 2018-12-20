@@ -35,6 +35,10 @@
               </div>
        </div>
        <div class="col-md-8">
+         <div class="row">
+           <div class="col-md-3"><i class="fa fa-video"></i> | <i class="fas fa-plus-square"></i></div>
+         </div>
+         
             <div class="card">
                     <div class="card-header card-title">
                       {{ $myProfile->article->title ?? 'Article Title Here'  }}
