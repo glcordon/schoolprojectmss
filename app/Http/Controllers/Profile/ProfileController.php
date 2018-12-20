@@ -83,7 +83,7 @@ class ProfileController extends Controller
     public function myProfile()
     {
         $myProfile = MyProfile::where('user_id', Auth::id())->first();
-
+        // dd($myProfile->users->name);
         return view('profile.my-profile', compact('myProfile'));
     }
 

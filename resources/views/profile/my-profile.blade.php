@@ -7,7 +7,7 @@
           <div class="card" style="margin-top:-80px">
               <img class="card-img-top" src="{{ Storage::disk('public')->url($myProfile->profile_img) ?? 'https://html.crumina.net/html-olympus/img/author-main1.jpg' }}">
               <div class="card-block">
-                  <h4 class="card-title">{{ $myProfile->name ?? 'My Name' }}</h4>
+                  <h4 class="card-title">{{ $myProfile->users->name ?? 'My Name' }}</h4>
                   <div class="meta">
                       <a href="#">Followers</a>
                   </div>

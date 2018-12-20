@@ -72,6 +72,6 @@ class profile extends Model
     
     public function users()
     {
-        return $this->hasOne(\App\User, 'user_id', 'id');
+        return $this->hasOne('\App\User', 'id', 'user_id');
     }
 }

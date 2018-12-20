@@ -231,7 +231,7 @@
         <div class="col-md-12" style="position:relative">
 
         <div class="flex-center position-ref hero">
-           <h1>{{ $profile->name ?? 'My Name' }}</h1>
+           <h1>{{ $myProfile->users->name ?? 'My Name' }}</h1>
         </div>
         
         </div>
