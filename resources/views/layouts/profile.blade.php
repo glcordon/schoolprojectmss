@@ -86,8 +86,9 @@
                 margin-bottom: 60px;
             }
             .hero{
-                height:40vh;
-                background-size:cover;
+                height:400px;
+                min-height:50vh;
+                background-size:contain;
                 color:#fff;
                 background: url(
                     @if (isset($myProfile))
