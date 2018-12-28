@@ -74,4 +74,10 @@ class profile extends Model
     {
         return $this->hasOne('\App\User', 'id', 'user_id');
     }
+
+    public function getProfileSlugAttribute()
+    {
+        return str_slug($this->first_name. ' ' .$this->last_name);
+    }
+
 }

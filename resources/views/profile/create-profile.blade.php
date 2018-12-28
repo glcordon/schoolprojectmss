@@ -12,17 +12,21 @@
                 <div class="col-md-7">
                     <div class="form-group">
                         <label for="">Avatar/Profile Picture</label>
-                        <input type="file" name="profile_img" id="profile_img" class="form-control">
+                        <input type="file" name="profile_img" id="profile_img" class="form-control" accept=".jpg,.png,.gif">
                     </div>
                     <div class="form-group">
                         <label for="">Cover Photo</label>
-                        <input type="file" name="cover_img" id="cover_img" class="form-control">
+                        <input type="file" name="cover_img" id="cover_img" class="form-control"  accept=".jpg,.png,.gif">
                     </div>
                     <div class="form-group">
-                    <input type="text" value="" name="first_name" data-role="tagsinput" class="form-control" placeholder="First Name" required>
+                    <input type="text" name="first_name" value="{{ $myProfile['first_name'] ?? '' }}" data-role="tagsinput" class="form-control" placeholder="First Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="last_name"  required placeholder="Last Name">
+                    <input type="text" class="form-control" value="{{ $myProfile['last_name'] ?? '' }}" name="last_name"  required placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="profile-name" class="form-control" placeholder="Name Your Profile">
+                    <small>This will be used to find you in searches and in the URL http://mysportsshare.com/profile-name </small>
                 </div>
                 <div class="form-group"><label for="">About Me</label>
                 <textarea name="bio" class="form-control">{{ $user->profile->bio ?? '' }}</textarea>

@@ -83,13 +83,13 @@ class ProfileController extends Controller
     public function myProfile()
     {
         $myProfile = MyProfile::where('user_id', Auth::id())->first();
-        // dd($myProfile->users->name);
+        // dd($myProfile->profile_slug);
         return view('profile.my-profile', compact('myProfile'));
     }
 
     public function viewPublicProfile($id)
     {
-        $profile = \App\Profile::find($id);
+        $profile = MyProfile::where('profile_name', $id)->first();
         return view('profile.my-profile', compact('profile'));
     }
 
@@ -107,12 +107,9 @@ class ProfileController extends Controller
             $myProfile->save();
            
         }
-        else{
-            MyProfile::create($request->all());
-
-        }
         return redirect('/my-profile');
     }
+    
     public function createMyProfile(){
         $user = Auth::user();
         $myProfile = MyProfile::where('user_id', Auth::user()->id)->first();
