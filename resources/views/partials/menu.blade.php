@@ -7,8 +7,9 @@
         
             @auth
             <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('/home') }}">Dashboard</a>
-            </li>
+                    <a class="nav-link active" href="{{ url('/home') }}"><li class="nav-item">{{ Auth::user()->name }}</a>
+            </li> </li>
+           
             @else
             <li class="nav-item">
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
@@ -20,7 +21,8 @@
             <li class="nav-item">
                 <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Add New</button>
             </li>
-    @endif
+
+                 @endif
                       </ul>
         </div>
 
