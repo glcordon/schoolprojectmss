@@ -7,7 +7,7 @@
         
             @auth
             <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('/home') }}"><li class="nav-item">{{ Auth::user()->name }}</a>
+                    <a class="nav-link active" href="{{ url('/my-profile') }}"><li class="nav-item">{{ Auth::user()->name }}</a>
             </li> </li>
            
             @else
