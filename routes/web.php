@@ -65,6 +65,15 @@ Route::post('/search', 'EventController@search');
 
 // Route::post('/store-profile', 'profile\ProfileController@storeMyProfile');
 
+Route::domain('test.localhost')->group(function () {
+    Route::get('test', function () {
+        //
+        return 'success';
+    });
+});
+
+Route::get('/courses/create', 'CoursesController@create');
+
 require __DIR__ . '/profile/profile.php';
 require __DIR__ . '/users/users.php';
 require __DIR__ . '/roles/roles.php';

@@ -71,9 +71,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-            // $avatar = Avatar::create($user->name)->getImageObject()->encode('png');
-            // Storage::put('avatars/'.$user->id.'/avatar.png', (string) $avatar);
+            $user->profile()->create();
+            $avatar = Avatar::create($user->name)->getImageObject()->encode('png');
+            Storage::put('avatars/'.$user->id.'/avatar.png', (string) $avatar);
 
         return $user;
     }

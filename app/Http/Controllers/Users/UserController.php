@@ -49,7 +49,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
-
+        $user->profile()->save();
         $rolesNames = array_pluck($request->roles, ['name']);
         $user->assignRole($rolesNames);
 
