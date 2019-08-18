@@ -71,6 +71,12 @@ Route::domain('test.localhost')->group(function () {
         return 'success';
     });
 });
+Route::domain('test.159.65.178.155')->group(function () {
+    Route::get('test', function () {
+        //
+        return 'success';
+    });
+});
 
 Route::get('/courses/create', 'CoursesController@create');
 
