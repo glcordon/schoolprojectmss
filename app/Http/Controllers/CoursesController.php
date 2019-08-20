@@ -32,8 +32,8 @@
             } else {
                 $courses = Course::all();
             }
-    
-            return view('courses.index', compact('courses'));
+            $categories = ['Lessons', 'Drills', 'Fundamentals', 'Conditioning'];
+            return view('courses.index', compact('courses', 'categories'));
         }
     
         /**
@@ -42,9 +42,12 @@
          * @return \Illuminate\Http\Response
          */
         public function create(){
+        $course = new Course;
         $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
         // dd($categories);
-        return view('courses.create', compact('categories'));
+        $course->course_title = '';
+        $course->save();
+        return view('courses.create', compact('categories', 'course'));
             if (! Gate::allows('course_create')) {
                 return abort(401);
             }

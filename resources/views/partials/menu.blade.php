@@ -8,8 +8,13 @@
             @auth
             <li class="nav-item">
                     <a class="nav-link active" href="{{ url('/my-profile') }}"><li class="nav-item">{{ Auth::user()->name }}</a>
-            </li> </li>
-           
+            </li> 
+           <li class="nav-item">
+                <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Add New Event</button>
+            </li>
+            <li class="nav-item">
+                <a href="/courses/create" class="btn btn-success mx-1">Add New Course</a>
+            </li>
             @else
             <li class="nav-item">
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
@@ -18,12 +23,7 @@
                     <a class="nav-link active" href="{{ route('register') }}">Register</a>
             </li>
             @endauth
-            <li class="nav-item">
-                <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Add New Event</button>
-            </li>
-            <li class="nav-item">
-                <a href="/courses/create" class="btn btn-success mx-1">Add New Course</a>
-            </li>
+            
 
                  @endif
                       </ul>
