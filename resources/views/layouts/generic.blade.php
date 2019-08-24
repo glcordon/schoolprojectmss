@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-icon-72x72.png">
@@ -28,7 +28,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+
         <script src="https://kit.fontawesome.com/f42913f22f.js"></script>
+        
                 <!-- Styles -->
         <style>
             html, body {
@@ -118,7 +120,7 @@
            
         </div>
         <div class="content">
-                <div class="container">
+                <div id="app">>
                    @yield('content') 
                 </div>
             
@@ -128,4 +130,6 @@
                 
         </footer>
 </body>
+<script src="/js/app.js"></script>
+
 </html>

@@ -99,17 +99,29 @@
          * @param  int  $id
          * @return \Illuminate\Http\Response
          */
-        public function update(UpdateCoursesRequest $request, $id)
+        public function update(Request $request, $id)
         {
-            if (! Gate::allows('course_edit')) {
-                return abort(401);
-            }
+            // if (! Gate::allows('course_edit')) {
+            //     return abort(401);
+            // }
+            $lessons = collect($request->Lesson);
+            $lessonArray = $lessons->map(function($item, $key) use($request){
+                return [
+                    'lesson_title' => $item, 
+                    'lesson_description' => $request->lesson_description[$key],
+                    'lesson_video' => $request->lesson_video[$key],
+                    'lesson_video_upload' => $request->lesson_video_upload[$key]
+                ];
+            });
+            dump($lessonArray);
             $course = Course::findOrFail($id);
             $course->update($request->all());
     
-            $lessons           = $course->lessons;
+            $lessons= $course->lessons;
+            dd($lessons);
             $currentLessonData = [];
-            foreach ($request->input('lessons', []) as $index => $data) {
+            foreach ($request->input('lesson_video_upload', []) as $index => $data) {
+                dd($data);
                 if (is_integer($index)) {
                     $course->lessons()->create($data);
                 } else {

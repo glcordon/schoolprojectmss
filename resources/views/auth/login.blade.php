@@ -68,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="card text-white bg-primary py-5 d-md-down-none">
+        <div class="card text-white bg-dark py-5 d-md-down-none">
             <div class="card-body text-center">
                 <div>
                     <img src="{{asset('img/mss-logo.png')}}" class="mb-5" width="250" alt="Mss Logo">

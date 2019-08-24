@@ -79,6 +79,8 @@ Route::domain('test.159.65.178.155')->group(function () {
 });
 
 Route::get('/courses/create', 'CoursesController@create');
+Route::post('/create-course/{id}/store', 'CoursesController@update');
+
 
 require __DIR__ . '/profile/profile.php';
 require __DIR__ . '/users/users.php';
