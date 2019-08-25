@@ -2,6 +2,7 @@
     namespace App\Http\Controllers;
     
     use App\Course;
+    use App\Lessons;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Gate;
     use App\Http\Controllers\Controller;
@@ -21,18 +22,19 @@
         }
         public function index()
         {
-            if (! Gate::allows('course_access')) {
-                return abort(401);
-            }
-            if (request('show_deleted') == 1) {
-                if (! Gate::allows('course_delete')) {
-                    return abort(401);
-                }
-                $courses = Course::onlyTrashed()->get();
-            } else {
-                $courses = Course::all();
-            }
-            $categories = ['Lessons', 'Drills', 'Fundamentals', 'Conditioning'];
+            // if (! Gate::allows('course_access')) {
+            //     return abort(401);
+            // }
+            // if (request('show_deleted') == 1) {
+            //     if (! Gate::allows('course_delete')) {
+            //         return abort(401);
+            //     }
+            //     $courses = Course::onlyTrashed()->get();
+            // } else {
+            //     $courses = Course::all();
+            // }
+            $courses = Course::get();
+            $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return view('courses.index', compact('courses', 'categories'));
         }
     
@@ -47,10 +49,7 @@
         // dd($categories);
         $course->course_title = '';
         $course->save();
-        return view('courses.create', compact('categories', 'course'));
-            if (! Gate::allows('course_create')) {
-                return abort(401);
-            }
+        return redirect('/courses/'.$course->id.'/create');
             
         }
     
@@ -60,7 +59,7 @@
          * @param  \App\Http\Requests\StoreCoursesRequest  $request
          * @return \Illuminate\Http\Response
          */
-        public function store(StoreCoursesRequest $request)
+        public function store(Request $request)
         {
             if (! Gate::allows('course_create')) {
                 return abort(401);
@@ -84,12 +83,16 @@
          */
         public function edit($id)
         {
+            $course = Course::findOrFail($id);
+            $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
+            
+            $lessons= $course->lessons;
+            return view('courses.create', compact('course','categories'));
+            
             if (! Gate::allows('course_edit')) {
                 return abort(401);
             }
-            $course = Course::findOrFail($id);
-    
-            return view('courses.edit', compact('course'));
+            
         }
     
         /**
@@ -104,7 +107,8 @@
             // if (! Gate::allows('course_edit')) {
             //     return abort(401);
             // }
-            $lessons = collect($request->Lesson);
+            // dd($request->category);
+            $lessons = collect($request->lesson);
             $lessonArray = $lessons->map(function($item, $key) use($request){
                 return [
                     'lesson_title' => $item, 
@@ -113,31 +117,45 @@
                     'lesson_video_upload' => $request->lesson_video_upload[$key]
                 ];
             });
-            dump($lessonArray);
             $course = Course::findOrFail($id);
-            $course->update($request->all());
+            $course->course_title = $request->course_title;
+            $course->course_intro_video = $request->course_intro_video;
+            $course->course_video_thumb = 'https://img.youtube.com/vi/'.explode('=',$request->course_intro_video)[1].'/0.jpg' ?? null;
+            $course->course_description = $request->course_description;
+            $course->category = $request->category;
+            $course->course_difficulty = $request->course_difficulty;
+            $course->save();
+            foreach ($lessonArray as $la){
+                $lesson = new Lessons;
+                $lesson->lesson_title = $la['lesson_title'];
+                $lesson->lesson_video = $la['lesson_video'];
+                $lesson->lesson_description = $la['lesson_description'];
+                $course->lessons()->save($lesson);
+            }
+            // $course->update(['course_title'=>]);
     
             $lessons= $course->lessons;
-            dd($lessons);
-            $currentLessonData = [];
-            foreach ($request->input('lesson_video_upload', []) as $index => $data) {
-                dd($data);
-                if (is_integer($index)) {
-                    $course->lessons()->create($data);
-                } else {
-                    $id                          = explode('-', $index)[1];
-                    $currentLessonData[$id] = $data;
-                }
-            }
-            foreach ($lessons as $item) {
-                if (isset($currentLessonData[$item->id])) {
-                    $item->update($currentLessonData[$item->id]);
-                } else {
-                    $item->delete();
-                }
-            }
+            // $currentLessonData = [];
+            // foreach ($request->input('lesson_video_upload', []) as $index => $data) {
+            //     dd($data);
+            //     if (is_integer($index)) {
+            //         $course->lessons()->create($data);
+            //     } else {
+            //         $id                          = explode('-', $index)[1];
+            //         $currentLessonData[$id] = $data;
+            //     }
+            // }
+            // foreach ($lessons as $item) {
+            //     if (isset($currentLessonData[$item->id])) {
+            //         $item->update($currentLessonData[$item->id]);
+            //     } else {
+            //         $item->delete();
+            //     }
+            // }
     
-    
+            $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
+            return view('courses.create', compact('course','categories', 'lessons'));
+            
             return redirect()->route('courses.index');
         }
     

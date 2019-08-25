@@ -3,6 +3,7 @@
 @section('content')
 <div class="container" style="padding:50px 0px">
     <h1>Add/Edit Course</h1>
+    <hr>
     <form method="POST" action="/create-course/{{ $course->id }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
         <input name="_token" type="hidden" value="{{ csrf_token()}}">
         <input type="hidden" name="id" value="{{ $course->id }}">
@@ -11,6 +12,10 @@
                             <div class="form-group">
                                 <label for="title" class="control-label required">Course Title</label>
                                 <input class="form-control" value="{{ $course->course_title ?? '' }}" placeholder="My Course Title" name="course_title" type="text" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="course_intro_video" class="control-label required">Course Intro Video</label>
+                                <input class="form-control" value="{{ $course->course_intro_video ?? '' }}" placeholder="My Course Intro Video" name="course_intro_video" type="text" id="course_intro_video">
                             </div>
     
                             <div class="form-group custom-theme">
@@ -30,7 +35,7 @@
                         <option value="">Select</option>
                         
                         @foreach ($categories->all() as $category )
-                        <option value="{{ $category['id'] }}" {{ $category['id']   == $category ? 'selected' : '' }}>{{$category['name']}}</option>
+                        <option value="{{ $category['id'] }}" {{ $category['id']   == $course->category ? 'selected' : '' }}>{{$category['name']}}</option>
                             
                         @endforeach
                     </select>
@@ -50,6 +55,34 @@
         </div>
         <div class="row">
             <div class="col-12">
+                @if($course->has('lessons'))
+                    @foreach($course->lessons->all() as $lesson)
+                    <div class="col-12 border border-dark my-3 p-2" style="padding:20px 10px" >
+                            <div class="d-flex justify-content-between">
+                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}">
+                                        {{--  <span class="fas fa-minus-square"></span>  --}}
+                                    </button>
+                                    <div id="remove_course_div"><i class="fas fa-times-circle" style="color:red"></i></div> 
+                                   
+                                </div>
+                                  <div id="collapse{{ $loop->index }}" class="collapse show" aria-labelledby="collapse{{ $loop->index }}">
+                                    <h4>Add Lesson</h4>
+                                    <label>Lesson Title</label>
+                                    <input type="text" id="lesson_title_field" placeholder="Lesson Title" value="{{ $lesson->lesson_title ?? '' }}" name="lesson[]" class="form-control my-2" />
+                                    {{--  <select id="video_insert_type" class="form-control">
+                                        <option value="">Select</option>
+                                        <option value="upload">Upload</option>
+                                        <option value="embed">Embed</option>
+                                    </select>  --}}
+                                    {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video_upload[]" class="my-2 col-12">  --}}
+                                    <label>Lesson Video</label>
+                                    <input type="text" placeholder="Lesson Video" id="embed_lesson_video" value="{{ $lesson->lesson_video ?? '' }}" name="lesson_video[]" class="form-control my-2 col-12">
+                                    Lesson Description
+                                    <textarea name="lesson_description[]" class="form-control">{{ $lesson->lesson_description ?? '' }}</textarea>
+                                  </div>
+                        </div> 
+                    @endforeach
+                @endif
                 <div id="add_course"></div> 
                 
             </div>
@@ -67,18 +100,25 @@
                 
                 var course_div = `<div class="col-12 border border-dark my-3 p-2" style="padding:20px 10px" >
                     <div class="d-flex justify-content-between">
-                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse${count}" aria-expanded="true" aria-controls="collapse${count}">
-                                <span class="fas fa-minus-square"></span>
+                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse${count}">
+                                {{--  <span class="fas fa-minus-square"></span>  --}}
                             </button>
                             <div id="remove_course_div"><i class="fas fa-times-circle" style="color:red"></i></div> 
                            
                         </div>
-                          <div id="collapse${count}" class="collapse show" aria-labelledby="headingOne">
+                          <div id="collapse${count}" class="collapse show" aria-labelledby="collapse${count}">
                             <h4>Add Lesson</h4>
-                            <input type="text" placeholder="Lesson Title" value="" name="lesson[]" class="form-control">
-                    
-                            <input type="file" id="video_upload" placeholder="Lesson Video" value="" name="lesson_video_upload[]" class="my-2 col-12">
-                            <input type="text" placeholder="Lesson Video" value="" name="lesson_video[]" class="form-control my-2 col-12">
+                            <label>Lesson Title</label>
+                            <input type="text" id="lesson_title_field" placeholder="Lesson Title" value="" name="lesson[]" class="form-control my-2" />
+                            {{--  <select id="video_insert_type" class="form-control">
+                                <option value="">Select</option>
+                                <option value="upload">Upload</option>
+                                <option value="embed">Embed</option>
+                            </select>  --}}
+                            {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video_upload[]" class="my-2 col-12">  --}}
+                            <label>Lesson Video</label>
+
+                            <input type="text" placeholder="Lesson Video" id="embed_lesson_video" value="" name="lesson_video[]" class="form-control my-2 col-12">
                             Lesson Description
                             <textarea name="lesson_description[]" class="form-control"></textarea>
                           </div>
@@ -86,11 +126,23 @@
                 $('#add_course').append(course_div);
                 count +=1
             });
+            
+            $(document).on('change', '#video_insert_type', function(){
+                {{--  console.log($(this).children("option:selected").val())  --}}
+                if($(this).children("option:selected").val() == 'upload')
+                {
+                    $(this).parent().find('#embed_lesson_video').hide();
+                }else if($(this).children("option:selected").val() == 'embed')
+                {
+                    $(this).parent().find('#upload_lesson_video').hide();
+                }
+            });
+            
             $(document).on('click', '#remove_course_div', function(e){
                 e.preventDefault();
                 if(confirm('You Are about to Delete this lesson'))
                 {
-                    $(this).parent().remove() 
+                    $(this).parent().parent().remove() 
                 }else{
                     return false;
                 }

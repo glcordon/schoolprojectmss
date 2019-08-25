@@ -61,10 +61,9 @@
                 </div>
                 <div class="input-group mb-4">
                         <select name="register_type" id="" class="form-control">
-                            <option value="fan">Select Registration Type</option>
-                            <option value="fan">Fan</option>
+                            <option value="">Select Registration Type</option>
+                            <option value="mentee">Mentee</option>
                             <option value="mentor">Mentor</option>
-                            <option value="org">Organization</option>
                         </select>
                     </div>
                 <button type="submit" class="btn btn-block btn-success btn-primary">

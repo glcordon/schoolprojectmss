@@ -77,8 +77,9 @@ Route::domain('test.159.65.178.155')->group(function () {
         return 'success';
     });
 });
-
+Route::get('/courses', 'CoursesController@index');
 Route::get('/courses/create', 'CoursesController@create');
+Route::get('/courses/{id}/create', 'CoursesController@edit');
 Route::post('/create-course/{id}/store', 'CoursesController@update');
 
 
