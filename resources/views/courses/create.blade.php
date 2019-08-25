@@ -43,10 +43,10 @@
                     <label for="course_difficulty">Difficulty</label>
                     <select name="course_difficulty" id="course_difficulty" class="form-control" required>
                         <option value="">Select One</option>
-                        <option value="novice" {{ isset($course) ? $course->course_difficulty = 'novice' ? 'selected' : '' : ''}}>Novice</option>
-                        <option value="intermediate" {{ isset($course) ? $course->course_difficulty = 'intermediate' ? 'selected' : '' : ''}}>Intermediate</option>
-                        <option value="pro" {{ isset($course) ? $course->course_difficulty = 'pro' ? 'selected' : '' : ''}}>pro</option>
-                        <option value="expert" {{ isset($course) ? $course->course_difficulty = 'expert' ? 'selected' : '' : ''}}>expert</option>
+                        <option value="novice"   {{ $course->course_difficulty = 'novice' ? 'selected' : '' }}>Novice</option>
+                        <option value="intermediate"   {{ $course->course_difficulty = 'intermediate' ? 'selected' : '' }}>Intermediate</option>
+                        <option value="pro"   {{ $course->course_difficulty = 'pro' ? 'selected' : '' }}>pro</option>
+                        <option value="expert"   {{ $course->course_difficulty = 'expert' ? 'selected' : '' }}>expert</option>
                     </select>
                     <br>
                     <button id="add_course_button" class="col-12">Add New Lesson</button>
