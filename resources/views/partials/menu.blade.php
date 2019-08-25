@@ -14,7 +14,7 @@
                     <a class="nav-link active" href="{{ url('/my-profile') }}"><li class="nav-item">{{ Auth::user()->name }}</a>
             </li> 
            <li class="nav-item">
-                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Add New Event</button>
+                {{--  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Add New Event</button>  --}}
             </li>
             <li class="nav-item">
                 <a href="/courses/create" class="btn btn-primary btn-sm mx-1">Add New Course</a>
