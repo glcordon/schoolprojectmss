@@ -3,6 +3,10 @@
         <div class="col-md-6"><a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('img/mss-logo.png')}}" alt=""> </a></div>
         <div class="col-md-6 top-right links">
                 <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                                <a class="nav-link active" href="{{ url('/courses') }}"><li class="nav-item">View All Courses</a>
+
+                        </li>
                         @if (Route::has('login'))
         
             @auth
