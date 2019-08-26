@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body p-5">
                 <div class="text-center d-lg-none">
-                    <img src="svg/modulr.svg" class="mb-5" width="150" alt="Modulr Logo">
+                    <img src="img/mss-logo.png" class="mb-5" width="150" alt="Modulr Logo">
                 </div>
                 <h1>{{ __('Login') }}</h1>
                 <p class="text-muted">Sign In to your account</p>

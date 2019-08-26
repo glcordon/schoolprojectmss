@@ -169,14 +169,14 @@
          */
         public function show($id)
         {
-            if (! Gate::allows('course_view')) {
-                return abort(401);
-            }
-            $lessons = \App\Lesson::where('lesson_id', $id)->get();
+            // if (! Gate::allows('course_view')) {
+            //     return abort(401);
+            // }
+            // $lessons = \App\Lesson::where('lesson_id', $id)->get();
     
             $course = Course::findOrFail($id);
     
-            return view('courses.show', compact('course', 'lessons'));
+            return view('courses.show', compact('course'));
         }
     
     
