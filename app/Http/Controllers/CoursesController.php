@@ -8,6 +8,9 @@
     use App\Http\Controllers\Controller;
     use App\Http\Requests\Admin\StoreCoursesRequest;
     use App\Http\Requests\Admin\UpdateCoursesRequest;
+    use Cohensive\Embed\Facades\Embed;
+    use Illuminate\Support\Arr;
+
     
     class CoursesController extends Controller
     {
@@ -48,7 +51,7 @@
         $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
         // dd($categories);
         $course->course_title = '';
-        $course->course_image = '';
+        // $course->course_image = '';
         $course->save();
         return redirect('/courses/'.$course->id.'/create');
             
@@ -108,10 +111,10 @@
             // if (! Gate::allows('course_edit')) {
             //     return abort(401);
             // }
-            // dd($request->category);
             $lessons = collect($request->lesson);
             $lessonArray = $lessons->map(function($item, $key) use($request){
                 return [
+                    'id' => $request->lesson_id ?? '',
                     'lesson_title' => $item, 
                     'lesson_description' => $request->lesson_description[$key],
                     'lesson_video' => $request->lesson_video[$key],
@@ -120,39 +123,43 @@
             });
             $course = Course::findOrFail($id);
             $course->course_title = $request->course_title;
-            $course->course_intro_video = $request->course_intro_video;
-            $course->course_video_thumb = 'https://img.youtube.com/vi/'.explode('=',$request->course_intro_video)[1].'/0.jpg' ?? null;
+            $embedId = '';
+            $embed = Embed::make($request->course_intro_video)->parseUrl();
+            if ($embed) {
+                
+                $embed->setAttribute(['width' => 600]);
+                $embedId = $embed->getProvider()->info->id;
+                $embedUrl = $embed->getProvider()->info->url;
+                // $embedImage = $embed->getProvider()->info->imageRoot."/0.jpg";
+                // Print html: '<iframe width="600" height="338" src="//www.youtube.com/embed/uifYHNyH-jA" frameborder="0" allowfullscreen></iframe>'.
+                // Height will be set automatically based on provider width/height ratio.
+                // Height could be set explicitly via setAttr() method.
+                // echo $embed;
+            }
+            $course->course_intro_video = $embedUrl;
+            $course->embed_url = $embed->getHtml();
+            $course->course_video_thumb = $embedImage ?? null;
             $course->course_description = $request->course_description;
             $course->category = $request->category;
             $course->course_difficulty = $request->course_difficulty;
             $course->save();
-            foreach ($lessonArray as $la){
-                $lesson = new Lessons;
+            foreach ($lessonArray as $key => $la){
+                // dd($la);
+                if(Arr::exists($la, 'id'))
+                {
+                    $lesson = Lessons::find($la['id']);
+                }else{
+                    $lesson = new Lessons;
+                }
+                $embed1 = Embed::make($la['lesson_video'])->parseUrl();
+                
                 $lesson->lesson_title = $la['lesson_title'];
-                $lesson->lesson_video = $la['lesson_video'];
+                $lesson->lesson_video = $embed1->gethtml();
                 $lesson->lesson_description = $la['lesson_description'];
                 $course->lessons()->save($lesson);
             }
-            // $course->update(['course_title'=>]);
-    
             $lessons= $course->lessons;
-            // $currentLessonData = [];
-            // foreach ($request->input('lesson_video_upload', []) as $index => $data) {
-            //     dd($data);
-            //     if (is_integer($index)) {
-            //         $course->lessons()->create($data);
-            //     } else {
-            //         $id                          = explode('-', $index)[1];
-            //         $currentLessonData[$id] = $data;
-            //     }
-            // }
-            // foreach ($lessons as $item) {
-            //     if (isset($currentLessonData[$item->id])) {
-            //         $item->update($currentLessonData[$item->id]);
-            //     } else {
-            //         $item->delete();
-            //     }
-            // }
+            
     
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return view('courses.create', compact('course','categories', 'lessons'));

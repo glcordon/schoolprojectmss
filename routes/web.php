@@ -11,7 +11,9 @@
 |
 */
 use App\Event;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;    
+use Illuminate\Http\Request;
+
 
 Route::get('/', function () {
     $events = Event::where([
@@ -82,6 +84,10 @@ Route::get('/courses/create', 'CoursesController@create');
 Route::get('/courses/show/{id}', 'CoursesController@show');
 Route::get('/courses/{id}/create', 'CoursesController@edit');
 Route::post('/create-course/{id}/store', 'CoursesController@update');
+
+Route::post('/lesson/delete', function(Request $request){
+    App\Lessons::find($request->id)->delete();
+});
 
 
 require __DIR__ . '/profile/profile.php';

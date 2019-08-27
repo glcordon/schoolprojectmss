@@ -62,12 +62,13 @@
                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}">
                                         {{--  <span class="fas fa-minus-square"></span>  --}}
                                     </button>
-                                    <div id="remove_course_div"><i class="fas fa-times-circle" style="color:red"></i></div> 
+                                    <button id="remove_course_div" lesson_id="{{ $lesson->id }}"><i class="fas fa-times-circle" style="color:red"></i></button> 
                                    
                                 </div>
                                   <div id="collapse{{ $loop->index }}" class="collapse show" aria-labelledby="collapse{{ $loop->index }}">
                                     <h4>Add Lesson</h4>
                                     <label>Lesson Title</label>
+                                    <input type="hidden" name="lesson_id" value="{{ $lesson->id }}">
                                     <input type="text" id="lesson_title_field" placeholder="Lesson Title" value="{{ $lesson->lesson_title ?? '' }}" name="lesson[]" class="form-control my-2" />
                                     {{--  <select id="video_insert_type" class="form-control">
                                         <option value="">Select</option>
@@ -140,9 +141,24 @@
             
             $(document).on('click', '#remove_course_div', function(e){
                 e.preventDefault();
+                
+                
+
                 if(confirm('You Are about to Delete this lesson'))
                 {
-                    $(this).parent().parent().remove() 
+                    $(this).parent().parent().remove()
+                    var id = $(this).attr('lesson_id');
+                    var token = '{{ csrf_token() }}'
+                    axios.post('/lesson/delete', {
+                       id:id,
+                       token:token, 
+                    })
+                    .then(function(response){
+                        console.log(response.data)
+                    })
+                    .catch(function(error){
+                        console.log(error)
+                    })
                 }else{
                     return false;
                 }
