@@ -158,7 +158,7 @@
                     $lesson = new Lessons;
                 }
                 $embed1 = Embed::make($la['lesson_video'])->parseUrl();
-                
+                $lesson->embed_url = $embed1->getProvider()->info->url;
                 $lesson->lesson_title = $la['lesson_title'];
                 $lesson->lesson_video = $embed1->gethtml();
                 $lesson->lesson_description = $la['lesson_description'];
