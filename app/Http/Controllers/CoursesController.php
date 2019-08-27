@@ -10,6 +10,9 @@
     use App\Http\Requests\Admin\UpdateCoursesRequest;
     use Cohensive\Embed\Facades\Embed;
     use Illuminate\Support\Arr;
+    use Illuminate\Support\Facades\Auth;
+
+
 
     
     class CoursesController extends Controller
@@ -19,6 +22,7 @@
          *
          * @return \Illuminate\Http\Response
          */
+        protected $user;
         public function __construct()
         {
             $this->middleware('auth');
@@ -111,6 +115,7 @@
             // if (! Gate::allows('course_edit')) {
             //     return abort(401);
             // }
+            
             $lessons = collect($request->lesson);
             $lessonArray = $lessons->map(function($item, $key) use($request){
                 return [
@@ -136,6 +141,7 @@
                 // Height could be set explicitly via setAttr() method.
                 // echo $embed;
             }
+            $course->created_by = Auth::user()->id;
             $course->course_intro_video = $embedUrl;
             $course->embed_url = $embed->getHtml();
             $course->course_video_thumb = $embedImage ?? null;
