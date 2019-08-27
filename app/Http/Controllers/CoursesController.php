@@ -55,7 +55,7 @@
         $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
         // dd($categories);
         $course->course_title = '';
-        // $course->course_image = '';
+        $course->course_image = '';
         $course->save();
         return redirect('/courses/'.$course->id.'/create');
             
