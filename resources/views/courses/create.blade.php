@@ -116,7 +116,7 @@
                                 <option value="upload">Upload</option>
                                 <option value="embed">Embed</option>
                             </select>  --}}
-                            {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video_upload[]" class="my-2 col-12">  --}}
+                            {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video[]" class="my-2 col-12">  --}}
                             <label>Lesson Video</label>
 
                             <input type="text" placeholder="Lesson Video" id="embed_lesson_video" value="" name="lesson_video[]" class="form-control my-2 col-12">
