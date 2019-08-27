@@ -19,7 +19,7 @@ class AddAdditionalFieldsToCoursesTable extends Migration
             
             $table->integer('category')->unsigned()->nullable()->after('course_title');
                         
-            $table->string('course_difficulty', 100)->nullable()->after('course_title');
+//            $table->string('course_difficulty', 100)->nullable()->after('course_title');
             
         });
     }
@@ -35,7 +35,7 @@ class AddAdditionalFieldsToCoursesTable extends Migration
             
             $table->dropColumn('course_difficulty');
             $table->dropColumn('category');
-            $table->dropColumn('course_description');
+  //          $table->dropColumn('course_description');
             
         });
     }
