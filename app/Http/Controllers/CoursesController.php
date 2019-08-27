@@ -56,6 +56,7 @@
         // dd($categories);
         $course->course_title = '';
         $course->course_image = '';
+        $course->created_by = Auth::user()->id;
         $course->save();
         return redirect('/courses/'.$course->id.'/create');
             
