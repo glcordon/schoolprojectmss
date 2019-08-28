@@ -88,6 +88,7 @@ Route::post('/create-course/{id}/store', 'CoursesController@update');
 Route::post('/lesson/delete', function(Request $request){
     App\Lessons::find($request->id)->delete();
 });
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 require __DIR__ . '/profile/profile.php';
