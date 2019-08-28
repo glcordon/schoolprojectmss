@@ -1,6 +1,8 @@
 @extends('layouts.generic')
 
 @section('content')
+
+<div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
     <div class="container" style="padding:50px 0px">
         <div class="col-12 text-center">
             <h1 class="display-4">{{ $course->course_title }}</h1>
