@@ -118,15 +118,17 @@
             // }
             
             $lessons = collect($request->lesson);
+            
             $lessonArray = $lessons->map(function($item, $key) use($request){
                 return [
-                    'id' => $request->lesson_id ?? '',
+                    'id' => $request->lesson_id[$key]?? '',
                     'lesson_title' => $item, 
                     'lesson_description' => $request->lesson_description[$key],
                     'lesson_video' => $request->lesson_video[$key],
                     'lesson_video_upload' => $request->lesson_video_upload[$key]
                 ];
             });
+            // dd($lessonArray);
             $course = Course::findOrFail($id);
             $course->course_title = $request->course_title;
             $embedId = '';
@@ -151,12 +153,11 @@
             $course->course_difficulty = $request->course_difficulty;
             $course->save();
             foreach ($lessonArray as $key => $la){
-                // dd($la);
-                if(Arr::exists($la, 'id'))
+                if($la['id'] == "")
                 {
-                    $lesson = Lessons::find($la['id']);
-                }else{
                     $lesson = new Lessons;
+                }else{
+                    $lesson = Lessons::find($la['id']);
                 }
                 $embed1 = Embed::make($la['lesson_video'])->parseUrl();
                 $lesson->embed_url = $embed1->getProvider()->info->url;
@@ -166,10 +167,10 @@
                 $course->lessons()->save($lesson);
             }
             $lessons= $course->lessons;
-            
     
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
-            return view('courses.create', compact('course','categories', 'lessons'));
+            return redirect()->back()->withInput();
+            
             
             return redirect()->route('courses.index');
         }

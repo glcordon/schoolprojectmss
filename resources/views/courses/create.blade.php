@@ -68,7 +68,7 @@
                                   <div id="collapse{{ $loop->index }}" class="collapse show" aria-labelledby="collapse{{ $loop->index }}">
                                     <h4>Add Lesson</h4>
                                     <label>Lesson Title</label>
-                                    <input type="hidden" name="lesson_id" value="{{ $lesson->id }}">
+                                    <input type="hidden" name="lesson_id[]" value="{{ $lesson->id }}">
                                     <input type="text" id="lesson_title_field" placeholder="Lesson Title" value="{{ $lesson->lesson_title ?? '' }}" name="lesson[]" class="form-control my-2" />
                                     {{--  <select id="video_insert_type" class="form-control">
                                         <option value="">Select</option>
@@ -107,6 +107,7 @@
                             <div id="remove_course_div"><i class="fas fa-times-circle" style="color:red"></i></div> 
                            
                         </div>
+                        <input type="hidden" name="lesson_id[]" value="">
                           <div id="collapse${count}" class="collapse show" aria-labelledby="collapse${count}">
                             <h4>Add Lesson</h4>
                             <label>Lesson Title</label>
