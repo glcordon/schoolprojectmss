@@ -133,7 +133,7 @@
                 <div class="container" style="padding-top:20px">
                     <div class="row">
                         <div class="col-md-9" style="text-align:left">
-                                <h3 class="text-divider"><span>Upcoming Events</span></h3>
+                                <h3 class="text-divider"><span>Courses</span></h3>
                         </div>
                         <div class="col-md-3"><a href="/view-all"> Browse All &raquo;</a> </div>
                     </div>
