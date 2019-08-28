@@ -9,5 +9,12 @@
         </div>  
         <div class="card-footer">
             <a href="/courses/show/{{ $course->id }}" class="card-link btn btn-primary pull-right col-md-12">View Course</a>
+            
+                <div class="d-flex justify-content-between col-12 px-0 py-1">
+                <div><a href="/courses/{{ $course->id }}/create" class="btn btn-warning">Edit</a></div>
+                <div><a href="/courses/{{ $course->id }}/delete" class="btn btn-danger"  onclick="return confirm('Are you sure?')">Delete</a></div>
+        
+            </div>
+            
         </div>
     </div>  

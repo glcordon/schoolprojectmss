@@ -203,13 +203,13 @@
          */
         public function destroy($id)
         {
-            if (! Gate::allows('course_delete')) {
-                return abort(401);
-            }
+            // if (! Gate::allows('course_delete')) {
+            //     return abort(401);
+            // }
             $course = Course::findOrFail($id);
             $course->delete();
     
-            return redirect()->route('courses.index');
+            return redirect()->back();
         }
     
         /**
