@@ -16,7 +16,7 @@ class AddEmbedUrlToLessons extends Migration
         Schema::table('lessons', function (Blueprint $table) {
             //
             
-            $table->string('embed_url', 100)->nullable();
+            $table->string('embed_url', 500)->nullable();
             
         });
     }
