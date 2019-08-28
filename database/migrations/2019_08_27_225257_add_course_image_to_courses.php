@@ -13,10 +13,10 @@ class AddCourseImageToCourses extends Migration
      */
     public function up()
     {
-        Schema::table('courses', function (Blueprint $table) {
+        Schema::table('lessons', function (Blueprint $table) {
             //
             
-            $table->string('course_image', 100)->nullable();
+            $table->string('lesson_video', 1000)->change();
             
         });
     }
@@ -28,10 +28,10 @@ class AddCourseImageToCourses extends Migration
      */
     public function down()
     {
-        Schema::table('courses', function (Blueprint $table) {
+        Schema::table('lessons', function (Blueprint $table) {
             //
             
-            $table->dropColumn('course_image');
+            $table->dropColumn('lesson_video');
             
         });
     }
