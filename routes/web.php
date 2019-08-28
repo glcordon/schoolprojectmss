@@ -83,6 +83,7 @@ Route::get('/courses', 'CoursesController@index');
 Route::get('/courses/create', 'CoursesController@create');
 Route::get('/courses/show/{id}', 'CoursesController@show');
 Route::get('/courses/{id}/create', 'CoursesController@edit');
+Route::get('/courses/{id}/delete', 'CoursesController@destroy');
 Route::post('/create-course/{id}/store', 'CoursesController@update');
 
 Route::post('/lesson/delete', function(Request $request){
