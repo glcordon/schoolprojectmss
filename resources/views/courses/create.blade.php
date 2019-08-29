@@ -21,7 +21,7 @@
                                 <label for="course_intro_video" class="control-label required">Course Intro Thumbnail</label>
                                 <input class="form-control" value="{{ $course->course_image ?? '' }}" accept="image/*" placeholder="My Course Intro Thumb" name="course_intro_thumb" type="file" id="course_intro_thumb">
                                 @if($course->course_image)
-                                <img src="{{ Storage::url($course->course_image) }}" width="200px">
+                                    <img src="{{ Storage::url($course->course_image) }}" width="200px">
                                 @endif
                             </div>
                 
