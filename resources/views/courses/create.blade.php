@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="padding:50px 0px">
-    <a href="//courses/show/{{ $course->id }}"></a>
+    <a href="/scourses/show/{{ $course->id }}">Preview</a>
     <h1>Add/Edit Course</h1>
     <hr>
     <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
