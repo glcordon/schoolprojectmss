@@ -15,7 +15,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 class Course extends Model
 {
     use SoftDeletes;
-    use HasMediaTrait;
+    // use HasMediaTrait;
 
     protected $fillable = ['course_title'];
     protected $hidden = [];
