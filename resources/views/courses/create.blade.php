@@ -19,8 +19,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="course_intro_video" class="control-label required">Course Intro Thumbnail</label>
-                                <input class="form-control" value="{{ $course->course_intro_thumb ?? '' }}" accept="image/*" placeholder="My Course Intro Thumb" name="course_intro_thumb" type="file" id="course_intro_thumb">
-                            </div>
+                                <input class="form-control" value="{{ $course->course_image ?? '' }}" accept="image/*" placeholder="My Course Intro Thumb" name="course_intro_thumb" type="file" id="course_intro_thumb">
+                                @if($course->course_image)
+                                <img src="{{ Storage::url($course->course_image) }}" width="200px">
+                                @endif
+                            </div>{{ $course->course_image }}
                 
                             <div class="form-group custom-theme">
                                 <label for="description" class="control-label required">Course Description</label><br />
