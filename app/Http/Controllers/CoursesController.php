@@ -40,7 +40,27 @@
             // } else {
             //     $courses = Course::all();
             // }
-            $courses = Course::get();
+            $course = Course::get();
+            $courses = collect($course->toArray())->map(function($item){
+                $embed = Embed::make($item['course_intro_video'])->parseUrl();
+                $url = '';
+                if($embed)
+                {
+                    $url = $embed->getProvider()->info->id;
+                }
+                return [
+                    'id' => $item['id'],
+                    'course_title' => $item['course_title'],
+                    'course_difficulty' => $item['course_difficulty'],
+                    'category' => $item['category'],
+                    'course_description' => $item['course_description'],
+                    'course_intro_video' => $item['course_intro_video'],
+                    'course_video_thumb' => $item['course_video_thumb'],
+                    'site_id' => $item['site_id'],
+                    'embed_url' => $item['embed_url'],
+                    'url_token' =>  $url,
+                ];
+            });
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return view('courses.index', compact('courses', 'categories'));
         }
@@ -51,15 +71,13 @@
          * @return \Illuminate\Http\Response
          */
         public function create(){
-        $course = new Course;
-        $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
-        // dd($categories);
-        $course->course_title = '';
-        $course->course_image = '';
-        $course->created_by = Auth::user()->id;
-        $course->save();
-        return redirect('/courses/'.$course->id.'/create');
-            
+            $course = new Course;
+            $course->course_title = '';
+            $course->course_image = '';
+            $course->created_by = Auth::user()->id;
+            $course->save();
+            $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
+            return redirect('/courses/'.$course->id.'/create');
         }
     
         /**
@@ -142,11 +160,12 @@
                 // Print html: '<iframe width="600" height="338" src="//www.youtube.com/embed/uifYHNyH-jA" frameborder="0" allowfullscreen></iframe>'.
                 // Height will be set automatically based on provider width/height ratio.
                 // Height could be set explicitly via setAttr() method.
-                // echo $embed;
+                // echo $embed; 
+                $course->course_intro_video = $embedUrl;
+                $course->embed_url = $embed->getHtml();
+                    
             }
             $course->created_by = Auth::user()->id;
-            $course->course_intro_video = $embedUrl;
-            $course->embed_url = $embed->getHtml();
             $course->course_video_thumb = $embedImage ?? null;
             $course->course_description = $request->course_description;
             $course->category = $request->category;

@@ -4,9 +4,9 @@
 <div class="container" style="padding:50px 0px">
     <h1>Add/Edit Course</h1>
     <hr>
-    <form method="POST" action="/create-course/{{ $course->id }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
+    <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
         <input name="_token" type="hidden" value="{{ csrf_token()}}">
-        <input type="hidden" name="id" value="{{ $course->id }}">
+        <input type="hidden" name="id" value="{{ $course->id ?? '' }}">
                     <div class="row">
                         <div class="col-md-9">
                             <div class="form-group">
@@ -17,7 +17,11 @@
                                 <label for="course_intro_video" class="control-label required">Course Intro Video</label>
                                 <input class="form-control" value="{{ $course->course_intro_video ?? '' }}" placeholder="My Course Intro Video" name="course_intro_video" type="text" id="course_intro_video">
                             </div>
-    
+                            <div class="form-group">
+                                <label for="course_intro_video" class="control-label required">Course Intro Thumbnail</label>
+                                <input class="form-control" value="{{ $course->course_intro_thumb ?? '' }}" accept="image/*" placeholder="My Course Intro Thumb" name="course_intro_thumb" type="file" id="course_intro_thumb">
+                            </div>
+                
                             <div class="form-group custom-theme">
                                 <label for="description" class="control-label required">Course Description</label><br />
                                 <textarea class="form-control  editable" rows="5" name="course_description" cols="50" id="course-description" >{{ $course->course_description ?? '' }}</textarea>
@@ -43,10 +47,10 @@
                     <label for="course_difficulty">Difficulty</label>
                     <select name="course_difficulty" id="course_difficulty" class="form-control" required>
                         <option value="">Select One</option>
-                        <option value="novice"   {{ $course->course_difficulty = 'novice' ? 'selected' : '' }}>Novice</option>
-                        <option value="intermediate"   {{ $course->course_difficulty = 'intermediate' ? 'selected' : '' }}>Intermediate</option>
-                        <option value="pro"   {{ $course->course_difficulty = 'pro' ? 'selected' : '' }}>pro</option>
-                        <option value="expert"   {{ $course->course_difficulty = 'expert' ? 'selected' : '' }}>expert</option>
+                        <option value="novice"   {{ $course->course_difficulty == 'novice' ? 'selected' : '' }}>Novice</option>
+                        <option value="intermediate"   {{ $course->course_difficulty == 'intermediate' ? 'selected' : '' }}>Intermediate</option>
+                        <option value="pro"   {{ $course->course_difficulty == 'pro' ? 'selected' : '' }}>pro</option>
+                        <option value="expert"   {{ $course->course_difficulty == 'expert' ? 'selected' : '' }}>expert</option>
                     </select>
                     <br>
                     <button id="add_course_button" class="col-12">Add New Lesson</button>
