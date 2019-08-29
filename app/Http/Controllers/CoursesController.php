@@ -11,6 +11,7 @@
     use Cohensive\Embed\Facades\Embed;
     use Illuminate\Support\Arr;
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Storage;
 
 
 
@@ -134,7 +135,6 @@
             // if (! Gate::allows('course_edit')) {
             //     return abort(401);
             // }
-            
             $lessons = collect($request->lesson);
             
             $lessonArray = $lessons->map(function($item, $key) use($request){
@@ -146,9 +146,11 @@
                     'lesson_video_upload' => $request->lesson_video_upload[$key]
                 ];
             });
-            // dd($lessonArray);
+            $fileName = str_slug($request->course_title."_".\Carbon\Carbon::now()).".".$request->course_intro_thumb->getClientOriginalExtension();
+            
             $course = Course::findOrFail($id);
             $course->course_title = $request->course_title;
+            $course->course_image = $request->course_intro_thumb->storeAs('course_images', $fileName, 'public');
             $embedId = '';
             $embed = Embed::make($request->course_intro_video)->parseUrl();
             if ($embed) {
@@ -165,6 +167,10 @@
                 $course->embed_url = $embed->getHtml();
                     
             }
+            // dd($path = Storage::disk('local')->path($fileName));
+            $course->addMedia($path = Storage::disk('local')->path($fileName))
+            ->preservingOriginal()
+            ->toMediaCollection();
             $course->created_by = Auth::user()->id;
             $course->course_video_thumb = $embedImage ?? null;
             $course->course_description = $request->course_description;
