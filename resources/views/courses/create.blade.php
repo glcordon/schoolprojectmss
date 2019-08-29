@@ -23,7 +23,7 @@
                                 @if($course->course_image)
                                 <img src="{{ Storage::url($course->course_image) }}" width="200px">
                                 @endif
-                            </div>{{ $course->course_image }}
+                            </div>
                 
                             <div class="form-group custom-theme">
                                 <label for="description" class="control-label required">Course Description</label><br />
