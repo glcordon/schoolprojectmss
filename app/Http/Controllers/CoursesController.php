@@ -168,9 +168,8 @@
                     
             }
             // dd($path = Storage::disk('local')->path($fileName));
-            $course->addMedia($path = Storage::disk('local')->path($fileName))
-            ->preservingOriginal()
-            ->toMediaCollection();
+            // $course->addMedia(Storage::disk('public')->path($course->course_image))
+            // ->toMediaCollection();
             $course->created_by = Auth::user()->id;
             $course->course_video_thumb = $embedImage ?? null;
             $course->course_description = $request->course_description;
