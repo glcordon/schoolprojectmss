@@ -57,6 +57,7 @@
                     'course_description' => $item['course_description'],
                     'course_intro_video' => $item['course_intro_video'],
                     'course_video_thumb' => $item['course_video_thumb'],
+                    'course_image' => $item['course_image'] ?? null,
                     'site_id' => $item['site_id'],
                     'embed_url' => $item['embed_url'],
                     'url_token' =>  $url,
@@ -146,11 +147,13 @@
                     'lesson_video_upload' => $request->lesson_video_upload[$key]
                 ];
             });
-            $fileName = str_slug($request->course_title."_".\Carbon\Carbon::now()).".".$request->course_intro_thumb->getClientOriginalExtension();
-            
             $course = Course::findOrFail($id);
-            $course->course_title = $request->course_title;
+            if($request->course_intro_thumb){
+               $fileName = str_slug($request->course_title."_".\Carbon\Carbon::now()).".".$request->course_intro_thumb->getClientOriginalExtension();
             $course->course_image = $request->course_intro_thumb->storeAs('course_images', $fileName, 'public');
+             
+            }
+            $course->course_title = $request->course_title;
             $embedId = '';
             $embed = Embed::make($request->course_intro_video)->parseUrl();
             if ($embed) {

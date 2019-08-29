@@ -2,7 +2,12 @@
     <div class="card mx-2" style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
         {{--  {{ dd($courses) }}  --}}
         <a href="/courses/show/{{ $course['id'] }}">
-            <img class="card-img" src="{{ $course['url_token'] ?? asset('img/baseball-field.jpg') }}" alt="Card image cap" >
+            @if($course['course_image'])
+            <img class="card-img" src="{{ Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') }}" alt="Card image cap" >
+            @else
+            <img class="card-img" src="{{ asset('img/baseball-field.jpg') }}" alt="Card image cap" >
+
+            @endif
         </a>
         <div class="card-body">
             
