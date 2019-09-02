@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 // Include Wave Routes
+Route::get('/', 'CoursesController@index');
 Wave::routes();
 Route::domain('test.localhost')->group(function () {
     Route::get('test', function () {
@@ -44,4 +45,4 @@ Route::post('/lesson/delete', function(Request $request){
     App\Lessons::find($request->id)->delete();
 });
 
-Route::get('/', 'CoursesController@index');
+
