@@ -8,11 +8,10 @@
     use App\Http\Controllers\Controller;
     use App\Http\Requests\Admin\StoreCoursesRequest;
     use App\Http\Requests\Admin\UpdateCoursesRequest;
-    use Cohensive\Embed\Facades\Embed;
+    use \Cohensive\Embed\Facades\Embed;
     use Illuminate\Support\Arr;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Storage;
-
 
 
     
@@ -41,7 +40,7 @@
             // } else {
             //     $courses = Course::all();
             // }
-            $course = Course::get();
+            $course = Course::where('course_title', '<>', '')->get();
             $courses = collect($course->toArray())->map(function($item){
                 $embed = Embed::make($item['course_intro_video'])->parseUrl();
                 $url = '';

@@ -1,0 +1,29 @@
+- ## Get Started
+    - [Welcome](/docs/{{version}}/welcome)
+    - [Installation](/docs/{{version}}/installation)
+    - [Configurations](/docs/{{version}}/configurations)
+    - [Upgrading](/docs/{{version}}/upgrading)
+
+- ## Features
+    - [Authentication](/docs/{{version}}/features/authentication)
+    - [User Profiles](/docs/{{version}}/features/user-profiles)
+    - [User Impersonation](/docs/{{version}}/features/user-impersonation)
+    - [Billing](/docs/{{version}}/features/billing)
+    - [Subscription Plans](/docs/{{version}}/features/subscription-plans)
+    - [User Roles](/docs/{{version}}/features/user-roles)
+    - [Notifications](/docs/{{version}}/features/notifications)
+    - [Announcements](/docs/{{version}}/features/announcements)
+    - [Blog](/docs/{{version}}/features/blog)
+    - [API](/docs/{{version}}/features/api)
+    - [Admin](/docs/{{version}}/features/admin)
+    - [Themes](/docs/{{version}}/features/themes)
+
+- ## Basic Concepts
+    - [Routing](/docs/{{version}}/concepts/routing)
+    - [Themes](/docs/{{version}}/concepts/themes)
+    - [Structure](/docs/{{version}}/concepts/structure)
+- ## Resources
+    - [Video Tutorials](https://devdojo.com/series/wave)
+    - [Support](https://devdojo.com/forums/category/wave)
+    - [Laravel](https://laravel.com)
+    - [Voyager](https://laravelvoyager.com)

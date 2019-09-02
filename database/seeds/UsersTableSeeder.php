@@ -1,68 +1,44 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 class UsersTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        // Module
-        $moduleId = DB::table('modules')->insertGetId([
-            'name' => 'users',
-            'display_name' => 'Users',
-            'icon' => 'icon-people'
-        ]);
+        
 
-        // Permissions
-        DB::table('permissions')->insert([
-            [
-                'name' => 'read-users',
-                'display_name' => 'Read',
-                'guard_name' => 'web',
-                'module_id' => $moduleId
-            ],
-            [
-                'name' => 'create-users',
-                'display_name' => 'Create',
-                'guard_name' => 'web',
-                'module_id' => $moduleId
-            ],
-            [
-                'name' => 'update-users',
-                'display_name' => 'Update',
-                'guard_name' => 'web',
-                'module_id' => $moduleId
-            ],
-            [
-                'name' => 'delete-users',
-                'display_name' => 'Delete',
-                'guard_name' => 'web',
-                'module_id' => $moduleId
-            ]
-        ]);
-
-        // Assign permissions to admin role
-        $admin = Role::findByName('admin');
-        $admin->givePermissionTo(Permission::all());
-
-        // Create default user
-        $user = \App\User::create([
-            'name' => 'admin',
-            'email' => 'admin@modulr.io',
-            'password' => bcrypt('admin'),
-            'avatar' => 'avatar.png'
-        ]);
-        // Assign admin role to default user
-        $user->assignRole('admin');
-        // Generate avatar to defautl user
-        // $avatar = Avatar::create($user->name)->getImageObject()->encode('png');
-        // Storage::put('avatars/'.$user->id.'/avatar.png', (string) $avatar);
+        \DB::table('users')->delete();
+        
+        \DB::table('users')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'role_id' => 1,
+                'name' => 'Wave Admin',
+                'email' => 'admin@admin.com',
+                'username' => 'admin',
+                'avatar' => 'users/default.png',
+                'password' => '$2y$10$L8MjmjVVOCbyLHbp7pq/9.1ZEEa5AqE67ZXLd2M4.res05a3Rz/G2',
+                'remember_token' => '4oXDVo48Lm1pc4j7NkWI9cMO4hv5OIEJFMrqjSCKQsIwWMGRFYDvNpdioBfo',
+                'settings' => NULL,
+                'created_at' => '2017-11-21 16:07:22',
+                'updated_at' => '2018-09-22 23:34:02',
+                'stripe_id' => NULL,
+                'card_brand' => NULL,
+                'card_last_four' => NULL,
+                'trial_ends_at' => NULL,
+                'verification_code' => NULL,
+                'verified' => 1,
+            ),
+        ));
+        
+        
     }
 }

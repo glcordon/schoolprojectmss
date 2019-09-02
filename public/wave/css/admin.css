@@ -1,0 +1,150 @@
+.voyager #theme_options .nav-tabs{
+	position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    background: none;
+    border-color: #EAEAEA;
+    border: 0px;
+}
+
+.voyager #theme_options .nav-tabs li:first-child a{
+	border-top-left-radius:3px;
+}
+
+.voyager #theme_options .panel-body{
+	padding-top:40px;
+}
+
+.voyager #theme_options .nav-tabs>li.active>a, .voyager #theme_options .nav-tabs>li.active>a:focus, .voyager #theme_options .nav-tabs>li.active>a:hover{
+	background:#fff;
+	color:#555;
+	border:0px;
+}
+
+.voyager #theme_options .nav-tabs>li>a{
+	background: #f1f1f1;
+	font-weight: normal;
+    font-size: 12px;
+}
+
+.voyager .side-menu.sidebar-inverse{
+	background:#fff;
+}
+
+.expanded .side-menu .panel.widget .dimmer, .side-menu:hover .panel.widget .dimmer{
+	background:rgba(0, 0, 0, 0.2);
+}
+
+.side-menu .panel.widget{
+	display:none;
+}
+
+.app-container .content-container .side-menu .navbar-nav li a .icon{
+    border: 1px solid #f1f1f1;
+    border-radius: 40px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    line-height: 32px;
+    margin-left: 5px;
+    margin-top: 10px;
+    color: #1478FA;
+    transition:all 0.2s ease-in;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li>a {
+    color: #5F6F7f;
+    font-weight: bold;
+    font-size: 12px;
+    transition:all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li>a:hover, .voyager .side-menu.sidebar-inverse .navbar li.active>a {
+    color: #1478FA;
+    background: #ffffff;
+    font-weight:bold;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li>a:after {
+    position:absolute;
+    width:3px;
+    height:0px;
+    right:0px;
+    top:25px;
+    content:'';
+    display:block;
+    background:#1478FA;
+    transition:all 0.1s ease-in;
+}
+
+.app-container .content-container .side-menu:hover .navbar-nav li.dropdown>a[aria-expanded=false]:after, .app-container .content-container .side-menu .navbar-nav li.dropdown>a:after, .app-container .content-container .side-menu .navbar-nav li.dropdown>a:hover:after, .app-container.expanded .content-container .side-menu .navbar-nav li.dropdown>a:after{
+    right: 2em !important;
+    background: none;
+    top: 0px !important;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li>a:hover:after, .voyager .side-menu.sidebar-inverse .navbar li.active>a:after {
+    top:10px;
+    height:30px;
+}
+
+.app-container .content-container .side-menu .navbar-nav li a:hover .icon, .app-container .content-container .side-menu .navbar-nav li.active a .icon{
+    background:#1478FA;
+    border-color:#1478FA;
+    color:#fff;
+    margin-left:5px;
+}
+
+.voyager .side-menu .navbar-header{
+    background:#ffffff;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand .title{
+    display:none;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand .logo-icon-container{
+    margin:0px auto;
+    text-align:center;
+    width:100%;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand, .app-container .content-container .side-menu .navbar-header .navbar-brand img{
+    transition:all 0.1s ease-in-out;
+}
+
+.app-container.expanded .content-container .side-menu .navbar-header .navbar-brand{
+    height:80px;
+}
+
+.app-container.expanded .content-container .side-menu .navbar-header .navbar-brand img{
+    width:40px;
+    height:40px;
+    top:10px;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li.dropdown>.panel-collapse{
+    background-color:rgba(0, 0, 0, 0.02);
+    box-shadow:inset 1px 8px 10px -4px rgba(0, 0, 0, 0.01);
+    border-right:1px solid #ffffff;
+    border-top:1px solid #f9f9fc;
+    border-bottom:1px solid #f9f9fc;
+}
+
+.app-container .content-container .side-menu .navbar-nav li.dropdown ul li a{
+    height:50px;
+    line-height:50px;
+}
+
+.hamburger.is-active .hamburger-inner{
+    width:15px !important;
+}
+
+.settings .col-md-2.no-padding-left-right{
+    padding-right:15px !important;
+}
+
+.panel-body .theme_details h4{
+    font-size:12px;
+}
