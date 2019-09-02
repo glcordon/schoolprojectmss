@@ -10,8 +10,7 @@
             @endif
         </a>
         <div class="card-body">
-            
-            <h4 class="card-title">{{$course['course_title']}}</h4>
+            <h4 class="card-title">{{ $course['course_title'] }}</h4>
         </div>  
         <div class="card-footer">
             <a href="/courses/show/{{ $course['id'] }}" class="card-link btn btn-primary pull-right col-md-12">View Course</a>

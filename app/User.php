@@ -3,18 +3,13 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Permission\Traits\HasRoles;
 
-use Storage;
-
-class User extends Authenticatable
+class User extends \Wave\User
 {
+
     use Notifiable;
-    use SoftDeletes;
-    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar',
+        'name', 'email', 'username', 'password', 'verification_code', 'verified', 'trial_ends_at'
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'trial_ends_at'
     ];
 
     /**
@@ -33,22 +34,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    protected $dates = ['deleted_at'];
-
-    protected $appends = ['avatar_url'];
-
-    public function getAvatarUrlAttribute()
-    {
-        return Storage::url('avatars/'.$this->id.'/'.$this->avatar);
-    }
-    public function event()
-    {
-        return $this->belongsTo('App\Event', 'user_id', 'id');
-    }
-    public function profile()
-    {
-        return $this->hasOne('\App\Profile', 'user_id', 'id');
-    }
-    
 }
