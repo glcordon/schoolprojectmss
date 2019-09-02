@@ -51,7 +51,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light @if(Request::is('/')){{ 'fixed-top' }}@endif" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="/"><img src="{{ Voyager::image(theme('logo')) }}" style="height:35px;"></a>
+                <a class="navbar-brand" href="/"><img src="{{ setting('site.site_logo') }}" style="height:35px;"></a>
 
 
                 @if(!Auth::guest())
