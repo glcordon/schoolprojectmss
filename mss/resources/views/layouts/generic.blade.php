@@ -100,7 +100,7 @@
                     @else
                         {{ asset('img/baseball-field.jpg') }}
                     @endif
-                    );
+                    ) black contain;
             }
             .top-right.links a{color:white}
             .card-img {
