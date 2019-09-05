@@ -3,6 +3,7 @@
     
     use App\Course;
     use App\Lessons;
+    use App\Site;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Gate;
     use App\Http\Controllers\Controller;
@@ -40,6 +41,8 @@
             // } else {
             //     $courses = Course::all();
             // }
+                $siteId = 1;
+            $siteData = Site::find($siteId);
             $course = Course::where('course_title', '<>', '')->get();
             $courses = collect($course->toArray())->map(function($item){
                 $embed = Embed::make($item['course_intro_video'])->parseUrl();
@@ -63,7 +66,7 @@
                 ];
             });
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
-            return view('courses.index', compact('courses', 'categories'));
+            return view('courses.index', compact('courses', 'categories', 'siteData'));
         }
     
         /**
