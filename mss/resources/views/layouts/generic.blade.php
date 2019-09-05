@@ -170,7 +170,6 @@
         </style>
     </head>
     <body>
-      @dump(json_decode($siteData->user_cover)[0]->download_link)
             @include('partials.menu')
              
         <div class="flex-center position-ref hero">
