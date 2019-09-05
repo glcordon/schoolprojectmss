@@ -158,25 +158,25 @@
 
                     <div class="col-6 col-md">
 
-                        <h5>Site Links</h5>
+                        {{--  <h5>Site Links</h5>
 
                         <ul class="list-unstyled text-small">
                             <li><a href="/#features" class="text-muted" @if(Request::is('/'))@php echo 'uk-scroll="offset:80"'; @endphp@endif>Features</a></li>
                             <li><a href="/#testimonials" class="text-muted" @if(Request::is('/'))@php echo 'uk-scroll="offset:80"'; @endphp@endif>Testimonials</a></li>
                             <li><a href="/#pricing" class="text-muted" @if(Request::is('/'))@php echo 'uk-scroll="offset:80"'; @endphp@endif>Pricing</a></li>
-                        </ul>
+                        </ul>  --}}
 
                     </div>
 
                     <div class="col-6 col-md">
 
-                        <h5>Wave Resources</h5>
+                        {{--  <h5>Wave Resources</h5>
 
                         <ul class="list-unstyled text-small">
                             <li><a href="https://devdojo.com/scripts/php/wave" class="text-muted" target="_blank">Product Page</a></li>
                             <li><a href="/docs" class="text-muted">Documentation</a></li>
                             <li><a href="https://devdojo.com/series/wave" class="text-muted" target="_blank">Videos</a></li>
-                        </ul>
+                        </ul>  --}}
 
                     </div>
 
