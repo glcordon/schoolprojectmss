@@ -170,6 +170,7 @@
         </style>
     </head>
     <body>
+      @dump($siteData)
             @include('partials.menu')
              
         <div class="flex-center position-ref hero">
