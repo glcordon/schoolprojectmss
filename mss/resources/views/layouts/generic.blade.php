@@ -96,7 +96,7 @@
                     @if (isset($course->course_image))
                         {{ Storage::url($course->course_image) }}
                     @elseif (isset($siteData->user_cover))
-                        {{ Storage::url($siteData->user_cover) }}
+                        {{ Storage::url(json_decode($siteData->user_cover)[0]->download_link) }}
                     @else
                         {{ asset('img/baseball-field.jpg') }}
                     @endif
