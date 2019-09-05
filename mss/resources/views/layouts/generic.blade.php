@@ -91,8 +91,9 @@
             .hero{
                 height:40vh;
                 background-size:cover;
-                color:#fff;
-                background: url(
+                color:#fff; 
+                background-size:contain;
+                background:black  url(
                     @if (isset($course->course_image))
                         {{ Storage::url($course->course_image) }}
                     @elseif (isset($siteData->user_cover))
@@ -100,7 +101,9 @@
                     @else
                         {{ asset('img/baseball-field.jpg') }}
                     @endif
-                    ) black contain;
+                    );
+               
+                
             }
             .top-right.links a{color:white}
             .card-img {
