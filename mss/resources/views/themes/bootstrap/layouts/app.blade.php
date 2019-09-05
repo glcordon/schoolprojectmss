@@ -184,14 +184,14 @@
 
                         <h5>Contact Us</h5>
 
-                        <div class="uk-margin">contact@app.com</div>
+                        <div class="uk-margin">sales@mysportsshare.com</div>
 
                         <div class="uk-margin">
                             <div class="uk-child-width-auto uk-grid-medium uk-grid" uk-grid>
-                                <a uk-icon="icon: youtube; ratio: 0.8" href="https://www.youtube.com/devdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
+                                {{--  <a uk-icon="icon: youtube; ratio: 0.8" href="https://www.youtube.com/devdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
                                 <a uk-icon="icon: instagram; ratio: 0.8" href="https://www.instagram.com/devdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
                                 <a uk-icon="icon: twitter; ratio: 0.8" href="https://twitter.com/thedevdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
-                                <a uk-icon="icon: facebook; ratio: 0.8" href="https://www.facebook.com/thedevdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
+                                <a uk-icon="icon: facebook; ratio: 0.8" href="https://www.facebook.com/thedevdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>  --}}
                             </div>
                         </div>
                     </div>
