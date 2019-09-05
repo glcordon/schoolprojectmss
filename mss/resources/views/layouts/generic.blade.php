@@ -170,7 +170,7 @@
         </style>
     </head>
     <body>
-      @dump($siteData)
+      @dump(json_decode($siteData->user_cover))
             @include('partials.menu')
              
         <div class="flex-center position-ref hero">
