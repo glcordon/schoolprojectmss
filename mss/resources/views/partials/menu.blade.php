@@ -4,7 +4,7 @@
                     }
 </style>
 <nav class="navbar navbar-dark bg-dark" style="background-color:black !important">
-                <a href="{{ url('/') }}"><img src="{{ theme('logo') }}" alt="" style="width:auto"></a>
+  <a class="navbar-brand" href="/"><img src="{{ Voyager::image(theme('logo')) }}" style="height:35px;"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
