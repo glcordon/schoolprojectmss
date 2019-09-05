@@ -136,7 +136,7 @@
         @yield('content')
     </div>
 
-    <div id="footer" data-sticky-footer>
+    <div id="footer" style="background-color:black; color:white;" data-sticky-footer>
 
         <div class="pb-5">
 
