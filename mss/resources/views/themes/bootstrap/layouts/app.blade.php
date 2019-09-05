@@ -49,7 +49,7 @@
 
     <div id="app" data-sticky-wrap>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-light @if(Request::is('/')){{ 'fixed-top' }}@endif" id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark @if(Request::is('/')){{ 'fixed-top' }}@endif" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="/"><img src="{{ Voyager::image(theme('logo')) }}" style="height:35px;"></a>
 
