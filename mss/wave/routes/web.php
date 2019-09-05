@@ -1,16 +1,14 @@
 <?php
 
 Route::impersonate();
-Route::group(array('domain' => '{subdomain}.mysportsshare.com'), function () {
+// Route::group(array('domain' => '{subdomain}.mysportsshare.com'), function () {
  
-    Route::get('/', function ($subdomain) {
+//     Route::get('/', function ($subdomain) {
  
-        
+//         dd($subdomain);
  
-        dd($subdomain);
- 
-    });
-});
+//     });
+// });
 Route::get('/', 'CoursesController@index')->name('wave.home');
 
 Route::get('@{username}', '\Wave\Http\Controllers\ProfileController@index')->name('wave.profile');
