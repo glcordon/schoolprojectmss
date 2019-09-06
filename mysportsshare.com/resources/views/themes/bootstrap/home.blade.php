@@ -41,11 +41,10 @@
     </g>
 </svg>
 
-Our Partners
 <div id="features">
 	<div class="container">
 
-		<h2 class="mt-0">Check Them Out</h2>
+		<h2 class="mt-0">Our Partners</h2>
 		<p class="text-center mt-4" style="color:#ffffff; opacity:0.8;">
 			Description
 		</p>
