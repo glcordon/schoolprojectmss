@@ -14,8 +14,8 @@ class HomeController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
-        $sties = Site::get();
-
+        $sites = Site::get();
+        
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
