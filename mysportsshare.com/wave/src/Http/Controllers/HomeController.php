@@ -3,7 +3,7 @@
 namespace Wave\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Site;
 class HomeController extends \App\Http\Controllers\Controller
 {
 
@@ -14,8 +14,8 @@ class HomeController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
-        $sties = \App\Site::get();
-        
+        $sties = Site::get();
+
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
