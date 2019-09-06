@@ -18,7 +18,7 @@ class HomeController extends \App\Http\Controllers\Controller
     {
         if(!Session::get('tenant'))
         {
-            return redirect('http://www.mysportsshare.com');
+            return redirect('http://mysportsshare.com');
         }
         $sites = Site::get();
         
