@@ -17,6 +17,7 @@ class CheckTenant
         list($subdomain) = explode('.', $request->getHost(), 2);
         // Retrieve requested tenant's info from database. If not found, abort the request.
         $tenant = Tenant::where('site_slug', $subdomain)->first();
+        dd($subdomain);
         if($subdomain == "www")
         {
            $request->session()->put('tenant', 'home'); 
