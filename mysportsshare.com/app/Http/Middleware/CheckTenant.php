@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Middleware;
 use Closure;
-use App\Tenant;
+use App\Site as Tenant;
 class CheckTenant
 {
     /**
@@ -16,10 +16,16 @@ class CheckTenant
         // Extract the subdomain from URL.
         list($subdomain) = explode('.', $request->getHost(), 2);
         // Retrieve requested tenant's info from database. If not found, abort the request.
-        $tenant = Tenant::where('slug', $subdomain)->firstOrFail();
+        $tenant = Tenant::where('site_slug', $subdomain)->firstOrFail();
         
         // Store the tenant info into session.
-        $request->session()->put('tenant', $tenant);
+        if($tenant)
+        {
+         $request->session()->put('tenant', $tenant);   
+        }else{
+            $request->session()->put('tenant', null);
+        }
+        
         return $next($request);
     }
 }

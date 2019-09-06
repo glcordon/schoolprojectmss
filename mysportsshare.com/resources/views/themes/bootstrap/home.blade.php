@@ -160,5 +160,5 @@
 
 	</div>
 </div>
-
+@dump(Session)
 @endsection
