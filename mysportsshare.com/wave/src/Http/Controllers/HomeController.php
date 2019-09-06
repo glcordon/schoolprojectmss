@@ -4,6 +4,8 @@ namespace Wave\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Site;
+use Illuminate\Support\Facades\Session;
+
 class HomeController extends \App\Http\Controllers\Controller
 {
 
