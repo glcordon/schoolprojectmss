@@ -191,7 +191,7 @@
 <div id="pricing">
 	<div class="container">
 		<h2>Example Pricing</h2>
-		<p class="text-center mb-5 mt-3">It's easy to customize the pricing of your Software as a Service</p>
+		<p class="text-center mb-5 mt-3">Join Now</p>
 
 		@php $plans = Wave\Plan::all() @endphp
 		<div class="card-deck">
@@ -213,8 +213,6 @@
 				</div>
 			@endforeach
 		</div>
-
-	 	<p class="text-center mt-4 mb-4"><i class="fa fa-sliders mr-2"></i> All plans are fully configurable in the Admin Area.</p>
 
 	</div>
 </div>
