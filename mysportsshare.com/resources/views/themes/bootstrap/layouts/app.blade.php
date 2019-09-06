@@ -41,7 +41,7 @@
     @if(isset($seo->description))
         <meta name="description" content="{{ $seo->description }}">
     @endif
-@dump($sites)
+
     <!-- Styles -->
     <link href="{{ asset('themes/bootstrap/css/app.css') }}" rel="stylesheet">
 </head>
