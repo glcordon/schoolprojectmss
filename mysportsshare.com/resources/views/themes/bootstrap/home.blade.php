@@ -160,5 +160,5 @@
 
 	</div>
 </div>
-@dump(Session)
+@dump(Session::get('tenant'))
 @endsection
