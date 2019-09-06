@@ -16,7 +16,7 @@ class CheckTenant
         // Extract the subdomain from URL.
         list($subdomain) = explode('.', $request->getHost(), 2);
         // Retrieve requested tenant's info from database. If not found, abort the request.
-        $tenant = Tenant::where('site_slug', $subdomain)->firstOrFail();
+        $tenant = Tenant::where('site_slug', $subdomain)->first();
         
         // Store the tenant info into session.
         if($tenant)
