@@ -51,12 +51,13 @@ Our Partners
 		</p>
 
 		<div class="row">
-			@foreach($sites as $site)
+			{{--  @foreach($sites as $site)  --}}
 			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ $site->user_cover }}">
-				<h4>{{ $site->site_name }}</h4>
+				<img src="{{ theme_folder_url('/images/authentication.png') }}">
+				<h4>{{  }}</h4>
+				<p>Fully loaded authentication, email verification, and password reset. Authentication in a snap!</p>
 			</div>
-			@endforeach
+			{{--  @endforeach  --}}
 		</div>
 
 	</div>
