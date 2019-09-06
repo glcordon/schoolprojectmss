@@ -5,7 +5,7 @@
 <!-- HERO -->
 <div class="pt-5 mb-2 home-hero">
 	<div class="container">
-			@if(Session::get('tenant')->site_name)
+			@if(isset(Session::get('tenant')->site_name))
 				<h4> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
 			<div class="row">
