@@ -8,7 +8,7 @@ Route::group(array('domain' => '{subdomain}.mysportsshare.com'), function () {
  
         $name = Site::where('site_slug', $subdomain)->get();
  
-        dd($name->toArray());
+        dd($name->first());
  
     });
 });
