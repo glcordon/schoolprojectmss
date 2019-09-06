@@ -6,7 +6,11 @@
 <div class="pt-5 mb-2 home-hero">
 	<div class="container">
 		<div class="row">
+			@dump(Session::get('tenant'))
+			@if(Session::get('tenant'))
+			
 
+			@endif
 			<div class="col-md-6 mt-5 pr-4">
 				<h1 class="text-left h6 mt-5">{{ theme('home_headline') }}</h1>
 				<h2 class="text-left h1 mb-3">{{ theme('home_subheadline') }}</h2>
