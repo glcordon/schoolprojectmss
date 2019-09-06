@@ -1,7 +1,7 @@
 <?php
 
 Route::impersonate();
-Route::group(array('domain' => '{subdomain}.website.com'), function () {
+Route::group(array('domain' => '{subdomain}.mysportsshare.com'), function () {
  
     Route::get('/', function ($subdomain) {
  
