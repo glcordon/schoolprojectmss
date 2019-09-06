@@ -1,11 +1,12 @@
 <?php
+use App\Site;
 
 Route::impersonate();
 Route::group(array('domain' => '{subdomain}.mysportsshare.com'), function () {
  
     Route::get('/', function ($subdomain) {
  
-        $name = DB::table('site')->where('site_slug', $subdomain)->get();
+        $name = Site::where('site_slug', $subdomain)->get();
  
         dd($name);
  
