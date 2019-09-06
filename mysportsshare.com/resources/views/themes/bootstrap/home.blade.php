@@ -41,7 +41,7 @@
     </g>
 </svg>
 
-<div id="features">
+<div id="features" style="background-color:black;">
 	<div class="container">
 
 		<h2 class="mt-0">Our Partners</h2>
