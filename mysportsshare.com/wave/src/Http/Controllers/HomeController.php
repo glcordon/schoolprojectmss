@@ -14,6 +14,10 @@ class HomeController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
+        if(!Session::get('tenant'))
+        {
+            return redirect('www.mysportsshare.com');
+        }
         $sites = Site::get();
         
     	if(setting('auth.dashboard_redirect', true) != "null"){
