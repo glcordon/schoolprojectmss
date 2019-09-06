@@ -52,8 +52,10 @@
 		<div class="row">
 			@foreach($sites as $site)
 			<div class="col-md-4 my-4 text-center">
-				<img src="{{ Storage::url($site->user_cover) }}">
-				<h4>{{ $site->site_name }}</h4>
+				<a href="{{ $site->site_slug }}.mysportsshare.com">
+					<img src="{{ Storage::url($site->user_cover) }}">
+					<h4>{{ $site->site_name }}</h4>
+				</a>
 			</div>
 			@endforeach
 		</div>
