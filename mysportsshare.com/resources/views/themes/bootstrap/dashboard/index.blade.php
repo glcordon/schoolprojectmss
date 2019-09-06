@@ -19,8 +19,7 @@
 								<p>Learn More Below</p>
 							</div>
 						</div>
-						<p class="card-text py-3">This is your application <a href="#">dashboard</a> you can customize this view inside of the <code>{{ theme_folder('/dashboard/index.blade.php') }}</code> file.<br><br> (All themes are located inside of the <code>resources/views/themes</code> folder)</p>
-						<a href="/docs" target="_blank" class="btn btn-primary">Read the docs to learn more</a>
+						<p class="card-text py-3">
 					</div>
 				</div>
 
@@ -38,8 +37,8 @@
 								<p>Are you more of a visual learner?</p>
 							</div>
 						</div>
-						<p class="card-text py-3">Make sure to head on over to the Wave Video Tutorials to learn more how to use and customize Wave.<br><br>Click on the button below to checkout the video tutorials.</p>
-						<a href="https://devdojo.com/series/wave" target="_blank" class="btn btn-primary">Watch the Videos</a>
+						<p class="card-text py-3"></p>
+						
 					</div>
 				</div>
 
