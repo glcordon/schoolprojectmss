@@ -148,7 +148,7 @@
 
                         <div class="ml-2">
 
-                            <a href="/"><img src="{{ Voyager::image(theme('footer_logo')) }}" data-src="{{ Voyager::image(theme('footer_logo')) }}" style="height:16px;"></a>
+                            <a href="/"><img src="{{ Voyager::image(theme('footer_logo')) }}" data-src="{{ Voyager::image(theme('footer_logo')) }}" style="height:40px;"></a>
 
                         </div>
 
