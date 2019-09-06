@@ -164,5 +164,4 @@
 
 	</div>
 </div>
-@dump(Session::get('tenant'))
 @endsection
