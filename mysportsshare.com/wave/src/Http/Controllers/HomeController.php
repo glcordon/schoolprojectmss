@@ -14,6 +14,8 @@ class HomeController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
+        $sties = \App\Site::get();
+        
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
@@ -29,6 +31,6 @@ class HomeController extends \App\Http\Controllers\Controller
 
         ];
 
-        return view('theme::home', compact('seo'));
+        return view('theme::home', compact('seo', 'sites'));
     }
 }

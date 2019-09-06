@@ -41,81 +41,26 @@
     </g>
 </svg>
 
-<!-- FEATURES
+Our Partners
 <div id="features">
 	<div class="container">
 
-		<h2 class="mt-0">Awesome Features</h2>
-		<p class="text-center mt-4" style="color:#ffffff; opacity:0.8;">Wave has some cool features to help you rapidly build your Software as a Service.<br> Here are a few awesome features you're going to love!</p>
+		<h2 class="mt-0">Check Them Out</h2>
+		<p class="text-center mt-4" style="color:#ffffff; opacity:0.8;">
+			Description
+		</p>
 
 		<div class="row">
+			@foreach($sites as $site)
 			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/authentication.png') }}">
-				<h4>Authentication</h4>
-				<p>Fully loaded authentication, email verification, and password reset. Authentication in a snap!</p>
+				<img src="{{ $site->user_cover }}">
+				<h4>{{ $site->site_name }}</h4>
 			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/profile.png') }}">
-				<h4>User Profiles</h4>
-				<p>Customizable user profiles. Allow your users to enter data and easily customize their user profiles.</p>
-			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/impersonation.png') }}">
-				<h4>User Impersonation</h4>
-				<p>With user impersonations you can login as another user and resolve an issue or troubleshoot a bug.</p>
-			</div>
-
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/subscriptions.png') }}">
-				<h4>Subscriptions</h4>
-				<p>Allow users to pay for your service and signup for a subscription using Stripe or Braintree Payments.</p>
-			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/plans.png') }}">
-				<h4>Subscription Plans</h4>
-				<p>Create new plans with different features and intrigue your users to subscribe to any plan.</p>
-			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/roles.png') }}">
-				<h4>User Roles</h4>
-				<p>Grant user permissions based on roles, you can then assign a role to a specific plan.</p>
-			</div>
-
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/notifications.png') }}">
-				<h4>Notifications</h4>
-				<p>Ready-to-use Notification System which integrates with the default Laravel notification feature.</p>
-			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/announcements.png') }}">
-				<h4>Announcements</h4>
-				<p>Create user announcements to notify users about new features or updates in your application.</p>
-			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/blog.png') }}">
-				<h4>Blog</h4>
-				<p>Equipped with a fully-functional blog. Write posts related to your product to gain free SEO traffic.</p>
-			</div>
-
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/api.png') }}">
-				<h4>Fully Functional API</h4>
-				<p>Ready-to-consume API for your application. Create API tokens with role specific permissions.</p>
-			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/admin.png') }}">
-				<h4>Voyager Admin</h4>
-				<p>Wave has been crafted using  Laravel & Voyager, which makes administering your app a breeze!</p>
-			</div>
-			<div class="col-md-4 mt-4 text-center">
-				<img src="{{ theme_folder_url('/images/themes.png') }}">
-				<h4>Themes</h4>
-				<p>Fully configurable themes. Choose from a few starter themes to begin configuring to make it your own.</p>
-			</div>
+			@endforeach
 		</div>
 
 	</div>
-</div> -->
+</div>
 
 <!-- WAVE SVG GRAPHIC -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
