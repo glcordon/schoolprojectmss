@@ -16,7 +16,9 @@
 							</div>
 							<div class="col-md-8 pl-0">
 								<h5 class="card-title mb-0 mt-2">Welcome to your Dashboard</h5>
-								<p>Learn More Below</p>
+								<p>
+									
+								</p>
 							</div>
 						</div>
 						<p class="card-text py-3">
@@ -33,8 +35,12 @@
 								<i class="fa fa-play-circle-o card-icon"></i>
 							</div>
 							<div class="col-md-8 pl-0">
-								<h5 class="card-title mb-0 mt-2">Learn more about Wave</h5>
-								<p>Are you more of a visual learner?</p>
+								<h5 class="card-title mb-0 mt-2">
+									
+								</h5>
+								<p>A
+									
+								</p>
 							</div>
 						</div>
 						<p class="card-text py-3"></p>
