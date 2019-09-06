@@ -8,7 +8,7 @@ Route::impersonate();
  
 //     });
  });
-Route::get('/', 'CoursesController@index');
+Route::get('/', 'CoursesController@index')->name('wave.home');
 
 Route::get('@{username}', '\Wave\Http\Controllers\ProfileController@index')->name('wave.profile');
 
