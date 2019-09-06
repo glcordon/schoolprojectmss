@@ -24,7 +24,7 @@
 
 		        	<div class="card-body">
 		        		<p>Your application info about {{ $user->name }} here</p>
-		        		<p>You can edit this template inside of <code>resources/views/{{ theme_folder('/profile.blade.php') }}</code></p>
+		        		
 		        	</div>
 
 		        </div>
