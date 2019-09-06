@@ -7,8 +7,8 @@
 	<div class="container">
 		<div class="row">
 			@dump(Session::get('tenant'))
-			@if(Session::get('tenant'))
-			
+			@if(Session::get('tenant')->site_name)
+			{{ Session::get('tenant')->site_name }}
 
 			@endif
 			<div class="col-md-6 mt-5 pr-4">
