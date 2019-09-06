@@ -18,7 +18,7 @@ class CheckTenant
         // Retrieve requested tenant's info from database. If not found, abort the request.
         $tenant = Tenant::where('site_slug', $subdomain)->first();
         dd($subdomain);
-        if($subdomain == "www")
+        if($subdomain == "www" || $subdomain == 'mysportsshare')
         {
            $request->session()->put('tenant', 'home'); 
             return $next($request);
