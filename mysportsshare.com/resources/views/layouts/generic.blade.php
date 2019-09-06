@@ -89,19 +89,19 @@
                 margin-bottom: 60px;
             }
             .hero{
-                height:40vh;
-                background-size:cover;
+                height:20em;
                 color:#fff; 
-                background-size:contain;
                 background:black  url(
                     @if (isset($course->course_image))
                         {{ Storage::url($course->course_image) }}
                     @elseif (isset($siteData->user_cover))
-                        {{ Storage::url(json_decode($siteData->user_cover)[0]->download_link) }}
+                        {{ Storage::url($siteData->user_cover) }}
                     @else
                         {{ asset('img/baseball-field.jpg') }}
                     @endif
                     );
+		background-size:contain;
+		box-shadow: 1px 1px 5px #888888;
                
                 
             }
