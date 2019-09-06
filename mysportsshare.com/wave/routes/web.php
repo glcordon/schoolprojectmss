@@ -1,13 +1,16 @@
 <?php
 
 Route::impersonate();
- Route::group(array('domain' => '{subdomain}.mysportsshare.com'), function () {
+Route::group(array('domain' => '{subdomain}.website.com'), function () {
  
- //    Route::get('/', function ($subdomain) {
-//          dd($subdomain);
+    Route::get('/', function ($subdomain) {
  
-//     });
- });
+        $name = DB::table('site')->where('site_slug', $subdomain)->get();
+ 
+        dd($name);
+ 
+    });
+});
  Route::get('/', '\Wave\Http\Controllers\HomeController@index')->name('wave.home');
 
 // Route::get('/', 'CoursesController@index')->name('wave.home');
