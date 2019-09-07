@@ -52,6 +52,7 @@
 		</p>
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
+				@if(isset(Session::get('tenant')->site_name))
 				@foreach($sites as $site)
 				<div class="col-4 my-4 text-center">
 					<a href="http://{{ $site->site_slug }}.mysportsshare.com">
@@ -60,6 +61,9 @@
 					</a>
 				</div>
 				@endforeach
+				@else
+				
+				@endif
 			
 		</div>
 
