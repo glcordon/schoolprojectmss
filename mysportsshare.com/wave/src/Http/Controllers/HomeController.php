@@ -23,7 +23,7 @@ class HomeController extends \App\Http\Controllers\Controller
         }
         $sites = Site::get();
         $courses = "";
-        if(Session::get('tenant'))
+        if(Session::get('tenant')->id)
         {
             $courses = Course::find(Session::get('tenant')->id);
         }
