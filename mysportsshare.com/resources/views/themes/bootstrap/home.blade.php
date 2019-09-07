@@ -58,7 +58,7 @@
 
 		<div class="row">
 			@foreach($sites as $site)
-			<div class="card">
+			<div class="card m-5">
 					<img class="card-img" src="{{ Storage::url($site->user_cover) }}"alt="{{ $site->site_name }}">
 				   <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
 					 <h4 class="card-title">{{ $site->site_name }}</h4>
