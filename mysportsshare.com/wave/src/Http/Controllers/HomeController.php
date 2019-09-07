@@ -4,6 +4,7 @@ namespace Wave\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Site;
+use App\Course;
 use Illuminate\Support\Facades\Session;
 
 class HomeController extends \App\Http\Controllers\Controller
@@ -21,7 +22,7 @@ class HomeController extends \App\Http\Controllers\Controller
             return redirect('http://mysportsshare.com');
         }
         $sites = Site::get();
-        $course = App\Course::find(Session::get('tenant')->id);
+        $course = Course::find(Session::get('tenant')->id);
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
