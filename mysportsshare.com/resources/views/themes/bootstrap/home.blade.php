@@ -51,7 +51,6 @@
 			Description
 		</p>
 
-		<div class="row">
 			<div class="flex flex-wrap col-12">
 				@foreach($sites as $site)
 				<div class=" my-4 text-center">
@@ -61,7 +60,6 @@
 					</a>
 				</div>
 				@endforeach
-			</div>
 			
 		</div>
 
