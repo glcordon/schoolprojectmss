@@ -1,6 +1,11 @@
 @extends('theme::layouts.app')
 
 @section('content')
+		<style>
+				.card-img-overlay {
+					background-color: rgba(#000, 0.4);
+				  }
+		</style>
 
 <!-- HERO -->
 <div class="pt-5 mb-2 home-hero">
