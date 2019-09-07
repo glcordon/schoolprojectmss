@@ -22,10 +22,12 @@ class HomeController extends \App\Http\Controllers\Controller
             return redirect('http://mysportsshare.com');
         }
         $sites = Site::get();
-        $courses = "";
         dd(Session::get('tenant'));
-        if(Session::get('tenant')->id)
+        if(Session::get('tenant') == 'home')
         {
+            $courses = "";
+        
+        }else{
             $courses = Course::find(Session::get('tenant')->id);
         }
     	if(setting('auth.dashboard_redirect', true) != "null"){
