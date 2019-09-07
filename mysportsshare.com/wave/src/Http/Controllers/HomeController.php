@@ -22,7 +22,7 @@ class HomeController extends \App\Http\Controllers\Controller
             return redirect('http://mysportsshare.com');
         }
         $sites = Site::get();
-        dd(Session::get('tenant'));
+        // dd(Session::get('tenant'));
         if(Session::get('tenant') == 'home')
         {
             $courses = "";
