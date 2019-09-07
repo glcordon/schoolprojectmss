@@ -53,12 +53,16 @@
 
 		<div class="row">
 			@foreach($sites as $site)
-			<div class="col-md-4 my-4 text-center">
-				<a href="http://{{ $site->site_slug }}.mysportsshare.com">
-					<img src="{{ Storage::url($site->user_cover) }}">
-					<h4>{{ $site->site_name }}</h4>
-				</a>
-			</div>
+			<div class="card">
+					<img class="card-img" src="{{ Storage::url($site->user_cover) }}"alt="{{ $site->site_name }}">
+				   <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+					 <h4 class="card-title">{{ $site->site_name }}</h4>
+					 <div class="link d-flex">
+					   <a href=" href="http://{{ $site->site_slug }}.mysportsshare.com"" class="card-link text-warning">Read More</a>
+					 </div>
+				   </div>
+				 </div>
+			
 			@endforeach
 		</div>
 

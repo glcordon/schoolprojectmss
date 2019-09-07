@@ -43,6 +43,11 @@
     @endif
 
     <!-- Styles -->
+    <style>
+            .card-img-overlay {
+                background-color: rgba(#000, 0.4);
+              }
+    </style>
     <link href="{{ asset('themes/bootstrap/css/app.css') }}" rel="stylesheet">
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
