@@ -14,7 +14,7 @@
 				<h4> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
 			<div class="row">
-			<div class="col-md-6 mt-5 pr-4">
+			<div class="col-md-4 m-5 pr-4">
 				<h1 class="text-left h6 mt-5">{{ theme('home_headline') }}</h1>
 				<h2 class="text-left h1 mb-3">{{ theme('home_subheadline') }}</h2>
 				<p>{{ theme('home_description') }}</p>
