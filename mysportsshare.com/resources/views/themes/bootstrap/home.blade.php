@@ -53,16 +53,16 @@
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
-				@foreach($sites as $site)
-				<div class="col-4 my-4 text-center">
-					<a href="http://{{ $site->site_slug }}.mysportsshare.com">
-						<img src="{{ Storage::url($site->user_cover) }}" style="height:100px; width:auto">
-						<h4>{{ $site->site_name }}</h4>
-					</a>
-				</div>
-				@endforeach
+					@dump($sites);
 				@else
-				
+					@foreach($sites as $site)
+						<div class="col-4 my-4 text-center">
+							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
+								<img src="{{ Storage::url($site->user_cover) }}" style="height:100px; width:auto">
+								<h4>{{ $site->site_name }}</h4>
+							</a>
+						</div>
+					@endforeach
 				@endif
 			
 		</div>
