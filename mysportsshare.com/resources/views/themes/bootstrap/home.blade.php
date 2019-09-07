@@ -51,7 +51,7 @@
 			Description
 		</p>
 
-			<div class="flex flex-wrap col-12">
+			<div class="d-flex flex-wrap col-12">
 				@foreach($sites as $site)
 				<div class=" my-4 text-center">
 					<a href="http://{{ $site->site_slug }}.mysportsshare.com">
