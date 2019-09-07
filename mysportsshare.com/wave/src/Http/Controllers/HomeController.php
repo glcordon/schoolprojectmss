@@ -22,7 +22,7 @@ class HomeController extends \App\Http\Controllers\Controller
             return redirect('http://mysportsshare.com');
         }
         $sites = Site::get();
-        $course = Course::find(Session::get('tenant')->id);
+        $courses = Course::find(Session::get('tenant')->id);
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
@@ -38,6 +38,6 @@ class HomeController extends \App\Http\Controllers\Controller
 
         ];
 
-        return view('theme::home', compact('seo', 'sites', 'course'));
+        return view('theme::home', compact('seo', 'sites', 'courses'));
     }
 }
