@@ -53,7 +53,7 @@
 
 			<div class="d-flex flex-wrap col-12">
 				@foreach($sites as $site)
-				<div class=" my-4 text-center">
+				<div class="col-4 my-4 text-center">
 					<a href="http://{{ $site->site_slug }}.mysportsshare.com">
 						<img src="{{ Storage::url($site->user_cover) }}">
 						<h4>{{ $site->site_name }}</h4>
