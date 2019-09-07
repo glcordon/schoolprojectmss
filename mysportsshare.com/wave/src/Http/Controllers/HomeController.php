@@ -21,7 +21,7 @@ class HomeController extends \App\Http\Controllers\Controller
             return redirect('http://mysportsshare.com');
         }
         $sites = Site::get();
-        $course = App\Courses::find(Session::get('tenant')->id);
+        $course = App\Course::find(Session::get('tenant')->id);
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
