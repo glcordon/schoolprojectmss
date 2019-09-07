@@ -1,11 +1,6 @@
 @extends('theme::layouts.app')
 
 @section('content')
-		<style>
-				.card-img-overlay {
-					background-color: rgba(#000, 0.4);
-				  }
-		</style>
 
 <!-- HERO -->
 <div class="pt-5 mb-2 home-hero">
@@ -14,7 +9,7 @@
 				<h4> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
 			<div class="row">
-			<div class="col-md-4 m-5 pr-4">
+			<div class="col-md-6 mt-5 pr-4">
 				<h1 class="text-left h6 mt-5">{{ theme('home_headline') }}</h1>
 				<h2 class="text-left h1 mb-3">{{ theme('home_subheadline') }}</h2>
 				<p>{{ theme('home_description') }}</p>
@@ -58,16 +53,12 @@
 
 		<div class="row">
 			@foreach($sites as $site)
-			<div class="card m-5 col-4">
-					<img class="card-img col-12" src="{{ Storage::url($site->user_cover) }}"alt="{{ $site->site_name }}">
-				   <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
-					 <h4 class="card-title">{{ $site->site_name }}</h4>
-					 <div class="link d-flex">
-					   <a href=" href="http://{{ $site->site_slug }}.mysportsshare.com"" class="card-link text-warning">Read More</a>
-					 </div>
-				   </div>
-				 </div>
-			
+			<div class="col-md-4 my-4 text-center">
+				<a href="http://{{ $site->site_slug }}.mysportsshare.com">
+					<img src="{{ Storage::url($site->user_cover) }}">
+					<h4>{{ $site->site_name }}</h4>
+				</a>
+			</div>
 			@endforeach
 		</div>
 
