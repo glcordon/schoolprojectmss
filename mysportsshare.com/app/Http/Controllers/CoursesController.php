@@ -179,6 +179,10 @@
             $course->course_video_thumb = $embedImage ?? null;
             $course->course_description = $request->course_description;
             $course->category = $request->category;
+            if(Session::get('tenant') && Session::get('tenant')->id)
+            {
+                $course->site_id = Session::get('tenant')->id;
+            }
             $course->course_difficulty = $request->course_difficulty;
             $course->save();
             foreach ($lessonArray as $key => $la){
