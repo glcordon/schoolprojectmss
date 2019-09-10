@@ -163,7 +163,7 @@
 			            		<li><i class="fa fa-check"></i> {{ $feature }}</li>
 			            	@endforeach
 						</ul>
-						<button type="button" href="{{ theme('home_cta_url') }}" class="btn btn-lg btn-block btn-dark">Select Plan</button>
+						<button type="button" href="/register" class="btn btn-lg btn-block btn-dark">Sign Up</button>
 					</div>
 				</div>
 			@endforeach
