@@ -8,9 +8,6 @@
                 @include('courses.partials.course-card')
             @endforeach
         </div>
-        
-        
-    
     </div>
 @endsection
     

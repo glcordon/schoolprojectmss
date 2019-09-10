@@ -89,7 +89,7 @@
                 margin-bottom: 60px;
             }
             .hero{
-                height:20em;
+                height:0vh;
                 color:#fff; 
                 background:black  url(
                     @if (isset($course->course_image))
