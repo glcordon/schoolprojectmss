@@ -2,8 +2,10 @@
 
 @section('content')
 
+@can('edit', $courses)
 <div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
-    <div class="container" style="padding:50px 0px">
+@endcan    
+<div class="container" style="padding:50px 0px">
         <div class="col-12 text-center">
             <h1 class="display-4">{{ $course->course_title }}</h1>
             <h4>Difficulty: {{ $course->course_difficulty }}</h4>
