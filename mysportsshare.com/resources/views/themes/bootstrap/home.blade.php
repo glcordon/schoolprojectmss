@@ -163,7 +163,7 @@
 			            		<li><i class="fa fa-check"></i> {{ $feature }}</li>
 			            	@endforeach
 						</ul>
-						<a href="/register" class="btn btn-lg btn-block btn-primary">Sign Up</a>
+						<a href="/register" class="btn btn-lg btn-block btn-dark">Sign Up</a>
 					</div>
 				</div>
 			@endforeach
