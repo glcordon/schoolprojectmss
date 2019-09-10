@@ -42,9 +42,9 @@
             // } else {
             //     $courses = Course::all();
             // }
-                $siteId = 1;
+            $siteId = Session::get('tenant')->id;
             $siteData = Site::find($siteId);
-            $course = Course::where('course_title', '<>', '')->get();
+            $course = Course::where('site_id', $siteId)->where('course_title', '<>', '')->get();
             $courses = collect($course->toArray())->map(function($item){
                 $embed = Embed::make($item['course_intro_video'])->parseUrl();
                 $url = '';
