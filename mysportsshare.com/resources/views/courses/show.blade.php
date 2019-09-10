@@ -2,7 +2,7 @@
 
 @section('content')
 
-@can('edit', $courses)
+@can('edit', $course)
 <div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
 @endcan    
 <div class="container" style="padding:50px 0px">
