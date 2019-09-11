@@ -50,7 +50,7 @@
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
-				{{ $sites }}
+				{{ dd($sites) }}
 							@foreach($sites->courses as $course)
 								@include('courses.partials.course-card')
 							@endforeach
