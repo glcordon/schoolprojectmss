@@ -50,13 +50,13 @@
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
-				zcvzcvzc
+
 							{{--  @foreach($sites->toArray()['courses'] as $course)
 								@include('courses.partials.course-card')
 							@endforeach  --}}
 				@else
-				adfada
 					@foreach($sites as $site)
+					@dump($site)
 						<div class="col-4 my-4 text-center">
 							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
 								<img src="{{ Storage::url($site->user_cover) }}" style="height:100px; width:auto">
