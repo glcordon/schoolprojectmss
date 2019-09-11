@@ -56,7 +56,7 @@
 							@endforeach  --}}
 				@else
 					@foreach($sites as $site)
-					@dump($site)
+					@dump($sites)
 						<div class="col-4 my-4 text-center">
 							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
 								<img src="{{ Storage::url($site->user_cover) }}" style="height:100px; width:auto">
