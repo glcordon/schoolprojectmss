@@ -22,7 +22,7 @@
 
 			<div class="col-md-6">
 				<div class="uk-margin uk-text-center uk-scrollspy-inview uk-animation-slide-right" uk-scrollspy-class="uk-animation-slide-right" style="">
-					<img src="{{ Voyager::image(theme('home_promo_image')) }}" class="el-image" alt="" style="max-height:550px">
+					<img src="{{ Voyager::image(theme('home_promo_image')) }}" class="el-image" alt="" style="max-height:350px">
 				</div>
 			</div>
 
