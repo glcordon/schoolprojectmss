@@ -21,7 +21,7 @@ class HomeController extends \App\Http\Controllers\Controller
         {
             return redirect('http://mysportsshare.com');
         }
-        $sites = Site::where('id', Session::get('tenant')->id)->with('courses')->get();
+        $sites = Site::find(Session::get('tenant')->id)->with('courses');
         // dd(Session::get('tenant'));
         
     	if(setting('auth.dashboard_redirect', true) != "null"){
