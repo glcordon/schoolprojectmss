@@ -30,6 +30,7 @@ class HomeController extends \App\Http\Controllers\Controller
         }else{
             $courses = Course::find(Session::get('tenant')->id);
         }
+        dd($courses);
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
