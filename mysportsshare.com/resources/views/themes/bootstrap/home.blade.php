@@ -46,7 +46,7 @@
 <div id="features" style="background-color:white; padding:4rem 0; color:black;">
 	<div class="container">
 
-		<h2 class="mt-0 text-uppercase text-black">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
+		<h2 class="mt-0 text-uppercase text-body">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
