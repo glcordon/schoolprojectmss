@@ -24,7 +24,7 @@ class HomeController extends \App\Http\Controllers\Controller
         $sites = Site::where('id', Session::get('tenant')->id)->with('courses')->get();
         // dd(Session::get('tenant'));
         
-        dd($sites->all());
+        dd($sites->toArray());
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
