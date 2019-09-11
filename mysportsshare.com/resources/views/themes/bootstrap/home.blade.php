@@ -55,6 +55,7 @@
 								@include('courses.partials.course-card')
 							@endforeach  --}}
 				@else
+				adfada
 					@foreach($sites as $site)
 						<div class="col-4 my-4 text-center">
 							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
