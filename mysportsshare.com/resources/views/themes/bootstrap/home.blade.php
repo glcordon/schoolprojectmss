@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- HERO -->
-<div class="pt-5 mb-2 home-hero">
+<div class="pt-5 mb-5 home-hero">
 	<div class="container">
 			@if(isset(Session::get('tenant')->site_name))
 				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
