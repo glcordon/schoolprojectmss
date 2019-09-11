@@ -17,11 +17,18 @@ class HomeController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
-        if(Session::get('tenant') =="home")
+        if(Session::get('tenant'))
         {
             return redirect('http://mysportsshare.com');
         }
-        $sites = Site::find(Session::get('tenant')->id)->with('courses');
+        
+        if(Session::get('tenant') == 'home')
+        {
+            $sites = [];
+        }else{
+            $sites = Site::find(Session::get('tenant')->id)->with('courses');
+        }
+        
         // dd(Session::get('tenant'));
         
     	if(setting('auth.dashboard_redirect', true) != "null"){
