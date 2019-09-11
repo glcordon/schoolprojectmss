@@ -47,9 +47,6 @@
 	<div class="container">
 
 		<h2 class="mt-0">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
-		<p class="text-center mt-4" style="color:#ffffff; opacity:0.8;">
-			Description
-		</p>
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
@@ -141,8 +138,9 @@
         <path class="wave-svg-light" d="M685.6,30.8323303 C418.7,-19.0491687 170.2,1.94304528 0,22.035593 L0,118 L1440,118 L1440,22.035593 C1252.7,44.2273621 1010,91.4098622 685.6,30.8323303 Z" id="Shape" fill="url(#linearGradient-1)" transform="translate(720.000000, 59.000000) scale(1, -1) translate(-720.000000, -59.000000) "></path>
     </g>
 </svg>-->
-
+@if(Auth::guest())
 <!-- PRICING -->
+
 <div id="pricing">
 	<div class="container">
 		<h2>Get Started Now!</h2>
@@ -171,4 +169,5 @@
 
 	</div>
 </div>
+@endif
 @endsection
