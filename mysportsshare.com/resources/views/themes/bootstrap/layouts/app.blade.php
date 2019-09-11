@@ -48,7 +48,7 @@
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
 
-    <div id="app" data-sticky-wrap>
+    <div id="app" style="margin-top:70px" data-sticky-wrap>
 
         <nav style="background-color:black" class="navbar navbar-expand-lg navbar-dark @if(Request::is('/')){{ 'fixed-top' }}@endif" id="navbar">
             <div class="container">
