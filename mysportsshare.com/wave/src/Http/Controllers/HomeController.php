@@ -17,7 +17,7 @@ class HomeController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
-        if(!Session::get('tenant'))
+        if(Session::get('tenant') =="home")
         {
             return redirect('http://mysportsshare.com');
         }
