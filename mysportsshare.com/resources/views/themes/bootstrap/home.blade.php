@@ -43,7 +43,7 @@
     </g>
 </svg> -->
 
-<div id="features" style="background-color:black; padding:20px 0">
+<div id="features" style="background-color:black; padding:4rem 0">
 	<div class="container">
 
 		<h2 class="mt-0">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
