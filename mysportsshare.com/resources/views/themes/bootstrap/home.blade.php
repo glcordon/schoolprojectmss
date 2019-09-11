@@ -50,9 +50,9 @@
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
-							@foreach($sites->toArray()['courses'] as $course)
+							{{--  @foreach($sites->toArray()['courses'] as $course)
 								@include('courses.partials.course-card')
-							@endforeach
+							@endforeach  --}}
 				@else
 					@foreach($sites as $site)
 						<div class="col-4 my-4 text-center">
