@@ -6,11 +6,11 @@
 <div class="pt-5 mb-2 home-hero">
 	<div class="container">
 			@if(isset(Session::get('tenant')->site_name))
-				<h4> Welcome to {{ Session::get('tenant')->site_name }}</h4>
+				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
 			<div class="row">
 			<div class="col-md-6 mt-5 pr-4">
-				<h1 class="text-left h6 mt-5">{{ theme('home_headline') }}</h1>
+				<h1 class="text-left h6 mt-5 text-uppercase">{{ theme('home_headline') }}</h1>
 				<h2 class="text-left h1 mb-3">{{ theme('home_subheadline') }}</h2>
 				<p>{{ theme('home_description') }}</p>
 				<div class="uk-margin-medium uk-text-left@m uk-text-center uk-scrollspy-inview uk-animation-slide-left-medium">
