@@ -44,9 +44,9 @@
 </svg> -->
 
 <div id="features" style="background-color:white; padding:4rem 0; color:black;">
-	<div class="container" style="color:black;">
+	<div class="container">
 
-		<h2 class="mt-0 text-uppercase">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
+		<h2 class="mt-0 text-uppercase text-black">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
@@ -58,7 +58,7 @@
 						<div class="col-4 my-4 text-center">
 							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
 								<img src="{{ Storage::url($site->user_cover) }}" style="height:100px; width:auto">
-								<h4>{{ $site->site_name }}</h4>
+								<h4 class="text-body">{{ $site->site_name }}</h4>
 							</a>
 						</div>
 					@endforeach
