@@ -24,7 +24,6 @@ class HomeController extends \App\Http\Controllers\Controller
         $sites = Site::where('id', Session::get('tenant')->id)->with('courses')->get();
         // dd(Session::get('tenant'));
         
-        dd($sites->toArray());
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
@@ -40,6 +39,6 @@ class HomeController extends \App\Http\Controllers\Controller
 
         ];
 
-        return view('theme::home', compact('seo', 'sites', 'courses'));
+        return view('theme::home', compact('seo', 'sites'));
     }
 }
