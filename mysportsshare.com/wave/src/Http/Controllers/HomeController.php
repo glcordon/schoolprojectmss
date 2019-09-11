@@ -24,7 +24,7 @@ class HomeController extends \App\Http\Controllers\Controller
         
         if(Session::get('tenant') == 'home')
         {
-            $sites = [];
+            $sites = Site::get();
         }else{
             $sites = Site::find(Session::get('tenant')->id)->with('courses');
         }

@@ -55,7 +55,6 @@
 								@include('courses.partials.course-card')
 							@endforeach  --}}
 				@else
-				{{ dd($sites) }}
 					@foreach($sites as $site)
 					
 						<div class="col-4 my-4 text-center">
