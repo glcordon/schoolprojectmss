@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- HERO -->
-<div class="pt-5 mb-5 home-hero" style="background-image:url({{ Storage::url(Session::get('tenant')->site_cover) ?? '' }});">
+<div class="pt-5 mb-5 home-hero" style="background-image:url({{ Storage::url(Session::get('tenant')->site_cover) ?? '' }}); background-size:contain">
 	<div class="container">
 			@if(isset(Session::get('tenant')->site_name))
 				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
