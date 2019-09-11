@@ -25,7 +25,7 @@ class HomeController extends \App\Http\Controllers\Controller
         // dd(Session::get('tenant'));
         if(Session::get('tenant') == 'home')
         {
-            $courses = "";
+            $courses = [];
         
         }else{
             $courses = Course::find(Session::get('tenant')->id);
