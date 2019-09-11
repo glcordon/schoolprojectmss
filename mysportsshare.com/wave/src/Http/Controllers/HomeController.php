@@ -21,7 +21,7 @@ class HomeController extends \App\Http\Controllers\Controller
         {
             return redirect('http://mysportsshare.com');
         }
-        $sites = Site::with('courses')->get();
+        $sites = Site::where('id', Session::get('tenant')->id)->with('courses')->get();
         // dd(Session::get('tenant'));
         
         dd($sites);
