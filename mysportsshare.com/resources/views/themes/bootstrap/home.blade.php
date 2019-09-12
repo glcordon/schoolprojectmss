@@ -50,7 +50,6 @@
 
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
-{{ dump($sites) }}
 							@foreach($sites->courses->toArray() as $course)
 								{{ $course['course_title'] }}
 							@endforeach 
