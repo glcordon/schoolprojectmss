@@ -52,7 +52,7 @@
 				@if(isset(Session::get('tenant')->site_name))
 							@foreach($sites->courses->toArray() as $course)
 								@if($course['course_title'] !== '') 
-									{{ $course['course_title'] }}
+									<h3>{{ $course['course_title'] }}</h3>
 								@endif
 							@endforeach 
 				@else
