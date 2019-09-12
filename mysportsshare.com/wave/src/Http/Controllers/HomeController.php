@@ -26,7 +26,7 @@ class HomeController extends \App\Http\Controllers\Controller
         {
             $sites = Site::get();
         }else{
-            $sites = Site::where('id',Session::get('tenant')->id)->with('courses')->get();
+            $sites = Site::where('id',Session::get('tenant')->id)->with('courses')->first();
         }
         
         // dd(Session::get('tenant'));
