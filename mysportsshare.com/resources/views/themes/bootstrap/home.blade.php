@@ -51,7 +51,7 @@
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
 {{ dumps($sites->toArray()) }}
-							s@foreach($sites->toArray()['courses'] as $course)
+							s@foreach($sites->courses as $course)
 								@include('courses.partials.course-card')
 							@endforeach 
 				@else
