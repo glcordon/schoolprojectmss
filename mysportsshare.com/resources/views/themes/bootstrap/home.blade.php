@@ -51,7 +51,9 @@
 			<div class="d-flex flex-wrap col-12 align-items-stretch">
 				@if(isset(Session::get('tenant')->site_name))
 							@foreach($sites->courses->toArray() as $course)
-								{{ $course['course_title'] }}
+								@if($course['course_title'] !== '') 
+									{{ $course['course_title'] }}
+								@endif
 							@endforeach 
 				@else
 					@foreach($sites as $site)
