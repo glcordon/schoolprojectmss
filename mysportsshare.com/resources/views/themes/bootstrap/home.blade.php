@@ -52,7 +52,7 @@
 				@if(isset(Session::get('tenant')->site_name))
 {{ dump($sites) }}
 							@foreach($sites->courses->toArray() as $course)
-								{{ dd($course) }}
+								{{ dd($course->toArray()) }}
 							@endforeach 
 				@else
 					@foreach($sites as $site)
