@@ -57,7 +57,6 @@
                         <option value="expert"   {{ $course->course_difficulty == 'expert' ? 'selected' : '' }}>expert</option>
                     </select>
                     <br>
-                    <button id="add_course_button" class="col-12">Add New Lesson</button>
                 </div>
             </div>
         </div>
@@ -98,6 +97,8 @@
         </div>
             <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
             <input class="btn btn-success" type="submit" value="Create course">
+
+            <button id="add_course_button" class="col-12">Add New Lesson</button>
                 
     </form>
 </div>
