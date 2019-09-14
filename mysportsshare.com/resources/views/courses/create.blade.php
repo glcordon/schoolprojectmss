@@ -95,7 +95,7 @@
                 
             </div>
         </div>
-            <button id="add_course_button" class="col-12">Add New Lesson</button>
+            <button id="add_course_button" class="col-12 pb-2 pt-2">Add New Lesson</button>
             <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
             <input class="btn btn-success" type="submit" value="Create course">
     </form>
