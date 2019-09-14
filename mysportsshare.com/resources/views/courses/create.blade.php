@@ -21,7 +21,7 @@
                         <div class="col-md-9">
                             <div class="form-group">
                                 <label for="title" class="control-label required">Course Title</label>
-                                <input class="form-control" value="{{ $course->course_title ?? '' }}" placeholder="My Course Title" name="course_title" type="text" id="title">
+                                <input class="form-control" value="{{ $course->course_title ?? old('course_title') }}" placeholder="My Course Title" name="course_title" type="text" id="title">
                             </div>
                             <div class="form-group">
                                 <label for="course_intro_video" class="control-label required">Course Intro Video</label>
