@@ -2,9 +2,9 @@
 
 namespace Laravel\Dusk\Console;
 
-use ZipArchive;
 use Illuminate\Console\Command;
 use Laravel\Dusk\OperatingSystem;
+use ZipArchive;
 
 /**
  * @copyright Originally created by Jonas Staudenmeir: https://github.com/staudenmeir/dusk-updater
@@ -167,7 +167,7 @@ class ChromeDriverCommand extends Command
     {
         $home = $this->getUrl($this->homeUrl);
 
-        preg_match('/Latest stable release:.*?\?path=([\d.]+)/', $home, $matches);
+        preg_match('/release:.*?\?path=([\d.]+)/', $home, $matches);
 
         return $matches[1];
     }
