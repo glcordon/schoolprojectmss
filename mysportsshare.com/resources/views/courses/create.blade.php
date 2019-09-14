@@ -117,6 +117,7 @@
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
             @for($x=1; $x<=5; $x++)
             <div class="mt-3 mb-3 p-5" style="border:1px solid #ccc">
+                {{$loop->count}}
                 <input type="text" class="form-control" name="question_" value="{{ old('question_') ?? '' }}">
                 <label>Correct Answer:</label>
                 <input type="text" name="answer_1_" value="{{ old('answer_1_') ?? '' }}" class="form-control"><br />
