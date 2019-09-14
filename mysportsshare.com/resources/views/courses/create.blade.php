@@ -18,10 +18,10 @@
         <li><a data-toggle="tab" href="#lessons">Lessons</a></li>
         <li><a data-toggle="tab" href="#quiz">Quiz</a></li>
     </ul>
-    <div class="tab-content">
-        <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
-            <div id="intro" class="tab-pane fade in active">
-            <input name="_token" type="hidden" value="{{ csrf_token()}}">
+     <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
+        <div class="tab-content">
+        <div id="intro" class="tab-pane fade in active">
+           <input name="_token" type="hidden" value="{{ csrf_token()}}">
             <input type="hidden" name="id" value="{{ $course->id ?? '' }}">
                         <div class="row">
                             <div class="col-md-9">
@@ -119,8 +119,9 @@
         </div>
                 <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
                 <input class="btn btn-success" type="submit" value="Create course">
-        </form>
-    </div>
+        
+        </div>
+    </form>
 </div>
     <script>
         $(document).ready(function(){
