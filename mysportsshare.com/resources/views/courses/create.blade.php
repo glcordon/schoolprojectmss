@@ -120,8 +120,8 @@
                 {{$x}}.
                 <input type="text" class="form-control" name="question_" value="{{ old('question_') ?? '' }}" placeholder="question">
                 <hr>
-                <input type="text" name="answer_1_" value="{{ old('answer_1_') ?? '' }}" class="form-control"><br />
                 <label>Correct Answer:</label>
+                <input type="text" name="answer_1_" value="{{ old('answer_1_') ?? '' }}" class="form-control"><br />
                 <input type="text" name="answer_2_" value="{{ old('answer_2_') ?? '' }}" class="form-control"><br />
                 <input type="text" name="answer_3_" value="{{ old('answer_3_') ?? '' }}" class="form-control"><br />
                 <input type="text" name="answer_4_" value="{{ old('answer_4_') ?? '' }}" class="form-control"><br />
