@@ -115,7 +115,17 @@
                 <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
         </div>
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
-            Coming Soon
+            @for($x=1; $x<=5, $x++)
+            <div>
+                <input type="text" class="form-control" name="question_" value="{{ old('question_') ?? $quiz->question_ }}">
+                <label>Correct Answer:</label>
+                <input type="text" name="answer_1_" value="{{ old('answer_1_') ?? $answer_1_ }}" class="form-control">
+                <input type="text" name="answer_2_" value="{{ old('answer_2_') ?? $answer_2_ }}" class="form-control">
+                <input type="text" name="answer_3_" value="{{ old('answer_3_') ?? $answer_3_ }}" class="form-control">
+                <input type="text" name="answer_4_" value="{{ old('answer_4_') ?? $answer_4_ }}" class="form-control">
+                <input type="text" name="answer_5_" value="{{ old('answer_5_') ?? $answer_5_ }}" class="form-control">
+            </div>
+            @endfor
         </div>
                 <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
                 <input class="btn btn-success" type="submit" value="Create course">
