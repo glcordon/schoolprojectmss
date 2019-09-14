@@ -177,7 +177,7 @@
                 $embed->setAttribute(['width' => 600]);
                 $embedId = $embed->getProvider()->info->id;
                 $embedUrl = $embed->getProvider()->info->url;
-                // $embedImage = $embed->getProvider()->info->imageRoot."/0.jpg";
+                $embedImage = $embed->getProvider()->info->imageRoot."/0.jpg";
                 // Print html: '<iframe width="600" height="338" src="//www.youtube.com/embed/uifYHNyH-jA" frameborder="0" allowfullscreen></iframe>'.
                 // Height will be set automatically based on provider width/height ratio.
                 // Height could be set explicitly via setAttr() method.
