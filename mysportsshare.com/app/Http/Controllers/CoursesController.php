@@ -14,6 +14,7 @@
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Storage;
     use Illuminate\Support\Facades\Session;
+    use Illuminate\Support\Facades\Validator;
 
 
     
@@ -139,15 +140,20 @@
             // if (! Gate::allows('course_edit')) {
             //     return abort(401);
             // }
-            $request->validate([
+            $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',
                 'category' => 'required',
                 'course_description' => 'required',
                 'course_intro_video' => '',
                 'course_video_thumb' => '',
-                'course_image' => 'required'
-            ]);
+                'course_image' => 'required',
+            ]));
+            if ($validator->fails()) {
+                return redirect('post/create')
+                            ->withErrors($validator)
+                            ->withInput();
+            }
             $lessons = collect($request->lesson);
             
             $lessonArray = $lessons->map(function($item, $key) use($request){
