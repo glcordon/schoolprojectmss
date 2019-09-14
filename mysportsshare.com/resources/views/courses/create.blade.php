@@ -13,14 +13,14 @@
     </div>
     @endif
     <h1>Add/Edit Course</h1>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#intro">Intro</a></li>
-        <li><a data-toggle="tab" href="#lessons">Lessons</a></li>
-        <li><a data-toggle="tab" href="#quiz">Quiz</a></li>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="active"><a class="nav-link active" id="intro-tab" data-toggle="tab" href="#intro" role="tab" aria-controls="intro" aria-selected="true">Intro</a></li>
+        <li><a class="nav-link" id="lessons-tab" data-toggle="tab" href="#lessons" role="tab" aria-controls="lessons" aria-selected="false">Lessons</a></li>
+        <li><a class="nav-link" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="false">Quiz</a></li>
     </ul>
      <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
         <div class="tab-content">
-        <div id="intro" class="tab-pane fade in active">
+        <div class="tab-pane fade show active" id="intro" role="tabpanel" aria-labelledby="intro-tab">
            <input name="_token" type="hidden" value="{{ csrf_token()}}">
             <input type="hidden" name="id" value="{{ $course->id ?? '' }}">
                         <div class="row">
@@ -76,7 +76,7 @@
                 </div>
             </div>
             </div>
-            <div id="lessons" class="tab-pane fade">
+            <div class="tab-pane fade" id="lessons" role="tabpanel" aria-labelledby="lessons-tab">
             <div class="row">
                 <div class="col-12">
                     @if($course->has('lessons'))
@@ -114,7 +114,7 @@
             </div>
                 <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
         </div>
-        <div id="quiz" class="tab-pane fade">
+        <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
             Coming Soon
         </div>
                 <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
