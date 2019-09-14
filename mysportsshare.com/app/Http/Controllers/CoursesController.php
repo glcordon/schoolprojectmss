@@ -139,6 +139,15 @@
             // if (! Gate::allows('course_edit')) {
             //     return abort(401);
             // }
+            $request->validate([
+                'course_title' => 'required',
+                'course_difficulty' => 'required',
+                'category' => 'required',
+                'course_description' => 'required',
+                'course_intro_video' => '',
+                'course_video_thumb' => '',
+                'course_image' => 'required'
+            ]);
             $lessons = collect($request->lesson);
             
             $lessonArray = $lessons->map(function($item, $key) use($request){
@@ -153,14 +162,12 @@
             $course = Course::findOrFail($id);
             if($request->course_intro_thumb){
                $fileName = str_slug($request->course_title."_".\Carbon\Carbon::now()).".".$request->course_intro_thumb->getClientOriginalExtension();
-            $course->course_image = $request->course_intro_thumb->storeAs('course_images', $fileName, 'public');
-             
+                $course->course_image = $request->course_intro_thumb->storeAs('course_images', $fileName, 'public');
             }
             $course->course_title = $request->course_title;
             $embedId = '';
             $embed = Embed::make($request->course_intro_video)->parseUrl();
             if ($embed) {
-                
                 $embed->setAttribute(['width' => 600]);
                 $embedId = $embed->getProvider()->info->id;
                 $embedUrl = $embed->getProvider()->info->url;
@@ -171,12 +178,12 @@
                 // echo $embed; 
                 $course->course_intro_video = $embedUrl;
                 $course->embed_url = $embed->getHtml();
-                    
             }
             // dd($path = Storage::disk('local')->path($fileName));
             // $course->addMedia(Storage::disk('public')->path($course->course_image))
             // ->toMediaCollection();
             $course->created_by = Auth::user()->id;
+            $course->site_id = Session::get('tenant')->id;
             $course->course_video_thumb = $embedImage ?? null;
             $course->course_description = $request->course_description;
             $course->category = $request->category;
@@ -204,8 +211,6 @@
     
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();
-            
-            
             return redirect()->route('courses.index');
         }
     

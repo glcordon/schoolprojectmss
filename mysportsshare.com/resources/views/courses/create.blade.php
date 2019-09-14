@@ -3,6 +3,15 @@
 @section('content')
 <div class="container" style="padding:50px 0px">
     <a href="/courses/show/{{ $course->id }}">Preview</a>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <h1>Add/Edit Course</h1>
     <hr>
     <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
