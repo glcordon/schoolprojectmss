@@ -18,7 +18,7 @@ class Course extends Model
     use SoftDeletes;
     // use HasMediaTrait;
 
-    protected $fillable = ['course_title'];
+    protected $guarded = [];
     protected $hidden = [];
     protected static function boot()
     {
