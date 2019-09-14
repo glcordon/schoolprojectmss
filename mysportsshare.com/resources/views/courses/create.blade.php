@@ -119,7 +119,7 @@
             <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                 {{$x}}.
                 <input type="text" class="form-control" name="question_" value="{{ old('question_') ?? '' }}" placeholder="question">
-                <h1>
+                <hr>
                 <input type="text" name="answer_1_" value="{{ old('answer_1_') ?? '' }}" class="form-control"><br />
                 <label>Correct Answer:</label>
                 <input type="text" name="answer_2_" value="{{ old('answer_2_') ?? '' }}" class="form-control"><br />
