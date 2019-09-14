@@ -117,15 +117,15 @@
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
             @for($x=1; $x<=5; $x++)
             <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
-                {{$x}}.
-                <input type="text" class="form-control" name="question_" value="{{ old('question_') ?? '' }}" placeholder="question">
+                Question Number {{$x}}
+                <input type="text" class="form-control" name="question_" value="{{ old('question_'.$x) ?? '' }}" placeholder="question">
                 <hr>
                 <label>Correct Answer:</label>
-                <input type="text" name="answer_1_" value="{{ old('answer_1_') ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_2_" value="{{ old('answer_2_') ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_3_" value="{{ old('answer_3_') ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_4_" value="{{ old('answer_4_') ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_5_" value="{{ old('answer_5_') ?? '' }}" class="form-control">
+                <input type="text" name="answer_1_{{$x}}" value="{{ old('answer_1_'$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_2_{{$x}}" value="{{ old('answer_2_'$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_3_{{$x}}" value="{{ old('answer_3_'$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_4_{{$x}}" value="{{ old('answer_4_'$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_5_{{$x}}" value="{{ old('answer_5_'$x) ?? '' }}" class="form-control">
             </div>
             @endfor
         </div>
