@@ -150,7 +150,7 @@
                 'course_image' => 'required',
             ]));
             if ($validator->fails()) {
-                return redirect('post/create')
+                return back()
                             ->withErrors($validator)
                             ->withInput();
             }
