@@ -1,7 +1,7 @@
 @extends('layouts.generic')
 
 @section('content')
-<div class="container" style="padding:50px 0px; min-height:50vh">
+<div class="container" style="padding:50px 0px; min-height:70vh">
     <a href="/courses/show/{{ $course->id }}">Preview</a>
     @if ($errors->any())
     <div class="alert alert-danger">
