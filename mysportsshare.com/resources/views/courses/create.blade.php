@@ -13,101 +13,114 @@
     </div>
     @endif
     <h1>Add/Edit Course</h1>
-    <hr>
-    <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
-        <input name="_token" type="hidden" value="{{ csrf_token()}}">
-        <input type="hidden" name="id" value="{{ $course->id ?? '' }}">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <div class="form-group">
-                                <label for="title" class="control-label required">Course Title</label>
-                                <input class="form-control" value="{{ old('course_title') ?? $course->course_title  }}" placeholder="My Course Title" name="course_title" type="text" id="title">
-                            </div>
-                            <div class="form-group">
-                                <label for="course_intro_video" class="control-label required">Course Intro Video</label>
-                                <input class="form-control" value="{{ $course->course_intro_video ?? '' }}" placeholder="My Course Intro Video" name="course_intro_video" type="text" id="course_intro_video">
-                            </div>
-                            <div class="form-group">
-                                <label for="course_intro_video" class="control-label required">Course Intro Thumbnail</label>
-                                <input class="form-control" value="{{ $course->course_image ?? '' }}" accept="image/*" placeholder="My Course Intro Thumb" name="course_intro_thumb" type="file" id="course_intro_thumb">
-                                @if($course->course_image)
-                                    <img src="{{ Storage::url($course->course_image) }}" width="200px">
-                                @endif
-                            </div>
-                
-                            <div class="form-group custom-theme">
-                                <label for="description" class="control-label required">Course Description</label><br />
-                                <textarea class="form-control  editable" rows="5" name="course_description" cols="50" id="course-description" >{{ $course->course_description ?? '' }}</textarea>
-                            </div>
-                            <div class="row">
-                                
-                            </div>
-                            
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#intro">Intro</a></li>
+        <li><a data-toggle="tab" href="#lessons">Lessons</a></li>
+        <li><a data-toggle="tab" href="#quiz">Quiz</a></li>
+    </ul>
+    <div class="tab-content">
+        <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
+            <div id="intro" class="tab-pane fade in active">
+            <input name="_token" type="hidden" value="{{ csrf_token()}}">
+            <input type="hidden" name="id" value="{{ $course->id ?? '' }}">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label for="title" class="control-label required">Course Title</label>
+                                    <input class="form-control" value="{{ old('course_title') ?? $course->course_title  }}" placeholder="My Course Title" name="course_title" type="text" id="title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="course_intro_video" class="control-label required">Course Intro Video</label>
+                                    <input class="form-control" value="{{ $course->course_intro_video ?? '' }}" placeholder="My Course Intro Video" name="course_intro_video" type="text" id="course_intro_video">
+                                </div>
+                                <div class="form-group">
+                                    <label for="course_intro_video" class="control-label required">Course Intro Thumbnail</label>
+                                    <input class="form-control" value="{{ $course->course_image ?? '' }}" accept="image/*" placeholder="My Course Intro Thumb" name="course_intro_thumb" type="file" id="course_intro_thumb">
+                                    @if($course->course_image)
+                                        <img src="{{ Storage::url($course->course_image) }}" width="200px">
+                                    @endif
+                                </div>
                     
-            </div>
-            <div class="col-md-3" style="background-color:#eee; border:1px solid #aaa">
-                <div class="form-group">
-                    <label for="category" class="control-label">Category</label>
-                    <select name="category" id="category" class="form-control">
-                        <option value="">Select</option>
+                                <div class="form-group custom-theme">
+                                    <label for="description" class="control-label required">Course Description</label><br />
+                                    <textarea class="form-control  editable" rows="5" name="course_description" cols="50" id="course-description" >{{ $course->course_description ?? '' }}</textarea>
+                                </div>
+                                <div class="row">
+                                    
+                                </div>
+                                
                         
-                        @foreach ($categories->all() as $category )
-                        <option value="{{ $category['id'] }}" {{ $category['id']   == $course->category ? 'selected' : '' }}>{{$category['name']}}</option>
+                </div>
+                <div class="col-md-3" style="background-color:#eee; border:1px solid #aaa">
+                    <div class="form-group">
+                        <label for="category" class="control-label">Category</label>
+                        <select name="category" id="category" class="form-control">
+                            <option value="">Select</option>
                             
-                        @endforeach
-                    </select>
-                    <br>
-                    <label for="course_difficulty">Difficulty</label>
-                    <select name="course_difficulty" id="course_difficulty" class="form-control" required>
-                        <option value="">Select One</option>
-                        <option value="novice"   {{ $course->course_difficulty == 'novice' ? 'selected' : '' }}>Novice</option>
-                        <option value="intermediate"   {{ $course->course_difficulty == 'intermediate' ? 'selected' : '' }}>Intermediate</option>
-                        <option value="pro"   {{ $course->course_difficulty == 'pro' ? 'selected' : '' }}>pro</option>
-                        <option value="expert"   {{ $course->course_difficulty == 'expert' ? 'selected' : '' }}>expert</option>
-                    </select>
-                    <br>
+                            @foreach ($categories->all() as $category )
+                            <option value="{{ $category['id'] }}" {{ $category['id']   == $course->category ? 'selected' : '' }}>{{$category['name']}}</option>
+                                
+                            @endforeach
+                        </select>
+                        <br>
+                        <label for="course_difficulty">Difficulty</label>
+                        <select name="course_difficulty" id="course_difficulty" class="form-control" required>
+                            <option value="">Select One</option>
+                            <option value="novice"   {{ $course->course_difficulty == 'novice' ? 'selected' : '' }}>Novice</option>
+                            <option value="intermediate"   {{ $course->course_difficulty == 'intermediate' ? 'selected' : '' }}>Intermediate</option>
+                            <option value="pro"   {{ $course->course_difficulty == 'pro' ? 'selected' : '' }}>pro</option>
+                            <option value="expert"   {{ $course->course_difficulty == 'expert' ? 'selected' : '' }}>expert</option>
+                        </select>
+                        <br>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                @if($course->has('lessons'))
-                    @foreach($course->lessons->all() as $lesson)
-                    <div class="col-12 border border-dark my-3 p-2" style="padding:20px 10px" >
-                            <div class="d-flex justify-content-between">
-                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}">
-                                         <span class="fas fa-minus-square"></span> 
-                                    </button>
-                                    <button id="remove_course_div" lesson_id="{{ $lesson->id }}"><i class="fas fa-times-circle" style="color:red"></i></button> 
-                                   
-                                </div>
-                                  <div id="collapse{{ $loop->index }}" class="collapse show" aria-labelledby="collapse{{ $loop->index }}">
-                                    <h4>Add Lesson</h4>
-                                    <label>Lesson Title</label>
-                                    <input type="hidden" name="lesson_id[]" value="{{ $lesson->id }}">
-                                    <input type="text" id="lesson_title_field" placeholder="Lesson Title" value="{{ $lesson->lesson_title ?? '' }}" name="lesson[]" class="form-control my-2" />
-                                    {{--  <select id="video_insert_type" class="form-control">
-                                        <option value="">Select</option>
-                                        <option value="upload">Upload</option>
-                                        <option value="embed">Embed</option>
-                                    </select>  --}}
-                                    {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video_upload[]" class="my-2 col-12">  --}}
-                                    <label>Lesson Video</label>
-                                    <input type="text" placeholder="Lesson Video" id="embed_lesson_video" value="{{ $lesson->embed_url ?? '' }}" name="lesson_video[]" class="form-control my-2 col-12">
-                                    Lesson Description
-                                    <textarea name="lesson_description[]" class="form-control">{{ $lesson->lesson_description ?? '' }}</textarea>
-                                  </div>
-                        </div> 
-                    @endforeach
-                @endif
-                <div id="add_course"></div> 
-                
             </div>
+            <div id="lessons" class="tab-pane fade">
+            <div class="row">
+                <div class="col-12">
+                    @if($course->has('lessons'))
+                        @foreach($course->lessons->all() as $lesson)
+                        <div class="col-12 border border-dark my-3 p-2" style="padding:20px 10px" >
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}">
+                                            <span class="fas fa-minus-square"></span> 
+                                        </button>
+                                        <button id="remove_course_div" lesson_id="{{ $lesson->id }}"><i class="fas fa-times-circle" style="color:red"></i></button> 
+                                    
+                                    </div>
+                                    <div id="collapse{{ $loop->index }}" class="collapse show" aria-labelledby="collapse{{ $loop->index }}">
+                                        <h4>Add Lesson</h4>
+                                        <label>Lesson Title</label>
+                                        <input type="hidden" name="lesson_id[]" value="{{ $lesson->id }}">
+                                        <input type="text" id="lesson_title_field" placeholder="Lesson Title" value="{{ $lesson->lesson_title ?? '' }}" name="lesson[]" class="form-control my-2" />
+                                        {{--  <select id="video_insert_type" class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="upload">Upload</option>
+                                            <option value="embed">Embed</option>
+                                        </select>  --}}
+                                        {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video_upload[]" class="my-2 col-12">  --}}
+                                        <label>Lesson Video</label>
+                                        <input type="text" placeholder="Lesson Video" id="embed_lesson_video" value="{{ $lesson->embed_url ?? '' }}" name="lesson_video[]" class="form-control my-2 col-12">
+                                        Lesson Description
+                                        <textarea name="lesson_description[]" class="form-control">{{ $lesson->lesson_description ?? '' }}</textarea>
+                                    </div>
+                            </div> 
+                        @endforeach
+                    @endif
+                    <div id="add_course"></div> 
+                    
+                </div>
+            </div>
+                <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
         </div>
-            <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
-            <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
-            <input class="btn btn-success" type="submit" value="Create course">
-    </form>
+        <div id="quiz" class="tab-pane fade">
+            Coming Soon
+        </div>
+                <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
+                <input class="btn btn-success" type="submit" value="Create course">
+        </form>
+    </div>
 </div>
     <script>
         $(document).ready(function(){
