@@ -121,11 +121,11 @@
                 <input type="text" class="form-control" name="question_" value="{{ old('question_'.$x) ?? '' }}" placeholder="question">
                 <hr>
                 <label>Correct Answer:</label>
-                <input type="text" name="answer_1_{{$x}}" value="{{ old('answer_1_'$x) ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_2_{{$x}}" value="{{ old('answer_2_'$x) ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_3_{{$x}}" value="{{ old('answer_3_'$x) ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_4_{{$x}}" value="{{ old('answer_4_'$x) ?? '' }}" class="form-control"><br />
-                <input type="text" name="answer_5_{{$x}}" value="{{ old('answer_5_'$x) ?? '' }}" class="form-control">
+                <input type="text" name="answer_1_{{$x}}" value="{{ old('answer_1_'.$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_2_{{$x}}" value="{{ old('answer_2_'.$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_3_{{$x}}" value="{{ old('answer_3_'.$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_4_{{$x}}" value="{{ old('answer_4_'.$x) ?? '' }}" class="form-control"><br />
+                <input type="text" name="answer_5_{{$x}}" value="{{ old('answer_5_'.$x) ?? '' }}" class="form-control">
             </div>
             @endfor
         </div>
