@@ -140,7 +140,8 @@
             // if (! Gate::allows('course_edit')) {
             //     return abort(401);
             // }
-            dd($request->all());
+            dump($request->all());
+            
             $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',

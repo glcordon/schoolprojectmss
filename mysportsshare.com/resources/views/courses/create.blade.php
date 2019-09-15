@@ -115,7 +115,7 @@
                 <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
         </div>
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
-            @for($x=1; $x<=5; $x++)
+            @for($x=0; $x<=4; $x++)
             <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                 Question Number {{$x}}
                 <input type="text" class="form-control" name="question.{{$x}}" value="{{ old('question'.$x) ?? '' }}" placeholder="Question">
