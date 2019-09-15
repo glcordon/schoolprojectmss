@@ -175,6 +175,7 @@
             $course->course_title = $request->course_title;
             $embedId = '';
             $embed = Embed::make($request->course_intro_video)->parseUrl();
+            $embedUrl = '';
             if ($embed) {
                 $embed->setAttribute(['width' => 600]);
                 $embedId = $embed->getProvider()->info->id;
@@ -208,7 +209,7 @@
                     $lesson = Lessons::find($la['id']);
                 }
                 $embed1 = Embed::make($la['lesson_video'])->parseUrl();
-                $lesson->embed_url = $embed1->getProvider()->info->url;
+                $lesson->embed_url = $mbdUrl;
                 $lesson->lesson_title = $la['lesson_title'];
                 $lesson->lesson_video = $embed1->gethtml();
                 $lesson->lesson_description = $la['lesson_description'];
