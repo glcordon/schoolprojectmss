@@ -118,7 +118,7 @@
             @for($x=1; $x<=5; $x++)
             <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                 Question Number {{$x}}
-                <input type="text" class="form-control" name="question_.{{$x}}" value="{{ old('question_'.$x) ?? '' }}" placeholder="Question">
+                <input type="text" class="form-control" name="question.{{$x}}" value="{{ old('question'.$x) ?? '' }}" placeholder="Question">
                 <hr>
                 <label>Correct Answer:</label>
                 <input type="text" name="answer_{{$x}}[]" value="{{ old('answer_1_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
