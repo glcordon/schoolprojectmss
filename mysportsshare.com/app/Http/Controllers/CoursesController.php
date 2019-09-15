@@ -209,7 +209,7 @@
                     $lesson = Lessons::find($la['id']);
                 }
                 $embed1 = Embed::make($la['lesson_video'])->parseUrl();
-                $lesson->embed_url = $mbdUrl;
+                $lesson->embed_url = $embdUrl;
                 $lesson->lesson_title = $la['lesson_title'];
                 $lesson->lesson_video = $embed1->gethtml();
                 $lesson->lesson_description = $la['lesson_description'];
