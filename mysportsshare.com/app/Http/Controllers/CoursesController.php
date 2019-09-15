@@ -211,7 +211,11 @@
                 $embed1 = Embed::make($la['lesson_video'])->parseUrl();
                 $lesson->embed_url = $embedUrl;
                 $lesson->lesson_title = $la['lesson_title'];
-                $lesson->lesson_video = $embed1->gethtml();
+                if($embed1)
+                {
+
+                    $lesson->lesson_video = $embed1->gethtml();
+                }
                 $lesson->lesson_description = $la['lesson_description'];
                 $course->lessons()->save($lesson);
             }
