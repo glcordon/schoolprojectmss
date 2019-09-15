@@ -141,7 +141,7 @@
             //     return abort(401);
             // }
             dump($request->all());
-            
+
             $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',
@@ -149,7 +149,7 @@
                 'course_description' => 'required',
                 'course_intro_video' => '',
                 'course_video_thumb' => '',
-                'course_image' => 'required',
+                'course_image' => '',
             ]));
             if ($validator->fails()) {
                 return back()
