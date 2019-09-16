@@ -59,7 +59,7 @@
 										@else
 											<img class="card-img" src="{{ asset('img/baseball-field.jpg') }}" alt="Card image cap" >
 										@endif
-									<div class="card-body">
+									<div class="card-body" style="position:absolute; bottom:0;">
 										<h4 class="card-title">{{ $course['course_title'] }}</h4>
 									</div>
 								</div>  
