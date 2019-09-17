@@ -251,14 +251,10 @@
                        }
                        $answers->answer_text = $answer;
                        $thisQuestion->answers()->save($answers);
-                       dd($thisQuestion);
                    }
                 }
                 
             }
-            dd($newQuiz);
-            dd($thisQuestion);
-            dd($lessons->quiz()->questions());
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();
             return redirect()->route('courses.index');
