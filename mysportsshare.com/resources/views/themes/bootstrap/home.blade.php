@@ -71,7 +71,7 @@
 								<div class="card col-4 mb-5 shadow-sm overlay" 
 									style="text-align:left; height:15rem; background-image:url({{ $course['course_image'] ? Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') : asset('img/baseball-field.jpg') }}); background-size:cover;">
 									{{--  {{ dd($courses) }}  --}}
-									<a href="/courses/{{ $course['id'] }}" style="display:block; height:100%; width:100%;">
+									<a href="/courses/show/{{ $course['id'] }}" style="display:block; height:100%; width:100%;">
 										<div class="card-body" style="position:absolute; bottom:0;">
 											<h4 class="card-title">{{ $course['course_title'] }}</h4>
 										</div>
