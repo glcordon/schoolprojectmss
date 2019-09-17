@@ -234,7 +234,11 @@
             
             foreach($qAndA as $q)
             {
-                dd($q);
+                foreach($q as $key => $k)
+                {
+                    dump($key);
+                    dd($k);
+                }
                 $lessons->attach($q);
             }
             
