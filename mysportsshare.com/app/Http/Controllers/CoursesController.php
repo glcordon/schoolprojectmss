@@ -150,7 +150,7 @@
             $questions = collect($request->question);
             $answers = collect($request->answer_);
                 $qAndA = $questions->map(function($item, $key) use($answers){
-                    return [$key => [$item => $answers[$key]]];
+                    return [$item => $answers[$key]];
                 });
             dd($qAndA->toArray());
             $validator = Validator::make($request->all(),([
