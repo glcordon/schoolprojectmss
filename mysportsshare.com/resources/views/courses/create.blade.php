@@ -121,10 +121,10 @@
                 <input type="text" class="form-control" name="question[]" value="{{ old('question'.$x) ?? '' }}" placeholder="Question">
                 <hr>
                 <label>Correct Answer:</label>
-                <input type="text" name="answer_{{$x}}[]" value="{{ old('answer_1_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
-                <input type="text" name="answer_{{$x}}[]" value="{{ old('answer_2_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
-                <input type="text" name="answer_{{$x}}[]" value="{{ old('answer_3_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
-                <input type="text" name="answer_{{$x}}[]" value="{{ old('answer_4_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
+                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_1_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
+                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_2_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
+                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_3_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
+                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_4_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
             </div>
             @endfor
         </div>
