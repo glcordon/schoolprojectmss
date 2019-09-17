@@ -43,7 +43,7 @@
             // } else {
             //     $courses = Course::all();
             // }
-            $course = Course::get();
+            $course = Course::where('course_title', '<>', '')->get();
             $siteData = Site::find(1);
             if(Session::get('tenant') !== "home")
             {
