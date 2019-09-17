@@ -248,7 +248,7 @@
                            $answer->is_correct = 0;
                        }
                        $answer->answer_text = $answer;
-                       $newQuiz->answer()->save($answer);
+                       $newQuiz->answers()->save($answer);
                    }
                 }
                 
