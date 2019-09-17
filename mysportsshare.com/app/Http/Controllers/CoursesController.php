@@ -240,8 +240,8 @@
                 {
                     
                     $questions = [];
-                    $questions->question_text = $key;
-                    $questions->question_type = 'single';
+                    $questions['question_text'] = $key;
+                    $questions['question_type'] = 'single';
                     $thisQuestion = $quiz->questions()->attach($questions);
                    foreach($k as $index => $answer)
                    {
