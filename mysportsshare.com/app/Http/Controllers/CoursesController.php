@@ -43,9 +43,13 @@
             // } else {
             //     $courses = Course::all();
             // }
-            $siteId = Session::get('tenant')->id;
-            $siteData = Site::find($siteId);
-            $course = Course::where('site_id', $siteId)->where('course_title', '<>', '')->get();
+            if(Session::get('tenant') == "home")
+            {
+                $siteId = Session::get('tenant')->id;
+                $siteData = Site::find($siteId);
+                $course = Course::where('site_id', $siteId)->where('course_title', '<>', '')->get();
+            }
+            $course = Course::get();
             $courses = collect($course->toArray())->map(function($item){
                 $embed = Embed::make($item['course_intro_video'])->parseUrl();
                 $url = '';
