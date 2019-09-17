@@ -255,7 +255,7 @@
                 }
                 
             }
-            dump($newQuiz);
+            dd($newQuiz);
             dd($thisQuestion);
             dd($lessons->quiz()->questions());
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
