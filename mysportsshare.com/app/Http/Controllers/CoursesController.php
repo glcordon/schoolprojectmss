@@ -231,13 +231,15 @@
                 $course->lessons()->save($lesson);
             }
             $lessons= $course->lessons;
+            $quiz = new \App\Quiz;
+            $newQuiz = $course->quiz()->save($quiz);
+                    
             foreach($qAndA as $q)
             {
                 foreach($q as $key => $k)
                 {
-                    $quiz = new \App\Quiz;
-                    $newQuiz = $course->quiz()->save($quiz);
-                    
+                    $questions = new \App\Questions;
+                    $thisQuestion = $quiz->questions()->save($questions);
                    foreach($k as $index => $answer)
                    {
                        $answer = new \App\Answers;
@@ -248,13 +250,13 @@
                            $answer->is_correct = 0;
                        }
                        $answer->answer_text = $answer;
-                       $newQuiz->answers()->save($answer);
+                       $thisQuestion->answers()->save($answer);
                    }
                 }
                 
             }
-            dd($newQuiz);
-            dd($course->quiz);
+            dump($newQuiz);
+            dd($thisQuestion);
             dd($lessons->quiz()->questions());
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();
