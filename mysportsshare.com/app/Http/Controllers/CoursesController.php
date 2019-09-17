@@ -236,7 +236,6 @@
             {
                 $quiz = new \App\Quiz;
             }
-            dd($quiz);
             $newQuiz = $course->quiz()->save($quiz);
                     
             foreach($qAndA as $q)
