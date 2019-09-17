@@ -52,7 +52,7 @@
 				@if(isset(Session::get('tenant')->site_name))
 							@foreach($sites->courses->toArray() as $course)
 								@if($course['course_title'] !== '') 
-								<div class="card mx-2 col-4 shadow-sm" style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
+								<div class="card col-4 shadow-sm" style="text-align:left; margin-bottom:20px;">
 									{{--  {{ dd($courses) }}  --}}
 										@if($course['course_image'])
 											<img class="card-img" src="{{ Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') }}" alt="Card image cap" >
