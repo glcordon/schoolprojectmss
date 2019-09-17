@@ -1,6 +1,5 @@
 
     <div class="card mx-2" style="text-align:left;max-width: 22rem; min-width:18rem; margin-bottom:20px;">
-@dump($course)
         <a href="/courses/show/{{ $course['id'] }}">
             @if($course['course_image'])
             <img class="card-img" src="{{ Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') }}" alt="Card image cap" >
