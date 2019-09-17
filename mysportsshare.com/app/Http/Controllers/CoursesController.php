@@ -240,7 +240,7 @@
                 {
                     $thisQuestion = $quiz->questions()->create([
                         'question_text' => $key,
-                        'question_type' => 'single_answer',
+                        'question_type' => 'single',
                     ]);
                    foreach($k as $index => $answer)
                    {
