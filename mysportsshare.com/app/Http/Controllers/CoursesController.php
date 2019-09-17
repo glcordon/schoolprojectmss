@@ -238,13 +238,22 @@
                     $quiz = new \App\Quiz;
                     $newQuiz = $course->quiz()->save($quiz);
                     
-                //    foreach($k as $answer)
-                //    {
-                //        $lessons->quiz()->questions()->attach($answer);
-                //    }
+                   foreach($k as $index => $answer)
+                   {
+                       $answer = new \App\Answer;
+                       if($index == 0)
+                       {
+                           $answer->is_correct = 1;
+                       }else{
+                           $answer->is_correct = 0;
+                       }
+                       $answer->answer_text = $answer;
+                       $newQuiz->answer()->save($answer);
+                   }
                 }
                 
             }
+            dd($newQuiz);
             dd($course->quiz);
             dd($lessons->quiz()->questions());
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
