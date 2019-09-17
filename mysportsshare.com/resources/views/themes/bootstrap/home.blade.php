@@ -55,9 +55,11 @@
 								<div class="card col-4 mr-1 mb-5 shadow-sm" 
 									style="text-align:left; height:15rem; background-image:url({{ $course['course_image'] ? Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') : asset('img/baseball-field.jpg') }}); background-size:cover;">
 									{{--  {{ dd($courses) }}  --}}
-									<div class="card-body" style="position:absolute; bottom:0;">
-										<h4 class="card-title">{{ $course['course_title'] }}</h4>
-									</div>
+									<a href="/courses/{{ $course['ic'] }}">
+										<div class="card-body" style="position:absolute; bottom:0;">
+											<h4 class="card-title">{{ $course['course_title'] }}</h4>
+										</div>
+									</a>
 								</div>  
 								@endif
 							@endforeach 
