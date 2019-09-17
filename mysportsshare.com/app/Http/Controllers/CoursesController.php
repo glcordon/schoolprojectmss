@@ -236,7 +236,8 @@
             // {
             //     $quiz = new \App\Quiz;
             // }
-            $newQuiz = $course->quiz()->updateOrCreate(['course_id' => $course->course_id]);
+            $quiz = \App\Quiz::updateOrCreate(['course_id' => $course->course_id]);
+            $newQuiz = $course->quiz()->save($quiz);
                     
             foreach($qAndA as $q)
             {
