@@ -238,11 +238,10 @@
             {
                 foreach($q as $key => $k)
                 {
-                    
-                    $questions = [];
-                    $questions['question_text'] = $key;
-                    $questions['question_type'] = 'single';
-                    $thisQuestion = $quiz->questions()->create($questions);
+                    $thisQuestion = $quiz->questions()->create([
+                        'question_text' => $key,
+                        'question_type' => 'single_answer',
+                    ]);
                    foreach($k as $index => $answer)
                    {
                        $answers = new \App\Answers;
