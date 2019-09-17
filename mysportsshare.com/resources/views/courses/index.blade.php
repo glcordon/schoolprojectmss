@@ -1,7 +1,7 @@
 @extends('layouts.generic')
 
 @section('content')
-@dd($courses)
+@dump($courses)
     <div class="container" style="padding:50px 0px">
         <h2>{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name : "My Sports Share" }}</h2>
         <div class="d-flex flex-wrap" id="courses">
