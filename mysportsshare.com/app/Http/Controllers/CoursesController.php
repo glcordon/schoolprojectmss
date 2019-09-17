@@ -239,10 +239,10 @@
                 foreach($q as $key => $k)
                 {
                     
-                    $questions = new \App\Questions;
+                    $questions = [];
                     $questions->question_text = $key;
                     $questions->question_type = 'single';
-                    $thisQuestion = $quiz->questions()->save($questions);
+                    $thisQuestion = $quiz->questions()->attach($questions);
                    foreach($k as $index => $answer)
                    {
                        $answers = new \App\Answers;
