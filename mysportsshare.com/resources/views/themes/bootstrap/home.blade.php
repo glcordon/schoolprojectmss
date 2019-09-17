@@ -52,7 +52,7 @@
 				@if(isset(Session::get('tenant')->site_name))
 							@foreach($sites->courses->toArray() as $course)
 								@if($course['course_title'] !== '') 
-								<div class="card col-4 shadow-sm" style="text-align:left; margin-bottom:20px; background-image:url({{ isset($course['image']) ? Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') : asset('img/baseball-field.jpg') }})">
+								<div class="card col-4 shadow-sm" style="text-align:left; margin-bottom:20px; background-image:url({{ $course['course_image'] ? Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') : asset('img/baseball-field.jpg') }})">
 									{{--  {{ dd($courses) }}  --}}
 									<div class="card-body" style="position:absolute; bottom:0;">
 										<h4 class="card-title">{{ $course['course_title'] }}</h4>
