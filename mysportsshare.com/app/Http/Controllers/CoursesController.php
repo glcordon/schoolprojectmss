@@ -147,7 +147,12 @@
             //     return abort(401);
             // }
             // dump($request->all());
-            dd($request->all());
+            $questions = collect($request->question);
+            $answers = collect($request->answer_);
+                $qAndA = $questions->map(function($item, $key) use($answers){
+                    return [$key => [$item => $answers[$key]]];
+                });
+            dd($answers);
             $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',
