@@ -147,7 +147,7 @@
             //     return abort(401);
             // }
             // dump($request->all());
-
+            dd($request->all());
             $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',
