@@ -231,12 +231,11 @@
                 $course->lessons()->save($lesson);
             }
             $lessons= $course->lessons;
-            dd($lessons);
             foreach($qAndA as $q)
             {
                 foreach($q as $key => $k)
                 {
-                    $lessons->quiz()->attach($key);
+                    $course->quiz()->attach($key);
                    foreach($k as $answer)
                    {
                        $lessons->quiz()->questions()->attach($answer);
@@ -244,7 +243,7 @@
                 }
                 
             }
-            dump($lessons->quiz());
+            dd($course->quiz());
             dd($lessons->quiz()->questions());
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();

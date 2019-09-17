@@ -41,7 +41,10 @@ class Course extends Model
     {
         return $this->belongsTo(Site::class);
     }
-    
+    public function quiz()
+    {
+        return $this->hasOne(Quiz::class);
+    }
     public function lessons() {
         return $this->hasMany(Lesson::class, 'course_id');
     }
