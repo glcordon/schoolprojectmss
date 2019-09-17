@@ -232,9 +232,9 @@
             }
             $lessons= $course->lessons;
             
-            foreach($qAndA as $key => $q)
+            foreach($qAndA as $q)
             {
-                dd($key);
+                dd($q);
                 $lessons->attach($q);
             }
             
