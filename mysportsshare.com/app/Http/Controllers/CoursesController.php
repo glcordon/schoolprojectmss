@@ -239,6 +239,8 @@
                 foreach($q as $key => $k)
                 {
                     $questions = new \App\Questions;
+                    $questions->question_text = $key;
+                    $questions->question_type = 'single';
                     $thisQuestion = $quiz->questions()->save($questions);
                    foreach($k as $index => $answer)
                    {
