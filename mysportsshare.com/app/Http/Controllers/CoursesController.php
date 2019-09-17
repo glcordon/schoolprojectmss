@@ -235,11 +235,13 @@
             {
                 foreach($q as $key => $k)
                 {
-                    $course->quiz()->attach($key);
-                   foreach($k as $answer)
-                   {
-                       $lessons->quiz()->questions()->attach($answer);
-                   }
+                    $quiz = new App\Quiz;
+                    $newQuiz = $course->quiz()->save($quiz);
+                    
+                //    foreach($k as $answer)
+                //    {
+                //        $lessons->quiz()->questions()->attach($answer);
+                //    }
                 }
                 
             }
