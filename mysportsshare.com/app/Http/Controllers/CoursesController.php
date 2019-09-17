@@ -151,8 +151,8 @@
             $answers = collect($request->answer_);
                 $qAndA = $questions->map(function($item, $key) use($answers){
                     return [$item => $answers[$key]];
-                });
-            dd($qAndA->toArray());
+                })->toArray();
+            dump($qAndA);
             $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',
@@ -231,7 +231,13 @@
                 $course->lessons()->save($lesson);
             }
             $lessons= $course->lessons;
-    
+            
+            foreach($qAndA as $q)
+            {
+                dd($q);
+                $lessons->attach($q);
+            }
+            
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();
             return redirect()->route('courses.index');
