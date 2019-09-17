@@ -242,7 +242,7 @@
             {
                 foreach($q as $key => $k)
                 {
-                    $thisQuestion = $quiz->questions()->create([
+                    $thisQuestion = $newQuiz->questions()->create([
                         'question_text' => $key,
                         'question_type' => 'single',
                     ]);
