@@ -20,7 +20,7 @@
         "laravel/helpers": "^1.0",
         "laravel/tinker": "~1.0",
         "orangehill/iseed": "dev-master",
-        "tcg/voyager": "1.2.*",
+        "tcg/voyager": "1.2.6",
         "tymon/jwt-auth": "1.0.0-rc.4.1",
         "voyager-themes": "^0.15",
         "cohensive/embed": "5.5.*"
