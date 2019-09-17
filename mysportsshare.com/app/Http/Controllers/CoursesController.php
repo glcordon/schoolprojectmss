@@ -244,7 +244,7 @@
                 }
                 
             }
-            dump($lessons->quiz);
+            dump($lessons->quiz());
             dd($lessons->quiz()->questions());
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();
