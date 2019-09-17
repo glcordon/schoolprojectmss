@@ -242,7 +242,7 @@
                     $questions = [];
                     $questions['question_text'] = $key;
                     $questions['question_type'] = 'single';
-                    $thisQuestion = $quiz->questions()->associate($questions);
+                    $thisQuestion = $quiz->questions()->create($questions);
                    foreach($k as $index => $answer)
                    {
                        $answers = new \App\Answers;
