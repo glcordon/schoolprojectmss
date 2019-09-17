@@ -242,14 +242,14 @@
                     $thisQuestion = $quiz->questions()->save($questions);
                    foreach($k as $index => $answer)
                    {
-                       $answer = new \App\Answers;
+                       $answers = new \App\Answers;
                        if($index == 0)
                        {
-                           $answer->is_correct = 1;
+                           $answers->is_correct = 1;
                        }else{
-                           $answer->is_correct = 0;
+                           $answers->is_correct = 0;
                        }
-                       $answer->answer_text = $answer;
+                       $answers->answer_text = $answer;
                        $thisQuestion->answers()->save($answer);
                    }
                 }
