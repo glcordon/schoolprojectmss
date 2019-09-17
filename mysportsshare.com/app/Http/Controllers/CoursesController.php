@@ -235,7 +235,7 @@
             {
                 foreach($q as $key => $k)
                 {
-                    $quiz = new App\Quiz;
+                    $quiz = new \App\Quiz;
                     $newQuiz = $course->quiz()->save($quiz);
                     
                 //    foreach($k as $answer)
