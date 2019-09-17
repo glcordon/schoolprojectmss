@@ -247,12 +247,14 @@
                        $answers = new \App\Answers;
                        if($index == 0)
                        {
-                           $answers->is_correct = 1;
+                           $is_correct = 1;
                        }else{
-                           $answers->is_correct = 0;
+                           $is_correct = 0;
                        }
-                       $answers->answer_text = $answer;
-                       $thisAnswer = $thisQuestion->answers()->save($answers);
+                       $thisAnswer = $thisQuestion->answers()->create([
+                           'is_correct' => $is_correct,
+                           'answer_text' => $answer,
+                       ]);
                        dd($thisAnswer);
                    }
                 }
