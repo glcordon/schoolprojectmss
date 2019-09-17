@@ -236,7 +236,7 @@
             // {
             //     $quiz = new \App\Quiz;
             // }
-            $newQuiz = $course->quiz()->updateOrCreate(['course_id', $course->course_id]);
+            $newQuiz = $course->quiz()->updateOrCreate(['course_id' => $course->course_id]);
                     
             foreach($qAndA as $q)
             {
