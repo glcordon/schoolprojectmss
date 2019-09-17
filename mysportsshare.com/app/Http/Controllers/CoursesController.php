@@ -238,11 +238,12 @@
             {
                 foreach($q as $key => $k)
                 {
-                    dd($key);
+                    
                     $questions = new \App\Questions;
                     $questions->question_text = $key;
                     $questions->question_type = 'single';
                     $thisQuestion = $quiz->questions()->save($questions);
+                    dd($thisQuestion);
                    foreach($k as $index => $answer)
                    {
                        $answers = new \App\Answers;
