@@ -150,9 +150,9 @@
             $questions = collect($request->question);
             $answers = collect($request->answer_);
                 $qAndA = $questions->map(function($item, $key) use($answers){
-                    return [$item => $answers[$key]];
+                    return [$key => [$item => $answers[$key]]];
                 });
-            dd($answers);
+            dd($qAndA);
             $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',
