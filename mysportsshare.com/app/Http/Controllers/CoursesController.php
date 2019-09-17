@@ -238,6 +238,7 @@
             {
                 foreach($q as $key => $k)
                 {
+                    dd($key);
                     $questions = new \App\Questions;
                     $questions->question_text = $key;
                     $questions->question_type = 'single';
