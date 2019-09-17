@@ -231,7 +231,7 @@
                 $course->lessons()->save($lesson);
             }
             $lessons= $course->lessons;
-            $quiz = new \App\Quiz;
+            $quiz = \App\Quiz::firstOrCreate($course->course_id);
             $newQuiz = $course->quiz()->save($quiz);
                     
             foreach($qAndA as $q)
