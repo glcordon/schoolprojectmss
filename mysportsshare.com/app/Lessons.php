@@ -12,5 +12,9 @@ class Lessons extends Model
     {
         return $this->belongsTo('App\Course');
     }
+    public function quiz()
+    {
+        return $this->hasOne(Quiz::class);
+    }
     
 }
