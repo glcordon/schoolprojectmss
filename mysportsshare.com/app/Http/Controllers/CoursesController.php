@@ -236,12 +236,16 @@
             {
                 foreach($q as $key => $k)
                 {
-                    dump($key);
-                    dd($k);
+                    $lessons->quiz()->attach($key);
+                   foreach($k as $answer)
+                   {
+                       $lessons->quiz()->questions()->attach($answer);
+                   }
                 }
-                $lessons->attach($q);
+                
             }
-            
+            dump($lessons->quiz);
+            dd($lessons->quiz()->questions());
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();
             return redirect()->route('courses.index');
