@@ -37,6 +37,7 @@ class Course extends Model
     {
         return 'string';
     }
+    
     public function lessons() {
         return $this->hasMany(Lesson::class, 'course_id');
     }
