@@ -1,7 +1,24 @@
 @extends('theme::layouts.app')
 
 @section('content')
-
+<style>
+		.overlay {
+			position: relative;
+		  }
+		  
+		  .overlay:before{
+			position: absolute;
+			content:" ";
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			display: none;
+			z-index:0;
+			background-color: rgba(0, 0, 0, 0.4)
+		  }
+		  
+</style>		  
 <!-- HERO -->
 <div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, white 85%), url({{ Session::get('tenant') == 'home' ? '' : Storage::url(Session::get('tenant')->site_cover) ?? '' }}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
 	<div class="container">
