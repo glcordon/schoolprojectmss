@@ -37,6 +37,10 @@ class Course extends Model
     {
         return 'string';
     }
+    public function site()
+    {
+        return $this->belongsTo(Site::class);
+    }
     
     public function lessons() {
         return $this->hasMany(Lesson::class, 'course_id');
