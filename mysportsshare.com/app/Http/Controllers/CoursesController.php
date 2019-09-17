@@ -231,7 +231,7 @@
                 $course->lessons()->save($lesson);
             }
             $lessons= $course->lessons;
-            
+            dd($lessons);
             foreach($qAndA as $q)
             {
                 foreach($q as $key => $k)
