@@ -256,7 +256,6 @@
                            'is_correct' => $is_correct,
                            'answer_text' => $answer,
                        ]);
-                       dd($thisQuestion);
                    }
                 }
                 
