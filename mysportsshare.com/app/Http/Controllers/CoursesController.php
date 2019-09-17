@@ -231,19 +231,14 @@
                 $course->lessons()->save($lesson);
             }
             $lessons= $course->lessons;
-            // $quiz = \App\Quiz::where('course_id',$course->course_id)->first();
-            // if(!$quiz)
-            // {
-            //     $quiz = new \App\Quiz;
-            // }
-            $quiz = \App\Quiz::updateOrCreate(['course_id' => $course->course_id]);
+            $quiz = \App\Quiz::firstOrCreate(['course_id' => $course->course_id]);
             $newQuiz = $course->quiz()->save($quiz);
                     
             foreach($qAndA as $q)
             {
                 foreach($q as $key => $k)
                 {
-                    $thisQuestion = $newQuiz->questions()->create([
+                    $thisQuestion = $quiz->questions()->create([
                         'question_text' => $key,
                         'question_type' => 'single',
                     ]);
