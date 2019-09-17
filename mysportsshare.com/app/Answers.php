@@ -10,6 +10,6 @@ class Answers extends Model
     protected $table = "Answers";
     public function questions()
     {
-        return $this->belongsTo(Questions::class);
+        return $this->belongsTo(Questions::class, 'questions_id');
     }
 }
