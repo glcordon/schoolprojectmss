@@ -240,7 +240,7 @@
                     
                    foreach($k as $index => $answer)
                    {
-                       $answer = new \App\Answer;
+                       $answer = new \App\Answers;
                        if($index == 0)
                        {
                            $answer->is_correct = 1;
