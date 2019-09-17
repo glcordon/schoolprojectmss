@@ -250,7 +250,7 @@
                            $answers->is_correct = 0;
                        }
                        $answers->answer_text = $answer;
-                       $thisQuestion->answers()->save($answer);
+                       $thisQuestion->answers()->save($answers);
                    }
                 }
                 
