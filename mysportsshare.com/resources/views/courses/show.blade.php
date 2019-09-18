@@ -5,7 +5,7 @@
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
       background-color: black;
     }
-    
+    a.nav-link{color:black}
 </style>
 @can('edit', $course)
 <div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
@@ -32,7 +32,7 @@
                     <strong class="fa-stack-1x">
                         {{ $loop->count }} 
                     </strong>
-                </span>
+                </span> - 
                 {{ $lesson->lesson_title }}
             </a>
           </li>
