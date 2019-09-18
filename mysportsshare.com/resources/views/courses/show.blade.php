@@ -36,7 +36,7 @@
           @foreach($course->lessons->all() as $lesson)
           <li class="nav-item">
             <a class="nav-link flex-column" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
-                <div class="numberCircle">{{ $loop->count }}</div> <div>{{ $lesson->lesson_title }}</div>
+                <div class="numberCircle col-3">{{ $loop->count }}</div> <div class="col-9">{{ $lesson->lesson_title }}</div>
             </a>
           </li>
           @endforeach
