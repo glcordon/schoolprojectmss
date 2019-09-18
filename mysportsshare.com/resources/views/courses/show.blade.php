@@ -38,6 +38,7 @@
               <h2>{{ $lesson->lesson_title }}</h2>
               {!!  $lesson->lesson_video !!}    
               <p>
+                <strong><small>Description:</small></strong> <br>
                 {{ $lesson->lesson_description }}
               </p>        
             </div>
