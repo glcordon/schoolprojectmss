@@ -27,7 +27,7 @@
             <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
                 <span class="fa-stack">
                     <!-- The icon that will wrap the number -->
-                    <span class="fa fa-square-o fa-stack-2x"></span>
+                    <span class="fa fa-circle-o fa-stack-2x"></span>
                     <!-- a strong element with the custom content, in this case a number -->
                     <strong class="fa-stack-1x">
                         {{ $loop->count }} 
