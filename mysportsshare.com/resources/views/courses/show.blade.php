@@ -11,10 +11,9 @@
       /* remove if you don't care about IE8 */
       width: 36px;
       height: 36px;
-      padding: 8px;
       background: #fff;
-      border: 2px solid #666;
-      color: #666;
+      border: 2px solid #555;
+      color: #555;
       text-align: center;
       font: 32px Arial, sans-serif;
     }
@@ -36,8 +35,8 @@
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
           <li class="nav-item">
-            <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
-                <div class="numberCircle">{{ $loop->count }}</div> - {{ $lesson->lesson_title }}
+            <a class="nav-link flex-column" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
+                <div class="numberCircle">{{ $loop->count }}</div> <div>{{ $lesson->lesson_title }}</div>
             </a>
           </li>
           @endforeach
