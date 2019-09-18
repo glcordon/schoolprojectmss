@@ -30,7 +30,7 @@
                     <span class="fa fa-circle-o fa-stack-2x"></span>
                     <!-- a strong element with the custom content, in this case a number -->
                     <strong class="fa-stack-1x">
-                        {{ $loop->count }} 
+                        <strong>{{ $loop->count }} </strong>
                     </strong>
                 </span> - 
                 {{ $lesson->lesson_title }}
