@@ -191,6 +191,7 @@
                 $embed->setAttribute(['width' => 600]);
                 $embedId = $embed->getProvider()->info->id;
                 $embedUrl = $embed->getProvider()->info->url;
+                $embedImage = '';
                 if($embed->getProvider()->info->imageRoot)
                 {
                     $embedImage = $embed->getProvider()->info->imageRoot."/0.jpg";
