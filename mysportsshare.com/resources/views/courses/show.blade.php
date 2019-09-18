@@ -1,7 +1,11 @@
 @extends('layouts.generic')
 
 @section('content')
-
+<style>
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      background-color: black;
+    }
+</style>
 @can('edit', $course)
 <div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
 @endcan    
