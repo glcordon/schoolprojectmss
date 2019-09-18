@@ -23,7 +23,7 @@
         </li>
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
-          <li class="nav-item">
+          <li class="nav-item" id="myStopClickButton" onclick="pausePlayer()">
             <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
                 <span class="fa-stack">
                     <!-- The icon that will wrap the number -->
@@ -74,5 +74,12 @@
       </div>
       <!-- /.container -->
     </div>
+    <script>
+        $('#myStopClickButton').click(function(){
+          $('#player').each(function(){
+            $(this).stopVideo();
+          });
+        });
+    </script>
 @endsection 
     
