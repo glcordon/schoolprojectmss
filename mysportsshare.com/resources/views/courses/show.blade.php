@@ -32,7 +32,7 @@
                     <strong class="fa-stack-1x">
                         <strong>{{ $loop->count }} </strong>
                     </strong>
-                </span> - 
+                </span>
                 {{ $lesson->lesson_title }}
             </a>
           </li>
