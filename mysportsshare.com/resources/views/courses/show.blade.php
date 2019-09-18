@@ -11,7 +11,7 @@
           <h1>{{ $course->course_title }}</h1> <h4>Difficulty: {{ $course->course_difficulty }}</h4>
         <hr>
         <div class="row">
-          <div class="col-md-2 mb-3">
+          <div class="col-md-4 mb-3">
               <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Intro</a>
@@ -26,7 +26,7 @@
       </ul>
           </div>
           <!-- /.col-md-4 -->
-              <div class="col-md-10">
+              <div class="col-md-8">
             <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <h2>Intro</h2>
