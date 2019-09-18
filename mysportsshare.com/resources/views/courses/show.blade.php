@@ -5,18 +5,7 @@
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
       background-color: black;
     }
-    .numberCircle {
-      border-radius: 50%;
-      behavior: url(PIE.htc);
-      /* remove if you don't care about IE8 */
-      width: 36px;
-      height: 36px;
-      background: #fff;
-      border: 2px solid #555;
-      color: #555;
-      text-align: center;
-      font: 32px Arial, sans-serif;
-    }
+    
 </style>
 @can('edit', $course)
 <div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
@@ -35,8 +24,16 @@
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
           <li class="nav-item">
-            <a class="nav-link flex-column" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
-                <div class="numberCircle col-3">{{ $loop->count }}</div> <div class="col-9">{{ $lesson->lesson_title }}</div>
+            <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
+                <span class="fa-stack">
+                    <!-- The icon that will wrap the number -->
+                    <span class="fa fa-square-o fa-stack-2x"></span>
+                    <!-- a strong element with the custom content, in this case a number -->
+                    <strong class="fa-stack-1x">
+                        {{ $loop->count }} 
+                    </strong>
+                </span>
+                {{ $lesson->lesson_title }}
             </a>
           </li>
           @endforeach
