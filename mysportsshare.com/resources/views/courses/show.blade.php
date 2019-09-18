@@ -5,6 +5,19 @@
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
       background-color: black;
     }
+    .numberCircle {
+      border-radius: 50%;
+      behavior: url(PIE.htc);
+      /* remove if you don't care about IE8 */
+      width: 36px;
+      height: 36px;
+      padding: 8px;
+      background: #fff;
+      border: 2px solid #666;
+      color: #666;
+      text-align: center;
+      font: 32px Arial, sans-serif;
+    }
 </style>
 @can('edit', $course)
 <div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
@@ -23,7 +36,9 @@
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
           <li class="nav-item">
-            <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">{{ $loop->count }} - {{ $lesson->lesson_title }}</a>
+            <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
+                <div class="numberCircle">{{ $loop->count }}</div> - {{ $lesson->lesson_title }}
+            </a>
           </li>
           @endforeach
         @endif
