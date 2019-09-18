@@ -192,7 +192,7 @@
                 $embedId = $embed->getProvider()->info->id;
                 $embedUrl = $embed->getProvider()->info->url;
                 $embedImage = '';
-                if($embed->getProvider()->info->imageRoot)
+                if(isset($embed->getProvider()->info->imageRoot))
                 {
                     $embedImage = $embed->getProvider()->info->imageRoot."/0.jpg";
                 }
@@ -262,7 +262,6 @@
                        ]);
                    }
                 }
-                
             }
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return redirect()->back()->withInput();
