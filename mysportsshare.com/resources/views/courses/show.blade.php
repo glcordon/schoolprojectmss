@@ -23,7 +23,7 @@
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
           <li class="nav-item">
-            <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">Lesson {{ $loop->count }}</a>
+            <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">{{ $loop->count }} - {{ $lesson->lesson_title }}</a>
           </li>
           @endforeach
         @endif
