@@ -38,7 +38,7 @@
 
 			<div class="col-md-6">
 				<div class="uk-margin uk-text-center uk-scrollspy-inview uk-animation-slide-right" uk-scrollspy-class="uk-animation-slide-right" style="">
-					<img src="{{ isset(Session::get('tenant')->site_name) : Session::get('tenant')->user_cover ? Voyager::image(theme('home_promo_image')) }}" class="el-image" alt="" style="max-height:350px">
+					<img src="{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->user_cover : Voyager::image(theme('home_promo_image')) }}" class="el-image" alt="" style="max-height:350px">
 				</div>
 			</div>
 
