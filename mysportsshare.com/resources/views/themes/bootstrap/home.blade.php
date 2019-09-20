@@ -19,7 +19,7 @@
 		  
 </style>		  
 <!-- HERO -->
-<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, white 85%), url({{ Session::get('tenant') == 'home' ? '' : Storage::url(Session::get('tenant')->site_cover) ?? '' }}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
+<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, white 98%), url({{ Session::get('tenant') == 'home' ? '' : Storage::url(Session::get('tenant')->site_cover) ?? '' }}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
 	<div class="container">
 			@if(isset(Session::get('tenant')->site_name))
 				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
