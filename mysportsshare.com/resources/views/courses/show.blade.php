@@ -75,10 +75,8 @@
       <!-- /.container -->
     </div>
     <script>
-        $('#myStopClickButton').click(function(){
-          $('#player').each(function(){
-            $(this).stopVideo();
-          });
+        $('.player').click(function(){
+          $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
         });
     </script>
 @endsection 
