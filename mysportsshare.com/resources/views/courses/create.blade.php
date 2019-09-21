@@ -115,18 +115,8 @@
                 <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
         </div>
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
-            @for($x=0; $x<=4; $x++)
-            <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
-                Question Number {{$x}}
-                <input type="text" class="form-control" name="question[]" value="{{ old('question'.$x) ?? '' }}" placeholder="Question">
-                <hr>
-                <label>Correct Answer:</label>
-                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_1_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
-                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_2_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
-                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_3_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
-                <input type="text" name="answer_[{{$x}}][]" value="{{ old('answer_4_'.$x) ?? '' }}" class="form-control" placeholder="Answer"><br />
-            </div>
-            @endfor
+           
+            
         </div>
                 <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
                 <input class="btn btn-success" type="submit" value="Create course">
