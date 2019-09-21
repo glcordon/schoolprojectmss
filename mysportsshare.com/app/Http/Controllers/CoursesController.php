@@ -152,7 +152,6 @@
                 $qAndA = $questions->map(function($item, $key) use($answers){
                     return [$item => $answers[$key]];
                 })->toArray();
-            dump($qAndA);
             $validator = Validator::make($request->all(),([
                 'course_title' => 'required',
                 'course_difficulty' => 'required',
