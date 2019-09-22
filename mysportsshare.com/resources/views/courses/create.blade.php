@@ -149,7 +149,9 @@
             })
             $(document).on('click', "#saveQuestion", function(e){
                 e.preventDefault()
-                console.log($(this).parent().find('input[name=answer]').val())
+                $(this).parent().find('input[name=answer]').each(function(index){
+                    console.log($this.val())
+                })
                 alert($(this).parent().find('#question').val() + ' saved');
             })
         })
