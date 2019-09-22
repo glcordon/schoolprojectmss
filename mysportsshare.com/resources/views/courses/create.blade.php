@@ -148,6 +148,7 @@
                 $('#quizSection').append(quizDiv);
             })
             $(document).on('click', "#saveQuestion", function(e){
+                e.preventDefault()
                 alert($(this).parent().find('#question').val() + ' saved');
             })
         })
