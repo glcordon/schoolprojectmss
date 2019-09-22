@@ -149,7 +149,7 @@
             })
             $(document).on('click', "#saveQuestion", function(e){
                 e.preventDefault()
-                $(this).parent().find('input[name=answer]').each(function(index){
+                $(this).parent().find('input').each(function(index){
                     console.log($(this).val())
                 })
                 alert($(this).parent().find('#question').val() + ' saved');
