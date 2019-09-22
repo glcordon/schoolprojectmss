@@ -115,8 +115,10 @@
                 <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
         </div>
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
-           
-            
+           <div id="quizSection">
+
+           </div>
+           <button class="btn btn-default btn-instagram" id="addQuestion">Add Question</button>
         </div>
                 <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
                 <input class="btn btn-success" type="submit" value="Create course">
@@ -124,6 +126,32 @@
         </div>
     </form>
 </div>
+<script>
+        $(document).ready(function(){
+            let count = 0;
+            $('#addQuestion').on('click', function(e){
+                count++;
+                e.preventDefault();
+                var quizDiv = `
+                    <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
+                        <label>Question</label>
+                        <input type="text" id='question' class="form-control" name="question" value=" " placeholder="Question">
+                        <hr>
+                        <label>Correct Answer:</label>
+                        <input type="text" name="answer[]" value="" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" name="answer[]" value="" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" name="answer[]" value="" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" name="answer[]" value="" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <button id="saveQuestion">Save Question</button>
+                    </div>
+                `;
+                $('#quizSection').append(quizDiv);
+            })
+            $(document).on('click', "#saveQuestion", function(e){
+                alert($(this).parent().find('#question').val() + ' saved');
+            })
+        })
+</script>
     <script>
         $(document).ready(function(){
             let count = 1
