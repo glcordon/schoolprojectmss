@@ -45,4 +45,4 @@ Route::post('/lesson/delete', function(Request $request){
 });
 
 
-Route::post('/api/add-question', 'CoursesController@addQuestion');
+Route::post('/courses/add-question', 'CoursesController@addQuestion');

@@ -163,7 +163,7 @@
                 console.log(questionArray);
                 var token = '{{ csrf_token() }}'
                 var id = $('#courseId').val()
-                axios.post('/api/add-question', {
+                axios.post('/courses/add-question', {
                     id:id,
                     token:token,
                     question: questionArray 
