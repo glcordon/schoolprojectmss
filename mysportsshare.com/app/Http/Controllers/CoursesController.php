@@ -39,14 +39,19 @@
             $question = new \App\Questions;
             $question->question_text = $request->question;
             $quiz->questions()->save($question);
-            return $quiz->questions;
-            foreach($request->answers as $answers)
+            foreach($request->answers as $key => $answers)
             {
-
+                $answer = new \App\Answers;
+                $answer->answer_text = $answers;
+                $answer->is_correct = 0;
+                if($key == 0)
+                {
+                    $answer->is_correct =1;
+                }
+                $question->answers()->save($answer);
             }
-            $quiz->questions()->save(['question_text' => $request->question]); 
             
-            return $quiz->question;
+            return $quiz->questions->answers;
             return $request->all();
         }
 
