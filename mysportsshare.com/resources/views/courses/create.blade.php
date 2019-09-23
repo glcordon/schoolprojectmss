@@ -149,9 +149,15 @@
             })
             $(document).on('click', "#saveQuestion", function(e){
                 e.preventDefault()
+                if($(this).parent().find('#question').val() == '')
+                {
+                    alert('Please Add A Question Please')
+                }
+                var questionArray = [];
                 $(this).parent().find('input').each(function(index){
-                    console.log($(this).val())
+                    questionArray.push(index);
                 })
+                console.log(questionArray);
                 alert($(this).parent().find('#question').val() + ' saved');
             })
         })
