@@ -65,9 +65,7 @@
         @endif
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
-          @if($questions)
-          
-          @endif
+        
         </div>
       </div>
           </div>
