@@ -53,10 +53,10 @@
             $set = $quiz->questions->map(function($x){
                 return[
                     'question' => $x->question_text,
-                    'answer_array' => \App\Questions::find($x->id),
+                    'answer_array' => \App\Questions::find($x->id)->toArray(),
                 ];
             });
-            return $quiz->questions;
+            return $set;
             return $request->all();
         }
 
