@@ -50,7 +50,12 @@
                 }
                 $question->answers()->save($answer);
             }
-            
+            $set = $quiz->questions->map(function($x){
+                return[
+                    'question' => $x->question_text,
+                    'answer_array' => \App\Questions::find($x->id),
+                ];
+            });
             return $quiz->questions;
             return $request->all();
         }
