@@ -160,7 +160,6 @@
                 $(this).parent().find('input#answer').each(function(key, index){
                     questionArray.push($(this).val());
                 })
-                console.log(questionArray);
                 var token = '{{ csrf_token() }}'
                 var id = $('#courseId').val()
                 axios.post('/courses/add-question', {
