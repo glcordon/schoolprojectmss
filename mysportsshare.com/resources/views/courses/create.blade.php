@@ -149,16 +149,17 @@
             })
             $(document).on('click', "#saveQuestion", function(e){
                 e.preventDefault()
+                console.log($(this).parent().find('#question').val())
                 if($(this).parent().find('#question').val() == '')
                 {
                     alert('Please Add A Question Please')
+                    exit;
                 }
                 var questionArray = [];
                 $(this).parent().find('input').each(function(index){
                     questionArray.push(index);
                 })
                 console.log(questionArray);
-                alert($(this).parent().find('#question').val() + ' saved');
             })
         })
 </script>
