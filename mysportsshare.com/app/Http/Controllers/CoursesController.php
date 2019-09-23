@@ -51,7 +51,7 @@
                 $question->answers()->save($answer);
             }
             
-            return $quiz->questions->id;
+            return $quiz->questions;
             return $request->all();
         }
 
