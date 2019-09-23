@@ -50,8 +50,6 @@
                                     
                                 </div>
                                 
-                                <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
-                                <input class="btn btn-success" type="submit" value="Create course">
                         
                 </div>
                 <div class="col-md-3" style="background-color:#eee; border:1px solid #aaa">
@@ -121,9 +119,11 @@
            <div id="quizSection">
 
            </div>
-           <button class="btn btn-default btn-instagram py-1 px-2" id="addQuestion">Add Question <span class="fas fa-plus"></span></button>
+           <button  class="col-12 pb-2 pt-2 mt-2 mb-2" id="addQuestion">Add Question <span class="fas fa-plus"></span></button>
         </div>
-                
+                <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
+                <input class="btn btn-success" type="submit" value="Create course">
+        
         </div>
     </form>
 </div>
