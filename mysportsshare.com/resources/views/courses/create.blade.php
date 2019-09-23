@@ -119,7 +119,7 @@
            <div id="quizSection">
 
            </div>
-           <button class="btn btn-default btn-instagram" id="addQuestion">Add Question</button>
+           <button class="btn btn-default btn-instagram py-1 px-2" id="addQuestion">Add Question <span class="fas fa-plus"></span></button>
         </div>
                 <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
                 <input class="btn btn-success" type="submit" value="Create course">
