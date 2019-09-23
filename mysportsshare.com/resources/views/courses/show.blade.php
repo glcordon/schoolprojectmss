@@ -39,7 +39,7 @@
           @endforeach
         @endif
         <li class="nav-item">
-            <a class="nav-link active" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="true">Quiz</a>
+            <a class="nav-link " id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="true">Quiz</a>
           </li>
           
       </ul>
