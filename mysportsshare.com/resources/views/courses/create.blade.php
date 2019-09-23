@@ -76,6 +76,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+                <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
+                <input class="btn btn-success" type="submit" value="Create course">
+
+        </div>           
             </div>
             <div class="tab-pane fade" id="lessons" role="tabpanel" aria-labelledby="lessons-tab">
             <div class="row">
@@ -120,11 +125,7 @@
 
            </div>
            <button class="btn btn-default btn-instagram py-1 px-2" id="addQuestion">Add Question <span class="fas fa-plus"></span></button>
-        </div>
-                <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
-                <input class="btn btn-success" type="submit" value="Create course">
         
-        </div>
     </form>
 </div>
 <script>
