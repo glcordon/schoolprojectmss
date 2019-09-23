@@ -53,7 +53,7 @@
             $set = $quiz->questions->map(function($x){
                 return[
                     'question' => $x->question_text,
-                    'answer_array' => \App\Answers::where('question_id', $x->id)->toArray(),
+                    'answer_array' => \App\Answers::where('question_id', $x->id)->get()->toArray(),
                 ];
             });
             return $set;
