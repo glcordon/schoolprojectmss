@@ -43,3 +43,6 @@ Route::post('/create-course/{id}/store', 'CoursesController@update');
 Route::post('/lesson/delete', function(Request $request){
     App\Lessons::find($request->id)->delete();
 });
+
+
+Route::post('/api/add-question', 'CoursesController@addQuestion');

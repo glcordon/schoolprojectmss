@@ -30,6 +30,12 @@
         {
             $this->middleware('auth');
         }
+
+        public function addQuestion(Request $request)
+        {
+            return $request->all();
+        }
+
         public function index()
         {
             // if (! Gate::allows('course_access')) {

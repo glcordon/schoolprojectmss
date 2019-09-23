@@ -19,6 +19,7 @@
         <li><a class="nav-link" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="false">Quiz <small><em>(coming soon)</em></small> </a></li>
     </ul>
      <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
+        <input type="hidden" name="courseId" id="courseId" value="{{ $course->id }}">
         <div class="tab-content">
         <div class="tab-pane fade show active" id="intro" role="tabpanel" aria-labelledby="intro-tab">
            <input name="_token" type="hidden" value="{{ csrf_token()}}">
@@ -160,6 +161,19 @@
                     questionArray.push($(this).val());
                 })
                 console.log(questionArray);
+                var token = '{{ csrf_token() }}'
+                var id = $('#courseId').val()
+                axios.post('/api/add-question', 
+                    id:id,
+                    token:token,
+                    question: questionArray 
+                )
+                .then(function(response){
+                    console.log(response.data)
+                })
+                .catch(function(error){
+                    console.log(error)
+                })
             })
         })
 </script>
