@@ -157,7 +157,7 @@
                 }
                 var questionArray = [];
                 $(this).parent().find('input').each(function(key, index){
-                    questionArray.push(key);
+                    questionArray.push(index);
                 })
                 console.log(questionArray);
             })
