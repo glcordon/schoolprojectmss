@@ -36,9 +36,13 @@
             $course = Course::find($request->id);
             $quizTitle = $course->course_name . ' quiz';
             $quiz = \App\Quiz::firstOrNew(['course_id' => $request->id], ['quiz_name' => $quizTitle]);
+            $question = new \App\Questions;
+            $question->question_text = $request->question;
+            $quiz->questions()->save($question);
+            return $quiz;
             foreach($request->answers as $answers)
             {
-                return $answers;
+
             }
             $quiz->questions()->save(['question_text' => $request->question]); 
             
