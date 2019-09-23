@@ -149,7 +149,7 @@
             })
             $(document).on('click', "#saveQuestion", function(e){
                 e.preventDefault()
-                console.log($(this).parent().find('#question').val())
+                
                 if($(this).parent().find('#question').val() === ' ')
                 {
                     alert('Please Add A Question Please')
@@ -157,7 +157,7 @@
                 }
                 var questionArray = [];
                 $(this).parent().find('input#answer').each(function(key, index){
-                    questionArray.push(index.val());
+                    questionArray.push($(this).val());
                 })
                 console.log(questionArray);
             })
