@@ -39,7 +39,7 @@
             $question = new \App\Questions;
             $question->question_text = $request->question;
             $quiz->questions()->save($question);
-            return $quiz;
+            return $quiz->question;
             foreach($request->answers as $answers)
             {
 
