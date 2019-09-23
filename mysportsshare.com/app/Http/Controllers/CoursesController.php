@@ -33,6 +33,14 @@
 
         public function addQuestion(Request $request)
         {
+            $course = Course::find($request->id);
+            $quizTitle = $course->course_name . ' quiz';
+            $quiz = \App\Quiz::firstOrNew(['course_id' => $request->id], ['quiz_name' => $quizTitle]);
+            foreach($request->question as $question)
+            {
+               $quiz->question()->save($question); 
+            }
+            return $quiz->question;
             return $request->all();
         }
 
