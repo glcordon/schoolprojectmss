@@ -166,7 +166,7 @@
                 axios.post('/courses/add-question', {
                     id:id,
                     token:token,
-                    answer: questionArray,
+                    answers: questionArray,
                     question: question
                 })
                 .then(function(response){
