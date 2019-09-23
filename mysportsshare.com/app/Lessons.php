@@ -15,7 +15,7 @@ class Lessons extends Model
     
     public function quiz()
     {
-        return $this->hasOne(App\Quiz::class, 'lesson_id');
+        return $this->hasOne(\App\Quiz::class, 'lesson_id');
     }
     
 }
