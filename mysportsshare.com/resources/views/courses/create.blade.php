@@ -138,10 +138,10 @@
                         <input type="text" id='question' class="form-control" name="question" value=" " placeholder="Question">
                         <hr>
                         <label>Correct Answer:</label>
-                        <input type="text" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <input type="text" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <input type="text" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <input type="text" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
                         <button id="saveQuestion">Save Question</button>
                     </div>
                 `;
@@ -156,8 +156,8 @@
                     exit;
                 }
                 var questionArray = [];
-                $(this).parent().find('input').each(function(key, index){
-                    questionArray.push(index);
+                $(this).parent().find('input#answer').each(function(key, index){
+                    questionArray.push(index.val());
                 })
                 console.log(questionArray);
             })
