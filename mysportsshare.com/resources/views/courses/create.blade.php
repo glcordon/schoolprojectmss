@@ -153,7 +153,7 @@
                 if($(this).parent().find('#question').val() === ' ')
                 {
                     alert('Please Add A Question Please')
-                    exit();
+                    return;
                 }
                 var questionArray = [];
                 $(this).parent().find('input#answer').each(function(key, index){
