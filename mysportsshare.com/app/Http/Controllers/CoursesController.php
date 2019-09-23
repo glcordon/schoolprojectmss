@@ -73,8 +73,7 @@
             // } else {
             //     $courses = Course::all();
             // }
-            $course = Course::where('course_title', '<>', '')->get();
-            $siteData = Site::find(1);
+            // $siteData = Site::find(1);
             if(Session::get('tenant') !== "home")
             {
                 $siteId = Session::get('tenant')->id;
@@ -83,25 +82,25 @@
             }
             
             $courses = collect($course->toArray())->map(function($item){
-                $embed = Embed::make($item['course_intro_video'])->parseUrl();
-                $url = '';
-                if($embed)
-                {
-                    $url = $embed->getProvider()->info->id;
-                }
-                return [
-                    'id' => $item['id'],
-                    'course_title' => $item['course_title'],
-                    'course_difficulty' => $item['course_difficulty'],
-                    'category' => $item['category'],
-                    'course_description' => $item['course_description'],
-                    'course_intro_video' => $item['course_intro_video'],
-                    'course_video_thumb' => $item['course_video_thumb'],
-                    'course_image' => $item['course_image'] ?? null,
-                    'site_id' => $item['site_id'],
-                    'embed_url' => $item['embed_url'],
-                    'url_token' =>  $url,
-                ];
+            $embed = Embed::make($item['course_intro_video'])->parseUrl();
+            $url = '';
+            if($embed)
+            {
+                $url = $embed->getProvider()->info->id;
+            }
+            return [
+                'id' => $item['id'],
+                'course_title' => $item['course_title'],
+                'course_difficulty' => $item['course_difficulty'],
+                'category' => $item['category'],
+                'course_description' => $item['course_description'],
+                'course_intro_video' => $item['course_intro_video'],
+                'course_video_thumb' => $item['course_video_thumb'],
+                'course_image' => $item['course_image'] ?? null,
+                'site_id' => $item['site_id'],
+                'embed_url' => $item['embed_url'],
+                'url_token' =>  $url,
+            ];
             });
             $categories = collect([['id'=> 1, 'name' => 'Sport'], ['id'=> 2, 'name' =>'Training'], ['id'=>3, 'name' =>'Drills']]);
             return view('courses.index', compact('courses', 'categories', 'siteData'));
@@ -311,7 +310,7 @@
             // }
             // $lessons = \App\Lesson::where('lesson_id', $id)->get();
     
-            $course = Course::findOrFail($id);
+            $course = Course::with('lessons')->findOrFail($id);
     
             return view('courses.show', compact('course'));
         }

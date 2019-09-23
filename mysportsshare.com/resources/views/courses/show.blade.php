@@ -38,6 +38,10 @@
           </li>
           @endforeach
         @endif
+        <li class="nav-item">
+            <a class="nav-link active" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="true">Quiz</a>
+          </li>
+          
       </ul>
           </div>
           <!-- /.col-md-4 -->
@@ -59,10 +63,11 @@
             </div>
           @endforeach
         @endif
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <h2>Contact</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem blanditiis voluptates vel ipsam? Facilis, earum!</p>
-        
+        <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
+        <h2>Quiz</h2>
+          @if($questions)
+          
+          @endif
         </div>
       </div>
           </div>
