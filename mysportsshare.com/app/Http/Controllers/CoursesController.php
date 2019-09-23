@@ -310,7 +310,7 @@
             // }
             // $lessons = \App\Lesson::where('lesson_id', $id)->get();
     
-            $course = Course::with(['lessons', 'lessons.quiz', 'lessons.quiz.questions', 'lessons.quiz.questions.answers'])->findOrFail($id);
+            $course = Course::with(['lessons', 'quiz', 'quiz.questions', 'quiz.questions.answers'])->findOrFail($id);
     
             return view('courses.show', compact('course'));
         }
