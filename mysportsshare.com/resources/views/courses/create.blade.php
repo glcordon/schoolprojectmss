@@ -150,8 +150,8 @@
             })
             $(document).on('click', "#saveQuestion", function(e){
                 e.preventDefault()
-                
-                if($(this).parent().find('#question').val() === ' ')
+                var question = $(this).parent().find('#question').val() 
+                if(question === ' ')
                 {
                     alert('Please Add A Question Please')
                     return;
