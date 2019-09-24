@@ -194,9 +194,11 @@
             })
             $(document).on('click', '#deleteQuestion', function(e){
                 e.preventDefault()
+                var token = '{{ csrf_token() }}'
+
                 axios.post('/courses/delete-question', {
                     id: $(this).attr('data-id'),
-                    token:{{ csrf_token() }}
+                    token:token
                 })
                 .then(function(response){
                     $(this).parent().hide()
