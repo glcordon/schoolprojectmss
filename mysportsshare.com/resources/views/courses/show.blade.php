@@ -73,7 +73,7 @@
                 @foreach(collect($question->answers)->shuffle() as $answers)
                 
                   <li> 
-                    <input type="radio" name="answer_question_{{ $loop->iteration }}" id="answer_question_{{ $loop->iteration }}"> 
+                    <input type="radio" radiogroup="answer_question_{{ $loop->iteration }}" name="answer_question_{{ $loop->iteration }}" id="answer_question_{{ $loop->iteration }}"> 
                     <label for="answer_question_{{ $loop->iteration }}">{{ $answers->answer_text }} - {{ $answers->is_correct }}</label>
                   </li>
                 
