@@ -66,7 +66,10 @@
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
           @foreach($course->quiz->questions as $question)
-            <li>{{ $question->question_text }}</li>
+            <div class="card">
+              <div class="card-header">{{ $question->question_text }}</div>
+              <div class="card-body"></div>
+            </div> 
           @endforeach
         </div>
       </div>
