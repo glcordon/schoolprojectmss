@@ -195,15 +195,19 @@
             $(document).on('click', '#deleteQuestion', function(e){
                 e.preventDefault()
                 var token = '{{ csrf_token() }}'
-
+                if(confirm('You Are about to Delete this question... are you sure?'))
+                {
                 axios.post('/courses/delete-question', {
                     id: $(this).attr('data-id'),
                     token:token
                 })
                 .then(function(response){
-                    return;
+                    return false;
                 })
                 $(this).parent().fadeOut()
+            }else{
+                return false;
+            }
 
             })
         })
