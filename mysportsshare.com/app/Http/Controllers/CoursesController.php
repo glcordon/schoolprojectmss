@@ -61,7 +61,7 @@
         }
         public function deleteQuestion(Request $request)
         {
-            \App\Questions::find($reqeust->id)->delete();
+            \App\Questions::find($request->id)->delete();
             return 'done';
         }
         public function index()
