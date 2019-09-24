@@ -120,6 +120,7 @@
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
            <div id="quizSection">
                 <h2>Quiz</h2>
+                @if($course->quiz->questions->count())
                 @foreach($course->quiz->questions as $question)
                 <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                         <label>Question</label>
@@ -134,7 +135,7 @@
                      <button id="updateQuestion">Update Question</button> <button id="deleteQuestion" data-id="{{ $question->id }}"><span class="fas fa-trash-o"></span></button>
                     </div>
                 @endforeach
-                 
+                @endif
            </div>
            <button  class="col-12 pb-2 pt-2 mt-2 mb-2" id="addQuestion">Add Question <span class="fas fa-plus"></span></button>
         </div>
