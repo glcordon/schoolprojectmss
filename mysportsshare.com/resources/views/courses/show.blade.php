@@ -18,12 +18,12 @@
         <div class="row">
           <div class="col-md-4 mb-3">
               <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
-        <li class="nav-item">
+        <li class="nav-item border border-dark">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Intro</a>
         </li>
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
-          <li class="nav-item" id="myStopClickButton">
+          <li class="nav-item border border-dark" id="myStopClickButton">
             <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
                 <span class="fa-stack">
                     <!-- The icon that will wrap the number -->
@@ -39,7 +39,7 @@
           @endforeach
         @endif
         <li class="nav-item">
-            <a class="nav-link " id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="true">Quiz</a>
+            <a class="nav-link border border-dark" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="true">Quiz</a>
           </li>
           
       </ul>
