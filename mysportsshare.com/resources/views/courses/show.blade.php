@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-      background-color: black;
+      background-color: #333;
     }
     a.nav-link{color:black}
 </style>
@@ -17,7 +17,7 @@
         <hr>
         <div class="row">
           <div class="col-md-4 mb-3">
-              <ul class="nav flex-column" id="myTab" role="tablist">
+              <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
         <li class="nav-item border border-dark">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Intro</a>
         </li>
