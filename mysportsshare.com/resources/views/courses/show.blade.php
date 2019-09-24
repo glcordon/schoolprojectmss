@@ -69,13 +69,14 @@
             <div class="card my-3">
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
               <div class="card-body">
-                @foreach($question->answers as $answers)
                 <ol>
+                @foreach($question->answers as $answers)
+                
                   <li>{{ $answers->answer_text }} - {{ $answers->is_correct }}</li>
-                </ol>
+                
                 
                 @endforeach
-
+                </ol>
               </div>
             </div> 
           @endforeach
