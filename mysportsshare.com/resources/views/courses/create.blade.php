@@ -119,6 +119,23 @@
     </form>
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
            <div id="quizSection">
+                <h2>Quiz</h2>
+                @foreach($course->quiz->questions as $question)
+                  <div class="card my-3">
+                    <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
+                    <div class="card-body">
+                      <ol>
+                      @foreach(collect($question->answers)->shuffle() as $answers)
+                        @continue($answers->answer_text == '')
+                        <li> 
+                          <input type="radio" radiogroup="answer_question_{{ $question->id }}" name="answer_question_{{ $question->id  }}" id="answer_{{ $answers->id }}question_{{ $loop->iteration }}"> 
+                          <label for="answer_{{ $answers->id }}question_{{ $loop->iteration }}">{{ $answers->answer_text }} - {{ $answers->is_correct }}</label>
+                        </li>
+                      @endforeach
+                      </ol>
+                    </div>
+                  </div> 
+                @endforeach
 
            </div>
            <button  class="col-12 pb-2 pt-2 mt-2 mb-2" id="addQuestion">Add Question <span class="fas fa-plus"></span></button>
