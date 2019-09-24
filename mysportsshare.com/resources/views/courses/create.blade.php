@@ -128,7 +128,7 @@
                         <label>Correct Answer:</label>
                         @foreach(collect($question->answers)->shuffle() as $answers)
                         @continue($answers->answer_text == '')
-                        <input type="text" id="answer" value="$answers->answer_text ?? ''" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" value="{{ $answers->answer_text ?? '' }}" class="form-control my-sm-1" placeholder="Answer"><br />
                         @endforeach
                      <button id="saveQuestion">Save Question</button> 
                     </div>
