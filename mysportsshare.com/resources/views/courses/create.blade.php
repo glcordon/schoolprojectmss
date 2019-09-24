@@ -76,6 +76,8 @@
                     </div>
                 </div>
             </div>
+            <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
+                <input class="btn btn-success" type="submit" value="Create course">
             </div>
             <div class="tab-pane fade" id="lessons" role="tabpanel" aria-labelledby="lessons-tab">
             <div class="row">
@@ -115,17 +117,17 @@
             </div>
                 <button id="add_course_button" class="col-12 pb-2 pt-2 mt-2 mb-2">Add New Lesson</button>
         </div>
+
+    </form>
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
            <div id="quizSection">
 
            </div>
            <button  class="col-12 pb-2 pt-2 mt-2 mb-2" id="addQuestion">Add Question <span class="fas fa-plus"></span></button>
         </div>
-                <button class="btn modal-close btn-danger" data-dismiss="modal" type="button">Cancel</button>
-                <input class="btn btn-success" type="submit" value="Create course">
+                
         
         </div>
-    </form>
 </div>
 <script>
         $(document).ready(function(){
