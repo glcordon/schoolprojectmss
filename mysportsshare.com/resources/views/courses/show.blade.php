@@ -80,6 +80,9 @@
               </div>
             </div> 
           @endforeach
+          @if($course->quiz->has('questions'))
+            Submit Quiz
+          @endif
         </div>
       </div>
           </div>
