@@ -184,6 +184,7 @@
                     question: question
                 })
                 .then(function(response){
+                    $(this).addClass('btn').addClass('btn-success')
                     console.log(response.data)
                 })
                 .catch(function(error){
