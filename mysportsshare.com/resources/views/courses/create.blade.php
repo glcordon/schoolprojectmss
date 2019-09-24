@@ -120,6 +120,7 @@
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
            <div id="quizSection">
                 <h2>Quiz</h2>
+                @dd($course->quiz->questions->count())
                 @if($course->quiz->questions->count())
                 @foreach($course->quiz->questions as $question)
                 <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
