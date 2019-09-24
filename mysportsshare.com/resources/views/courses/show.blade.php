@@ -80,7 +80,7 @@
               </div>
             </div> 
           @endforeach
-          @if($course->quiz->has('questions'))
+          @if($course->quiz->questions->count())
             Submit Quiz
           @endif
         </div>
