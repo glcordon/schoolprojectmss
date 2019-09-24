@@ -201,8 +201,10 @@
                     token:token
                 })
                 .then(function(response){
-                    $(this).parent().fadeOut()
+                    return;
                 })
+                $(this).parent().fadeOut()
+
             })
         })
 </script>
