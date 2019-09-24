@@ -65,7 +65,7 @@
         @endif
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
-        @dd($course)
+        @dd($course->quiz->questions)
           @foreach($course->questions as $quesiton)
           {{ $question->question_text }}
           @endforeach
