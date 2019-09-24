@@ -70,9 +70,12 @@
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
               <div class="card-body">
                 <ol>
-                @foreach($question->answers as $answers)
+                @foreach(collect($question->answers)->shuffle() as $answers)
                 
-                  <li>{{ $answers->answer_text }} - {{ $answers->is_correct }}</li>
+                  <li> 
+                    <input type="radio" name="answer_question_{{ $loop->iteration }}" id="answer_question_{{ $loop->iteration }}"> 
+                    <label for="answer_question_{{ $loop->iteration }}">{{ $answers->answer_text }} - {{ $answers->is_correct }}</label>
+                  </li>
                 
                 
                 @endforeach
