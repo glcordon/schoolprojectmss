@@ -70,7 +70,10 @@
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
               <div class="card-body">
                 @foreach($question->answers as $answers)
-                {{ $answers->answer_text }}
+                <ol>
+                  <li>{{ $answers->answer_text }} - {{ $answers->is_correct }}</li>
+                </ol>
+                
                 @endforeach
 
               </div>
