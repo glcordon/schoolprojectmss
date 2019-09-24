@@ -201,7 +201,7 @@
                     token:token
                 })
                 .then(function(response){
-                    $(this).parent().hide()
+                    $(this).parent().fadeOut()
                 })
             })
         })
