@@ -59,7 +59,11 @@
             return $set;
             return $request->all();
         }
-
+        public function deleteQuestion(Request $request)
+        {
+            \App\Questions::find($reqeust->id)->delete();
+            return 'done';
+        }
         public function index()
         {
             // if (! Gate::allows('course_access')) {

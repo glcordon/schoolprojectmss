@@ -46,3 +46,4 @@ Route::post('/lesson/delete', function(Request $request){
 
 
 Route::post('/courses/add-question', 'CoursesController@addQuestion');
+Route::post('/courses/delete-question', 'CoursesController@deleteQuestion');

@@ -131,7 +131,7 @@
                         {{--  @continue($answers->answer_text == '')  --}}
                         <input type="text" id="answer" value="{{ $answers->answer_text ?? '' }}" class="form-control my-sm-1" placeholder="Answer"><br />
                         @endforeach
-                     <button id="updateQuestion">Update Question</button> 
+                     <button id="updateQuestion">Update Question</button> <button id="deleteQuestion" data-id="{{ $question->id }}"><span class="fas fa-trash-o"></span></button>
                     </div>
                 @endforeach
                  
@@ -159,7 +159,7 @@
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <button id="saveQuestion">Save Question</button>
+                        <button id="saveQuestion">Save Question</button> <button id="deleteQuestion" data-id="{{ $question->id }}"><span class="fas fa-trash-o"></span></button>
                     </div>
                 `;
                 $('#quizSection').append(quizDiv);
@@ -190,6 +190,16 @@
                 })
                 .catch(function(error){
                     console.log(error)
+                })
+            })
+            $(document).on('click', '#deleteQuestion', function(e){
+                e.preventDefault()
+                axios.post('/courses/delete-question', {
+                    id: $(this).attr('data-id'),
+                    token:{{ csrf_token() }}
+                })
+                .then(function(response){
+                    $(this).parent().hide()
                 })
             })
         })
