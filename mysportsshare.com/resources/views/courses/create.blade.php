@@ -130,7 +130,7 @@
                         {{--  @continue($answers->answer_text == '')  --}}
                         <input type="text" id="answer" value="{{ $answers->answer_text ?? '' }}" class="form-control my-sm-1" placeholder="Answer"><br />
                         @endforeach
-                     <button id="saveQuestion">Save Question</button> 
+                     <button id="updateQuestion">Update Question</button> 
                     </div>
                 @endforeach
                  
