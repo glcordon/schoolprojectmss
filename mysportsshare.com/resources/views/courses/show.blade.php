@@ -10,7 +10,7 @@
 @can('edit', $course)
 <div class="jumbotron-fluid" style="height:24vh; background:black; color:white">
   <a href="/courses/{{ $course->id }}/create">Edit</a>
-  <div class="container" style="color:white">
+  <div class="container text-center" style="color:white">
       <h1>{{ $course->course_title }}</h1> <h4>Difficulty: {{ $course->course_difficulty }}</h4>
     <hr>
   </div>
@@ -19,8 +19,6 @@
 <div class="container" style="padding:50px 0px">
        {{--  @dump($course)  --}}
         <div class="container">
-          <h1>{{ $course->course_title }}</h1> <h4>Difficulty: {{ $course->course_difficulty }}</h4>
-        <hr>
         <div class="row">
           <div class="col-md-4 mb-3">
               <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
