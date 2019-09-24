@@ -35,10 +35,11 @@
           </li>
           @endforeach
         @endif
+        @if($course->quiz->questions->count())
         <li class="nav-item ">
             <a class="nav-link border border-dark rounded" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="true">Quiz</a>
           </li>
-          
+        @endif
       </ul>
           </div>
           <!-- /.col-md-4 -->
@@ -60,6 +61,7 @@
             </div>
           @endforeach
         @endif
+        @if($course->quiz->questions->count())
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
           @foreach($course->quiz->questions as $question)
@@ -80,10 +82,11 @@
               </div>
             </div> 
           @endforeach
-          @if($course->quiz->questions->count())
+          
             Submit Quiz
-          @endif
+          
         </div>
+        @endif
       </div>
           </div>
           <!-- /.col-md-8 -->
