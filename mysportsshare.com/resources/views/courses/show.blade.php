@@ -11,7 +11,7 @@
 <div><a href="/courses/{{ $course->id }}/create">Edit</a></div>
 @endcan    
 <div class="container" style="padding:50px 0px">
-       @dump($course)
+       {{--  @dump($course)  --}}
         <div class="container">
           <h1>{{ $course->course_title }}</h1> <h4>Difficulty: {{ $course->course_difficulty }}</h4>
         <hr>
@@ -66,7 +66,7 @@
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
           @foreach($course->quiz->questions as $question)
-          {{ $question->question_text }}
+            <li>{{ $question->question_text }}</li>
           @endforeach
         </div>
       </div>
