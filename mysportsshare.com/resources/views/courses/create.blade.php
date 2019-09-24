@@ -137,13 +137,13 @@
                 var quizDiv = `
                     <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                         <label>Question</label>
-                        <input type="text" id='question' class="form-control" name="question" value=" " placeholder="Question">
+                        <input type="text" id='question' class="form-control" value=" " placeholder="Question">
                         <hr>
                         <label>Correct Answer:</label>
-                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <input type="text" id="answer" name="answer[]" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
+                        <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
                         <button id="saveQuestion">Save Question</button>
                     </div>
                 `;
