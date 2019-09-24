@@ -8,7 +8,7 @@
     a.nav-link{color:black}
 </style>
 @can('edit', $course)
-<div class="jumbotron-fluid bg-dark h-100">
+<div class="jumbotron-fluid bg-darker" style="height:24vh">
   <a href="/courses/{{ $course->id }}/create">Edit</a>
 </div>
 @endcan    
