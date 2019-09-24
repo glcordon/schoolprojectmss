@@ -67,7 +67,7 @@
         <h2>Quiz</h2>
           @foreach($course->quiz->questions as $question)
             <div class="card my-3">
-              <div class="card-header">{{ $loop->count() }}. {{ $question->question_text }}</div>
+              <div class="card-header">{{ $loop->count }}. {{ $question->question_text }}</div>
               <div class="card-body"></div>
             </div> 
           @endforeach
