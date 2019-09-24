@@ -17,7 +17,7 @@
         <hr>
         <div class="row">
           <div class="col-md-4 mb-3">
-              <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+              <ul class="nav flex-column" id="myTab" role="tablist">
         <li class="nav-item border border-dark">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Intro</a>
         </li>
@@ -25,14 +25,7 @@
           @foreach($course->lessons->all() as $lesson)
           <li class="nav-item border border-dark" id="myStopClickButton">
             <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
-                <span class="fa-stack">
-                    <!-- The icon that will wrap the number -->
-                    <span class="fa fa-circle-o fa-stack-2x"></span>
-                    <!-- a strong element with the custom content, in this case a number -->
-                    <strong class="fa-stack-1x">
-                        <strong>{{ $loop->count }} </strong>
-                    </strong>
-                </span>
+                
                 {{ $lesson->lesson_title }}
             </a>
           </li>
