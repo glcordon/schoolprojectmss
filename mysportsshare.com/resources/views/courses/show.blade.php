@@ -68,7 +68,12 @@
           @foreach($course->quiz->questions as $question)
             <div class="card my-3">
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
-              <div class="card-body"></div>
+              <div class="card-body">
+                @foreach($question->answers as $answers)
+                {{ $answers->answer_text }}
+                @endforeach
+
+              </div>
             </div> 
           @endforeach
         </div>
