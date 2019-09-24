@@ -120,8 +120,7 @@
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
            <div id="quizSection">
                 <h2>Quiz</h2>
-                @dd($course->quiz->questions->count())
-                @if($course->quiz->questions->count())
+                @if($course->quiz->questions->count() > 0)
                 @foreach($course->quiz->questions as $question)
                 <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                         <label>Question</label>
@@ -161,7 +160,7 @@
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <button id="saveQuestion">Save Question</button> <button id="deleteQuestion" data-id="{{ $question->id ?? '' }}"><span class="fas fa-trash-o"></span></button>
+                        <button id="saveQuestion">Save Question</button> <button id="deleteQuestion" data-id="{{ $course->quiz->questions->count() : $question->id ? '' }}"><span class="fas fa-trash-o"></span></button>
                     </div>
                 `;
                 $('#quizSection').append(quizDiv);
