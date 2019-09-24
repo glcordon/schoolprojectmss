@@ -126,7 +126,7 @@
                         <input type="text" id='question' class="form-control" value="{{ $question->question_text ?? '' }}" placeholder="Question">
                         <hr>
                         <label>Correct Answer:</label>
-                        @foreach(collect($question->answers)->shuffle() as $answers)
+                        @foreach(collect($question->answers) as $answers)
                         {{--  @continue($answers->answer_text == '')  --}}
                         <input type="text" id="answer" value="{{ $answers->answer_text ?? '' }}" class="form-control my-sm-1" placeholder="Answer"><br />
                         @endforeach
