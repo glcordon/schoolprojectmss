@@ -128,7 +128,7 @@
                 <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                         <label>Question</label>
                         <input type="text" id='question' class="form-control" value="{{ $question->question_text ?? '' }}" placeholder="Question">
-                        <input type="hidden" name="thisQuestion" value="{{ $question->id ?? ''}}">
+                        <input type="hidden" id="thisQuestion" name="thisQuestion" value="{{ $question->id ?? ''}}">
                         <hr>
                         <label>Correct Answer:</label>
                         @foreach(collect($question->answers) as $answers)
