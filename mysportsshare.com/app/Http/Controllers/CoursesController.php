@@ -66,6 +66,17 @@
             $question->answers->map(function($x){
                 \App\Answers::find($x->id)->delete();
             });
+            foreach($request->answers as $key => $answers)
+            {
+                $answer = new \App\Answers;
+                $answer->answer_text = $answers;
+                $answer->is_correct = 0;
+                if($key == 0)
+                {
+                    $answer->is_correct =1;
+                }
+                $question->answers()->save($answer);
+            }
             // return $request->answers;
             return $question;
         }
