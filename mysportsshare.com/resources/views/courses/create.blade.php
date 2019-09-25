@@ -209,7 +209,8 @@
                     questionArray.push($(this).val());
                 })
                 var token = '{{ csrf_token() }}'
-                var id = $('#courseId').val()
+                var id = $(this).parent().('#thisQuestion').val()
+                console.log(id);
                 axios.post('/courses/update-question', {
                     id:id,
                     token:token,
