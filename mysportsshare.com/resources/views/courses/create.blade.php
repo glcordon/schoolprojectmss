@@ -196,6 +196,34 @@
                     console.log(error)
                 })
             })
+            $(document).on('click', "#updateQuestion", function(e){
+                e.preventDefault()
+                var question = $(this).parent().find('#question').val() 
+                if(question === ' ')
+                {
+                    alert('Please Add A Question Please')
+                    return;
+                }
+                var questionArray = [];
+                $(this).parent().find('input#answer').each(function(key, index){
+                    questionArray.push($(this).val());
+                })
+                var token = '{{ csrf_token() }}'
+                var id = $('#courseId').val()
+                axios.post('/courses/update-question', {
+                    id:id,
+                    token:token,
+                    answers: questionArray,
+                    question: question
+                })
+                .then(function(response){
+                    $(this).addClass('btn btn-success')
+                    console.log(response.data)
+                })
+                .catch(function(error){
+                    console.log(error)
+                })
+            })
             $(document).on('click', '#deleteQuestion', function(e){
                 e.preventDefault()
                 var token = '{{ csrf_token() }}'

@@ -59,6 +59,10 @@
             return $set;
             return $request->all();
         }
+        public function updateQuestion(Request $request)
+        {
+            
+        }
         public function deleteQuestion(Request $request)
         {
             \App\Questions::find($request->id)->delete();
