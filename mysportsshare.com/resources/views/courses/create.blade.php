@@ -16,7 +16,7 @@
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="active"><a class="nav-link active" id="intro-tab" data-toggle="tab" href="#intro" role="tab" aria-controls="intro" aria-selected="true">Intro</a></li>
         <li><a class="nav-link" id="lessons-tab" data-toggle="tab" href="#lessons" role="tab" aria-controls="lessons" aria-selected="false">Lessons</a></li>
-        <li><a class="nav-link" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="false">Quiz <small><em>(coming soon)</em></small> </a></li>
+        <li><a class="nav-link" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="false">Quiz </a></li>
     </ul>
      <form method="POST" action="/create-course/{{ $course->id ?? '' }}/store" accept-charset="UTF-8" enctype="multipart/form-data" class="ajax gf">
         <input type="hidden" name="courseId" id="courseId" value="{{ $course->id }}">
@@ -120,7 +120,9 @@
         <div  class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
            <div id="quizSection">
                 <h2>Quiz</h2>
-                (always make the first answer the correct one... the system will shuffle the answers)<br />
+                <small><em>
+                    (always make the first answer the correct one... the system will shuffle the answers)<br />
+                </em></small> 
                 @if($course->quiz->questions->count() > 0)
                 @foreach($course->quiz->questions as $question)
                 <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
