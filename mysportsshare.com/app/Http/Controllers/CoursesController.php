@@ -62,7 +62,9 @@
         public function updateQuestion(Request $request)
         {
             $question = \App\Questions::where('id',$request->id)->with('answers')->get();
-            $question->answers->delete();
+            $question->answers->map(function($x){
+                App\Answers::find($x->id)->delete();
+            });
             // return $request->answers;
             return $question;
         }
