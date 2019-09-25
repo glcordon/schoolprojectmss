@@ -64,7 +64,7 @@
             $question = \App\Questions::where('id',$request->id)->with('answers')->first();
             // return $question->answers;
             $question->answers->map(function($x){
-                return \App\Answers::find($x->id)->delete();
+                \App\Answers::find($x->id)->delete();
             });
             // return $request->answers;
             return $question;
