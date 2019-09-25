@@ -61,7 +61,7 @@
         }
         public function updateQuestion(Request $request)
         {
-            $question = \App\Questions::find($request->id);
+            $question = \App\Questions::find($request->id)->with('answers');
             return $question;
         }
         public function deleteQuestion(Request $request)
