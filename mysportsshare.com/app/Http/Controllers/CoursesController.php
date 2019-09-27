@@ -91,9 +91,12 @@
             $is_correct = collect($request->question)->filter(function($x){
                $answer = \App\Answers::find($x);
                 return $answer->is_correct == 1;
-            })->count();
-            $score = round(($is_correct/ count($request->question))*100);
-            dd($is_correct.'/'. count($request->question). ' Correct - ' . $score. '%');
+            });
+
+            $score = round(($is_correct->count()/ count($request->question))*100);
+            $message = $is_correct.'/'. count($request->question). ' Correct - ' . $score. '%';
+            return redirect()->back()->compact('is_correct', 'message')->withInput();
+            
         }
 
         public function index()
