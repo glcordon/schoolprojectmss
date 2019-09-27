@@ -64,6 +64,11 @@
         @if($course->quiz->questions->count())
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
         <form action="/courses/score-quiz" method="POST">
           {{ csrf_field() }}
           @foreach($course->quiz->questions as $question)
