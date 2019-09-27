@@ -92,7 +92,7 @@
                $answer = \App\Answers::find($x);
                 return $answer->is_correct == 1;
             })->count();
-            $score = ($is_correct/ count($request->question))*100;
+            $score = round(($is_correct/ count($request->question))*100);
             dd($is_correct.'/'. count($request->question). ' Correct - ' . $score. '%');
         }
 
