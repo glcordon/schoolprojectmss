@@ -48,4 +48,4 @@ Route::post('/lesson/delete', function(Request $request){
 Route::post('/courses/add-question', 'CoursesController@addQuestion');
 Route::post('/courses/update-question', 'CoursesController@updateQuestion');
 Route::post('/courses/delete-question', 'CoursesController@deleteQuestion');
-Route::post('/courses/score-quiz', 'CoursesController@scoreQuestion');
+Route::post('/courses/score-quiz', 'CoursesController@scoreQuiz');
