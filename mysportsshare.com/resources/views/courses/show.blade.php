@@ -70,6 +70,7 @@
             <div class="card my-3">
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
               <div class="card-body">
+                <fieldset id="group_{{ $loop->iteration }}">
                 <ol>
                 @foreach(collect($question->answers)->shuffle() as $answers)
                   @continue($answers->answer_text == '')
@@ -79,6 +80,7 @@
                   </li>
                 @endforeach
                 </ol>
+                </fieldset>
               </div>
             </div> 
           @endforeach
