@@ -88,11 +88,11 @@
 
         public function scoreQuiz(Request $request)
         {
-            foreach($request->question as $question)
-            {
-                dump($question);
-            }
-            dd($request->all());
+            $is_correct = collect($request->question)->filter(function($x){
+               $answer = \App\Answers::find($x);
+                return $answer->is_correct == 1;
+            });
+            dd($is_correct);
         }
 
         public function index()
