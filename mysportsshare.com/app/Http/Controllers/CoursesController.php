@@ -91,7 +91,7 @@
             $is_correct = collect($request->question)->filter(function($x){
                $answer = \App\Answers::find($x);
                 return $answer->is_correct == 1;
-            });
+            })->count();
             dd($is_correct);
         }
 
