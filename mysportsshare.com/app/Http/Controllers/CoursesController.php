@@ -95,7 +95,7 @@
 
             $score = round(($is_correct->count()/ count($request->question))*100);
             $message = $is_correct.'/'. count($request->question). ' Correct - ' . $score. '%';
-            return redirect()->back()->compact('is_correct', 'message')->withInput();
+            return redirect()->back()->with('is_correct', 'message')->withInput();
             
         }
 
