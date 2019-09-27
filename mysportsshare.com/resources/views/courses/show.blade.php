@@ -71,15 +71,13 @@
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
               <div class="card-body">
                 <fieldset id="group_{{ $loop->iteration }}">
-                <ol>
+                <select size="4" name="question[]" >
                 @foreach(collect($question->answers)->shuffle() as $answers)
                   @continue($answers->answer_text == '')
-                  <li> 
-                    <input type="radio" radiogroup="answer_question_{{ $question->id. '_'.$loop->iteration }}" value="{{ $answers->id }}" name="question[]" id="answer_{{ $answers->id }}question_{{ $loop->iteration }}"> 
-                    <label for="answer_{{ $answers->id }}question_{{ $loop->iteration }}">{{ $answers->answer_text }}</label>
-                  </li>
+                    {{--  <input type="radio" radiogroup="answer_question_{{ $question->id. '_'.$loop->iteration }}"id="answer_{{ $answers->id }}question_{{ $loop->iteration }}">   --}}
+                    <option id="answer_{{ $answers->id }}question_{{ $loop->iteration }}" value="{{ $answers->id }}">{{ $answers->answer_text }}</option>
                 @endforeach
-                </ol>
+                </select>
                 </fieldset>
               </div>
             </div> 
