@@ -64,7 +64,8 @@
         @if($course->quiz->questions->count())
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
-        <form action="/courses/quiz">
+        <form action="/courses/score-quiz" method="POST">
+          {{ csrf_token() }}
           @foreach($course->quiz->questions as $question)
             <div class="card my-3">
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
@@ -73,7 +74,7 @@
                 @foreach(collect($question->answers)->shuffle() as $answers)
                   @continue($answers->answer_text == '')
                   <li> 
-                    <input type="radio" radiogroup="answer_question_{{ $question->id }}" name="answer_question_{{ $question->id  }}" id="answer_{{ $answers->id }}question_{{ $loop->iteration }}"> 
+                    <input type="radio" radiogroup="answer_question_{{ $question->id }}" value="[{{ $question->id }} => {{ $answer->id }}]" name="answer_question_{{ $question->id  }}" id="answer_{{ $answers->id }}question_{{ $loop->iteration }}"> 
                     <label for="answer_{{ $answers->id }}question_{{ $loop->iteration }}">{{ $answers->answer_text }} - {{ $answers->is_correct }}</label>
                   </li>
                 @endforeach
