@@ -93,7 +93,7 @@
                 return $answer->is_correct == 1;
             })->count();
             $score = collect([$is_correct, count($request->question)])->avg();
-            dd($is_correct.'/'. count($request->question). ' Correct' );
+            dd($is_correct.'/'. count($request->question). ' Correct - ' . $score. '%');
         }
 
         public function index()
