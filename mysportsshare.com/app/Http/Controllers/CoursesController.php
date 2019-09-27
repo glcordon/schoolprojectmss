@@ -94,7 +94,7 @@
             });
 
             $score = round(($is_correct->count()/ count($request->question))*100);
-            $message = $score.'/'. count($request->question). ' Correct - ' . $score. '%';
+            $message = $is_correct->count().'/'. count($request->question). ' Correct - ' . $score. '%';
             return redirect()->back()->with('message', $message)->withInput();
             
         }
