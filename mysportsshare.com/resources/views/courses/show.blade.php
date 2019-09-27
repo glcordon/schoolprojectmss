@@ -65,7 +65,7 @@
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
         <form action="/courses/score-quiz" method="POST">
-          {{ csrf_token() }}
+          {{ csrf_field() }}
           @foreach($course->quiz->questions as $question)
             <div class="card my-3">
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
