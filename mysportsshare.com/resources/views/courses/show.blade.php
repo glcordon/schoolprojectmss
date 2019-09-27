@@ -64,6 +64,7 @@
         @if($course->quiz->questions->count())
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
+        <form action="/courses/quiz">
           @foreach($course->quiz->questions as $question)
             <div class="card my-3">
               <div class="card-header">{{ $loop->iteration }}. {{ $question->question_text }}</div>
@@ -80,8 +81,10 @@
               </div>
             </div> 
           @endforeach
-          
-            Submit Quiz
+          <button type="submit" class="btn btn-primary">Submit Quiz</button>
+            
+        
+        </form>
           
         </div>
         @endif
