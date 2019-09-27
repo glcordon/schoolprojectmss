@@ -92,7 +92,8 @@
                $answer = \App\Answers::find($x);
                 return $answer->is_correct == 1;
             })->count();
-            dd($is_correct.'/'. count($request->question));
+            $score = collect([$is_correct, count($request->question)])->avg();
+            dd($is_correct.'/'. count($request->question). ' Correct' );
         }
 
         public function index()
