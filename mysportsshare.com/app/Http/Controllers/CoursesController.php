@@ -90,7 +90,7 @@
         {
             foreach($request->question as $question)
             {
-                dump($questions);
+                dump($question);
             }
             dd($request->all());
         }
