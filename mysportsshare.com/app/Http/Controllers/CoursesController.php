@@ -92,7 +92,7 @@
                $answer = \App\Answers::find($x);
                 return $answer->is_correct == 1;
             })->count();
-            dd($is_correct);
+            dd($is_correct.'/'. count($request->question));
         }
 
         public function index()
