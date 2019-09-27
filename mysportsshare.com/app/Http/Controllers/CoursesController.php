@@ -92,7 +92,7 @@
                $answer = \App\Answers::find($x);
                 return $answer->is_correct == 1;
             })->count();
-            $score = collect([$is_correct, count($request->question)])->avg();
+            $score = ($is_correct/ count($request->question))*100;
             dd($is_correct.'/'. count($request->question). ' Correct - ' . $score. '%');
         }
 
