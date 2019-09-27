@@ -85,6 +85,12 @@
             \App\Questions::find($request->id)->delete();
             return 'done';
         }
+
+        public function scoreQuiz(Request $request)
+        {
+            dd($request->all());
+        }
+
         public function index()
         {
             // if (! Gate::allows('course_access')) {
