@@ -88,6 +88,10 @@
 
         public function scoreQuiz(Request $request)
         {
+            foreach($request->question as $question)
+            {
+                dump($questions);
+            }
             dd($request->all());
         }
 
