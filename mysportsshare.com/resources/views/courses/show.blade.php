@@ -20,7 +20,7 @@
        {{--  @dump($course)  --}}
        @if (session('message'))
             <div class="alert alert-success">
-                {{ session('message') }}
+                Your Quiz Results {{ session('message') }}
             </div>
         @endif
         <div class="container">

@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Http\Request;
 
 // Authentication routes
 Auth::routes();
