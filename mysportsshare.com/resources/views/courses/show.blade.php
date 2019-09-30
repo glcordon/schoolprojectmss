@@ -33,7 +33,7 @@
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
           <li class="nav-item border border-dark rounded my-1" id="myStopClickButton">
-            <a class="nav-link" id="lesson_{{ $loop->count }}-tab" data-toggle="tab" href="#lesson_{{ $loop->count }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
+            <a class="nav-link" id="lesson_{{ $loop->iteration }}-tab" data-toggle="tab" href="#lesson_{{ $loop->iteration }}" role="tab" aria-controls="lesson_{{ $loop->count }}" aria-selected="false">
                 
                 {{ $lesson->lesson_title }}
             </a>
@@ -56,7 +56,7 @@
         </div>
         @if($course->has('lessons'))
           @foreach($course->lessons->all() as $lesson)
-            <div class="tab-pane fade" id="lesson_{{ $loop->count }}" role="tabpanel" aria-labelledby="lesson_{{ $loop->count }}-tab">
+            <div class="tab-pane fade" id="lesson_{{ $loop->iteration }}" role="tabpanel" aria-labelledby="lesson_{{ $loop->iteration }}-tab">
               <h2>{{ $lesson->lesson_title }}</h2>
               {!!  $lesson->lesson_video !!}    
               <p>
