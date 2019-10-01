@@ -46,7 +46,7 @@
     
     <link href="{{ asset('themes/bootstrap/css/app.css') }}" rel="stylesheet">
 </head>
-<body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
+<body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif" style="background:black; color:white">
 
     <div id="app" style="margin-top:70px" data-sticky-wrap>
 
