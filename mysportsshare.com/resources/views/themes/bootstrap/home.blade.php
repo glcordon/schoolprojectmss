@@ -19,6 +19,7 @@
 		  #pricing
 		  {
 			  background-color: black !important;
+			  color:black !important;
 		  }
 		  
 </style>		  
