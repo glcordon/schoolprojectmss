@@ -16,6 +16,10 @@
 			z-index:0;
 			background-color: rgba(0, 0, 0, 0.4)
 		  }
+		  #pricing
+		  {
+			  background-color: black;
+		  }
 		  
 </style>		  
 <!-- HERO -->
@@ -168,7 +172,7 @@
 @if(Auth::guest())
 <!-- PRICING -->
 
-<div id="pricing">
+<div id="pricing" >
 	<div class="container">
 		<h2>Get Started Now!</h2>
 		<p class="text-center mb-5 mt-3">Join Now</p>
