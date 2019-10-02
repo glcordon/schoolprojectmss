@@ -57,7 +57,7 @@
     </g>
 </svg> -->
 
-<div id="features">
+<div id="features" style="background-color:black; padding:4rem 0; color:white;">
 	<div class="container">
 
 		<h2 class="mt-0 py-4 text-uppercase text-body">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
