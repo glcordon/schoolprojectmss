@@ -80,7 +80,7 @@
 				@else
 					@foreach($sites as $site)
 					
-					<div class="card bg-dark text-white m-1 col-4">
+					<div class="card bg-dark text-white col-4">
 						<img src="{{ Storage::url($site->user_cover) }}" class="w-100"> 
 						<a href="http://{{ $site->site_slug }}.mysportsshare.com">
 							<div class="card-img-overlay">
