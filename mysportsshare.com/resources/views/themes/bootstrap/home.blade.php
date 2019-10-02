@@ -18,7 +18,7 @@
 		  
 </style>		  
 <!-- HERO -->
-<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, black 98%), url({{ Session::get('tenant') == 'home' ? setting('site.main cover') : Storage::url(Session::get('tenant')->site_cover) ?? setting('site.main cover') }}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
+<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, black 98%), url({{ Session::get('tenant') == 'home' ? setting('site.main_cover') : Storage::url(Session::get('tenant')->site_cover) ?? ssetting('site.main_cover')}}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
 	<div class="container"><div class="row">
 			<div class="col-md-12 mt-5 text-center">
 				{{ setting('site.main cover') }}
@@ -26,8 +26,7 @@
 				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
 			
-				<h1 class="text-left h6 mt-5 text-uppercase">{{ theme('home_headline') }} 				{{ setting('site.main cover') }}
-					</h1>
+				<h1 class="text-left h6 mt-5 text-uppercase">{{ theme('home_headline') }} </h1>
 				<h2 class="text-left h1 mb-3">{{ theme('home_subheadline') }}</h2>
 				<p>{{ theme('home_description') }}</p>
 				<div class="uk-margin-medium uk-text-left@m uk-text-center uk-scrollspy-inview uk-animation-slide-left-medium">
