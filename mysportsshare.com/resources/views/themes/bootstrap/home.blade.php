@@ -26,7 +26,8 @@
 				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
 			
-				<h1 class="text-left h6 mt-5 text-uppercase">{{ theme('home_headline') }}</h1>
+				<h1 class="text-left h6 mt-5 text-uppercase">{{ theme('home_headline') }} 				{{ setting('site.main cover') }}
+					</h1>
 				<h2 class="text-left h1 mb-3">{{ theme('home_subheadline') }}</h2>
 				<p>{{ theme('home_description') }}</p>
 				<div class="uk-margin-medium uk-text-left@m uk-text-center uk-scrollspy-inview uk-animation-slide-left-medium">
