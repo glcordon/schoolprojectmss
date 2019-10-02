@@ -18,7 +18,7 @@
 		  
 </style>		  
 <!-- HERO -->
-<div class="pt-5 mb-5 home-hero" style="background-image:url({{ Session::get('tenant') == 'home' ? Voyager::image(setting('site.main_cover')) : Storage::url(Session::get('tenant')->site_cover) ?? ssetting('site.main_cover')}}); background-size:cover; background-repeat:no-repeat; background-position:50%; position:relative">
+<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(0deg,rgba(255,0,150,0.3),rgba(255,0,150,0.3)),url({{ Session::get('tenant') == 'home' ? Voyager::image(setting('site.main_cover')) : Storage::url(Session::get('tenant')->site_cover) ?? ssetting('site.main_cover')}}); background-size:cover; background-repeat:no-repeat; background-position:50%; position:relative">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 mt-5 text-center">
@@ -39,10 +39,10 @@
 				<div class="uk-margin uk-text-center uk-scrollspy-inview uk-animation-slide-right" uk-scrollspy-class="uk-animation-slide-right" style="">
 					<img src="{{ isset(Session::get('tenant')->user_cover) ? Storage::url(Session::get('tenant')->user_cover) : Voyager::image(theme('home_promo_image')) }}" class="el-image" alt="" style="max-height:350px">
 				</div>
-			</div>  --}}
+			</div>  <div style="position:absolute; background-color:rgba(0,0,0, 0.4); width:100%; height:100%; top:0; left:0;"><p>&nbsp;</p></div>--}}
 
 		</div>
-		<div style="position:absolute; background-color:rgba(0,0,0, 0.4); width:100%; height:100%; top:0; left:0;"><p>&nbsp;</p></div>
+		
 	</div>
 </div>
 
