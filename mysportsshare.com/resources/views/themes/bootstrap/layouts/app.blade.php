@@ -45,6 +45,9 @@
     <!-- Styles -->
     
     <link href="{{ asset('themes/bootstrap/css/app.css') }}" rel="stylesheet">
+    <style>
+        .card{color:black}
+    </style>
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif" style="background:black; color:white">
 
