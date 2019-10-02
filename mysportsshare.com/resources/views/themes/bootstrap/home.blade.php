@@ -87,12 +87,15 @@
 				@else
 					@foreach($sites as $site)
 					
-						<div class="col-4 my-4 text-center">
-							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
-								<img src="{{ Storage::url($site->user_cover) }}" style="height:100px; width:auto">
+					<div class="card text-white">
+						<img src="{{ Storage::url($site->user_cover) }}" style="height:100px; width:auto">
+						<a href="http://{{ $site->site_slug }}.mysportsshare.com">
+							<div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+								<div class="card-text border-0 bg-semitransparent text-center">
 								<h4 class="text-body">{{ $site->site_name }}</h4>
-							</a>
-						</div>
+							</div>
+						</a>
+					</div>
 					@endforeach
 				@endif
 			
