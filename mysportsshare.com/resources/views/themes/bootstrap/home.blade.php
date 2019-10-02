@@ -83,7 +83,7 @@
 						<div class="card shadow-sm overlay" 
 							style="text-align:left; height:15rem; background-image:url({{ Storage::url($site->user_cover) }}); background-size:cover;">
 							{{--  {{ dd($courses) }}  --}}
-							<a href="http://{{ $site->site_slug }}.mysportsshare.com" style="display:block; background-color:rgba(0,0,0,0.4); height:100%; width:100%;">
+							<a href="http://{{ $site->site_slug }}.mysportsshare.com" class="text-white" style="display:block; background-color:rgba(0,0,0,0.4); height:100%; width:100%;">
 								<div class="card-body" style="position:absolute; bottom:0;">
 									<h4 class="card-title">{{ $site->site_name }}</h4>
 								</div>
