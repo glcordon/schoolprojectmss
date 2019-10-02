@@ -62,7 +62,7 @@
 
 		<h2 class="mt-0 py-4 text-uppercase text-body">{{ isset(Session::get('tenant')->site_name) ? Session::get('tenant')->site_name. "'s Courses" : 'Our Partners' }}</h2>
 
-			<div class="d-flex flex-wrap col-12 align-items-stretch">
+			<div class="row">
 				@if(isset(Session::get('tenant')->site_name))
 							@foreach($sites->courses->toArray() as $course)
 								@if($course['course_title'] !== '') 
