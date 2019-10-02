@@ -90,7 +90,7 @@
 					<div class="card text-white col-4 my-4 h-5">
 						<img src="{{ Storage::url($site->user_cover) }}">
 						<a href="http://{{ $site->site_slug }}.mysportsshare.com">
-							<div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+							<div class="card-img-overlay d-flex flex-column justify-content-end">
 								<div class="card-text border-0 bg-semitransparent text-center">
 									<h4 class="text-body">{{ $site->site_name }}</h4>
 								</div>
