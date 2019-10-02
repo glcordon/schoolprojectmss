@@ -2,19 +2,13 @@
 
 @section('content')
 <style>
-		.overlay {
-			position: relative;
-		  }
-		  
-		  .overlay:before{
+		.card-img-overlay {
 			position: absolute;
-			content:" ";
-			top:0;
-			left:0;
-			width:100%;
-			height:100%;
-			z-index:0;
-			background-color: rgba(0, 0, 0, 0.4)
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding: $card-img-overlay-padding;
 		  }
 		  #pricing
 		  {
@@ -40,7 +34,6 @@
 					</a>
 				</div>
 			</div>
-			
 			<div class="col-md-6">
 				<div class="uk-margin uk-text-center uk-scrollspy-inview uk-animation-slide-right" uk-scrollspy-class="uk-animation-slide-right" style="">
 					<img src="{{ isset(Session::get('tenant')->user_cover) ? Storage::url(Session::get('tenant')->user_cover) : Voyager::image(theme('home_promo_image')) }}" class="el-image" alt="" style="max-height:350px">
@@ -87,12 +80,12 @@
 				@else
 					@foreach($sites as $site)
 					
-					<div class="card">
+					<div class="card bg-dark text-white">
 						<img src="{{ Storage::url($site->user_cover) }}">
 						<a href="http://{{ $site->site_slug }}.mysportsshare.com">
-							<div class="card-img-overlay d-flex flex-column justify-content-end">
-								<div class="card-text border-0 bg-semitransparent text-center">
-									<h4 class="text-white">{{ $site->site_name }}</h4>
+							<div class="card-img-overlay">
+								<div class="card-text border-0 bg-semitransparent text-center text-white">
+									{{ $site->site_name }}
 								</div>
 							</div>
 						</a>
