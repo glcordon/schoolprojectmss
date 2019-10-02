@@ -72,7 +72,7 @@
 										{{--  {{ dd($courses) }}  --}}
 										<a href="/courses/show/{{ $course['id'] }}" class="text-white" style="display:block; background-color:rgba(0,0,0,0.4); height:100%; width:100%;">>
 											<div class="card-body" style="position:absolute; bottom:0;">
-												<h6 class="card-title">{{ $course['course_title'] }}</h6>
+												<h6 class="card-title text-white">{{ $course['course_title'] }}</h6>
 											</div>
 										</a>
 								</div> 
@@ -87,7 +87,7 @@
 							{{--  {{ dd($courses) }}  --}}
 							<a href="http://{{ $site->site_slug }}.mysportsshare.com" class="text-white" style="display:block; background-color:rgba(0,0,0,0.4); height:100%; width:100%;">
 								<div class="card-body" style="position:absolute; bottom:0;">
-									<h6 class="card-title">{{ $site->site_name }}</h6>
+									<h6 class="card-title text-white">{{ $site->site_name }}</h6>
 								</div>
 							</a>
 						</div>  
