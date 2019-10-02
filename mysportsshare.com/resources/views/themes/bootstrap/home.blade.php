@@ -111,6 +111,52 @@
 
 	</div>
 </div>
+<div class="row">
+		@if(isset(Session::get('tenant')->site_name))
+					@foreach($sites->courses->toArray() as $course)
+						@if($course['course_title'] !== '') 
+						<div class="card col-4 mb-5 shadow-sm overlay" 
+							style="text-align:left; height:15rem; background-image:url({{ $course['course_image'] ? Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') : asset('img/baseball-field.jpg') }}); background-size:cover;">
+							{{--  {{ dd($courses) }}  --}}
+							<a href="/courses/show/{{ $course['id'] }}" style="display:block; height:100%; width:100%;">
+								<div class="card-body" style="position:absolute; bottom:0;">
+									<h4 class="card-title">{{ $course['course_title'] }}</h4>
+								</div>
+							</a>
+						</div>  
+						@endif
+					@endforeach 
+		@else
+			@foreach($sites as $site)
+			<div class="card">
+					<div class="card-header">
+						This is a header    
+					</div>
+					<img class="card-img-top" src="https://source.unsplash.com/daily" alt="Card image top">
+					<div class="card-body">
+						<p class="card-text">A Card with a top and bottom images</p>
+				  
+					</div>
+					<img class="card-img-bottom" src="https://source.unsplash.com/daily" alt="Card image top">
+				  
+					<div class="card-footer">
+							This is a footer
+					</div>
+				  </div>
+			<div class="card bg-dark text-white col-4 h-25" style="background-image:url({{ Storage::url($site->user_cover) }}); background-size:contain;">
+				{{--  <img src="">   --}}
+				<a href="http://{{ $site->site_slug }}.mysportsshare.com">
+					<div class="card-img-overlay">
+						<div class="card-text border-0 bg-semitransparent text-center text-white">
+							{{ $site->site_name }}
+						</div>
+					</div>
+				</a>
+			</div>
+			@endforeach
+		@endif
+	
+</div>
 
 <!-- WAVE SVG GRAPHIC
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
