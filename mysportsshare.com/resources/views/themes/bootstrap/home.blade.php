@@ -79,7 +79,7 @@
 							@endforeach 
 				@else
 					@foreach($sites as $site)
-					<div class="col-sm-4">
+					<div class="col-sm-4 my-4">
 						<div class="card shadow-sm overlay" 
 							style="text-align:left; height:15rem; background-image:url({{ Storage::url($site->user_cover) }}); background-size:cover;">
 							{{--  {{ dd($courses) }}  --}}
