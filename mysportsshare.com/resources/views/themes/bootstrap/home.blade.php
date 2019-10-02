@@ -79,8 +79,18 @@
 							@endforeach 
 				@else
 					@foreach($sites as $site)
+					<div class="card col-4 mb-5 shadow-sm overlay" 
+									style="text-align:left; height:15rem; background-image:url({{ Storage::url($site->user_cover) }}); background-size:cover;">
+									{{--  {{ dd($courses) }}  --}}
+									<a href="http://{{ $site->site_slug }}.mysportsshare.com" style="display:block; height:100%; width:100%;">
+										<div class="card-body" style="position:absolute; bottom:0;">
+											<h4 class="card-title">{{ $site->site_name }}</h4>
+										</div>
+									</a>
+								</div>  
 					<div class="col-3">
 						<div class="card bg-dark text-white">
+							<img src="{{ Storage::url($site->user_cover) }}"> 
 							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
 								<div class="card-img-overlay">
 									<div class="card-text border-0 bg-semitransparent text-center text-white">
