@@ -18,10 +18,10 @@
 		  
 </style>		  
 <!-- HERO -->
-<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, black 100%), url({{ Session::get('tenant') == 'home' ? Voyager::image(setting('site.main_cover')) : Storage::url(Session::get('tenant')->site_cover) ?? ssetting('site.main_cover')}}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
-	<div class="container"><div class="row">
+<div class="pt-5 mb-5 home-hero" style="background-image:url({{ Session::get('tenant') == 'home' ? Voyager::image(setting('site.main_cover')) : Storage::url(Session::get('tenant')->site_cover) ?? ssetting('site.main_cover')}}); background-size:cover; background-repeat:no-repeat; background-position:50%; position:relative">
+	<div class="container">
+		<div class="row">
 			<div class="col-md-12 mt-5 text-center">
-				{{ setting('site.main_cover') }}
 			@if(isset(Session::get('tenant')->site_name))
 				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
@@ -42,6 +42,7 @@
 			</div>  --}}
 
 		</div>
+		<div style="position:absolute; background-color:rgba(0,0,0, 0.4); width:100%; height:100%; top:0; left:0;"><p>&nbsp;</p></div>
 	</div>
 </div>
 
