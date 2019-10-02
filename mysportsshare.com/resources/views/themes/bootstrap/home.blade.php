@@ -18,7 +18,7 @@
 		  
 </style>		  
 <!-- HERO -->
-<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, black 18%), url({{ Session::get('tenant') == 'home' ? Voyager::image(setting('site.main_cover')) : Storage::url(Session::get('tenant')->site_cover) ?? ssetting('site.main_cover')}}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
+<div class="pt-5 mb-5 home-hero" style="background-image:linear-gradient(transparent, black 100%), url({{ Session::get('tenant') == 'home' ? Voyager::image(setting('site.main_cover')) : Storage::url(Session::get('tenant')->site_cover) ?? ssetting('site.main_cover')}}); background-size:cover; background-repeat:no-repeat; background-position:50%;">
 	<div class="container"><div class="row">
 			<div class="col-md-12 mt-5 text-center">
 				{{ setting('site.main_cover') }}
