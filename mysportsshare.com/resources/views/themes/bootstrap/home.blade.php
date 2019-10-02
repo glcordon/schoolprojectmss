@@ -66,15 +66,17 @@
 				@if(isset(Session::get('tenant')->site_name))
 							@foreach($sites->courses->toArray() as $course)
 								@if($course['course_title'] !== '') 
-								<div class="card col-4 mb-5 shadow-sm overlay" 
-									style="text-align:left; height:15rem; background-image:url({{ $course['course_image'] ? Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') : asset('img/baseball-field.jpg') }}); background-size:cover;">
-									{{--  {{ dd($courses) }}  --}}
-									<a href="/courses/show/{{ $course['id'] }}" style="display:block; background-color:rgba(0,0,0,0.4); height:100%; width:100%;">>
-										<div class="card-body" style="position:absolute; bottom:0;">
-											<h4 class="card-title">{{ $course['course_title'] }}</h4>
-										</div>
-									</a>
-								</div>  
+								<div class="col-sm-4 my-4">
+									<div class="card shadow-sm overlay" 
+										style="text-align:left; height:15rem; background-image:url({{ $course['course_image'] ? Storage::url($course['course_image'])  ?? asset('img/baseball-field.jpg') : asset('img/baseball-field.jpg') }}); background-size:cover;">
+										{{--  {{ dd($courses) }}  --}}
+										<a href="/courses/show/{{ $course['id'] }}" style="display:block; background-color:rgba(0,0,0,0.4); height:100%; width:100%;">>
+											<div class="card-body" style="position:absolute; bottom:0;">
+												<h4 class="card-title">{{ $course['course_title'] }}</h4>
+											</div>
+										</a>
+								</div> 
+								</div>
 								@endif
 							@endforeach 
 				@else
