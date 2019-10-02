@@ -79,7 +79,21 @@
 							@endforeach 
 				@else
 					@foreach($sites as $site)
-					
+					<div class="card">
+							<div class="card-header">
+								This is a header    
+							</div>
+							<img class="card-img-top" src="https://source.unsplash.com/daily" alt="Card image top">
+							<div class="card-body">
+								<p class="card-text">A Card with a top and bottom images</p>
+						  
+							</div>
+							<img class="card-img-bottom" src="https://source.unsplash.com/daily" alt="Card image top">
+						  
+							<div class="card-footer">
+									This is a footer
+							</div>
+						  </div>
 					<div class="card bg-dark text-white col-4 h-25" style="background-image:url({{ Storage::url($site->user_cover) }}); background-size:contain;">
 						{{--  <img src="">   --}}
 						<a href="http://{{ $site->site_slug }}.mysportsshare.com">
