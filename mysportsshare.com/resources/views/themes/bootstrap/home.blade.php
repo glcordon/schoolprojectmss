@@ -24,7 +24,7 @@
 				<h4 class="text-uppercase"> Welcome to {{ Session::get('tenant')->site_name }}</h4>
 			@endif
 			<div class="row">
-			<div class="col-md-6 mt-5 pr-4">
+			<div class="col-md-12 mt-5 text-center">
 				<h1 class="text-left h6 mt-5 text-uppercase">{{ theme('home_headline') }}</h1>
 				<h2 class="text-left h1 mb-3">{{ theme('home_subheadline') }}</h2>
 				<p>{{ theme('home_description') }}</p>
@@ -34,11 +34,11 @@
 					</a>
 				</div>
 			</div>
-			<div class="col-md-6">
+			{{--  <div class="col-md-6">
 				<div class="uk-margin uk-text-center uk-scrollspy-inview uk-animation-slide-right" uk-scrollspy-class="uk-animation-slide-right" style="">
 					<img src="{{ isset(Session::get('tenant')->user_cover) ? Storage::url(Session::get('tenant')->user_cover) : Voyager::image(theme('home_promo_image')) }}" class="el-image" alt="" style="max-height:350px">
 				</div>
-			</div>
+			</div>  --}}
 
 		</div>
 	</div>
