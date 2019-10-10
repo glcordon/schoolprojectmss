@@ -12,24 +12,17 @@ class EnumType extends Type
 
     public function getSQLDeclaration(array $field, AbstractPlatform $platform)
     {
-        $enumField = collect(DB::select(DB::raw('SHOW COLUMNS FROM '.DB::getQueryGrammar()->wrap($this->tableName))))->where('Field', $field['name'])->first();
+        throw new \Exception('Enum type is not supported');
+        // get allowed from $column instance???
+        // learn more about this....
 
-        if (!is_null($enumField)) {
-            return $enumField->Type;
-        } else {
-            throw new \Exception('Enum definition error');
-            // throw new \Exception('Enum type is not supported');
-            // get allowed from $column instance???
-            // learn more about this....
+        $pdo = DB::connection()->getPdo();
 
-            $pdo = DB::connection()->getPdo();
+        // trim the values
+        $allowed = array_map(function ($value) use ($pdo) {
+            return $pdo->quote(trim($value));
+        }, $allowed);
 
-            // trim the values
-            $allowed = array_map(function ($value) use ($pdo) {
-                return $pdo->quote(trim($value));
-            }, $allowed);
-
-            return 'enum('.implode(', ', $allowed).')';
-        }
+        return 'enum('.implode(', ', $allowed).')';
     }
 }

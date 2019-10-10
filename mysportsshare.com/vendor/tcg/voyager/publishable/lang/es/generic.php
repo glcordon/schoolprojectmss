@@ -64,7 +64,6 @@ return [
     'profile'                => 'Perfil',
     'public_url'             => 'URL pública',
     'read'                   => 'Leer',
-    'remember_me'            => 'Recordarme',
     'rename'                 => 'Renombrar',
     'required'               => 'Necesario',
     'return_to_list'         => 'Volver a la lista',

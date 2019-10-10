@@ -256,12 +256,10 @@
                                     <a href="{{ route('voyager.settings.move_down', $setting->id) }}">
                                         <i class="sort-icons voyager-sort-desc"></i>
                                     </a>
-                                    @can('delete', Voyager::model('Setting'))
                                     <i class="voyager-trash"
                                        data-id="{{ $setting->id }}"
                                        data-display-key="{{ $setting->key }}"
                                        data-display-name="{{ $setting->display_name }}"></i>
-                                    @endcan
                                 </div>
                             </div>
 
@@ -413,7 +411,6 @@
         @endcan
     </div>
 
-    @can('delete', Voyager::model('Setting'))
     <div class="modal modal-danger fade" tabindex="-1" id="delete_modal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -436,7 +433,6 @@
             </div>
         </div>
     </div>
-    @endcan
 
 @stop
 
@@ -452,7 +448,6 @@
                 }
             });
 
-            @can('delete', Voyager::model('Setting'))
             $('.panel-actions .voyager-trash').click(function () {
                 var display = $(this).data('display-name') + '/' + $(this).data('display-key');
 
@@ -461,7 +456,6 @@
                 $('#delete_form')[0].action = '{{ route('voyager.settings.delete', [ 'id' => '__id' ]) }}'.replace('__id', $(this).data('id'));
                 $('#delete_modal').modal('show');
             });
-            @endcan
 
             $('.toggleswitch').bootstrapToggle();
 
