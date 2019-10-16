@@ -82,6 +82,7 @@
                 <div class="col-12">
                     @if($course->has('lessons'))
                         @foreach($course->lessons->all() as $lesson)
+                        @dump($lesson)
                         <div class="col-12 border border-dark my-3 p-2" style="padding:20px 10px" >
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}">
@@ -101,7 +102,7 @@
                                             <option value="embed">Embed</option>
                                         </select>  --}}
                                         {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video_upload[]" class="my-2 col-12">  --}}
-                                        <label>Lesson Video</label>
+                                        <label>Lesson Video </label>
                                         <input type="text" placeholder="Lesson Video" id="embed_lesson_video" value="{{ $lesson->embed_url ?? '' }}" name="lesson_video[]" class="form-control my-2 col-12">
                                         Lesson Description
                                         <textarea name="lesson_description[]" class="form-control">{{ $lesson->lesson_description ?? '' }}</textarea>
