@@ -40,7 +40,7 @@
           </li>
           @endforeach
         @endif
-        @if($course->quiz->questions->count())
+        @if($course->quiz && $course->quiz->questions->count())
         <li class="nav-item ">
             <a class="nav-link border border-dark rounded" id="quiz-tab" data-toggle="tab" href="#quiz" role="tab" aria-controls="quiz" aria-selected="true">Quiz</a>
           </li>
