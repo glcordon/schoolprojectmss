@@ -165,7 +165,7 @@
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
                         <input type="text" id="answer" class="form-control my-sm-1" placeholder="Answer"><br />
-                        <button id="saveQuestion">Save Question</button> <button id="deleteQuestion"><span class="fas fa-trash-o"></span></button>
+                        <button id="saveQuestion">Save Question</button> <button id="deleteQuestion" data-id="{{ $course->quiz ? $question->id : '' }}"><span class="fas fa-trash-o"></span></button>
                     </div>
                 `;
                 $('#quizSection').append(quizDiv);
