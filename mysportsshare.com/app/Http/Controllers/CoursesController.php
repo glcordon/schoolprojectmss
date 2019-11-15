@@ -118,6 +118,9 @@
                 $siteId = Session::get('tenant')->id;
                 $siteData = Site::find($siteId);
                 $course = Course::where('site_id', $siteId)->where('course_title', '<>', '')->get();
+            }else{
+                $course = Course::where('course_title', '<>', '')->get();
+                
             }
             
             $courses = collect($course->toArray())->map(function($item){
