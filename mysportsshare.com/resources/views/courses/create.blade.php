@@ -125,7 +125,7 @@
                 <small><em>
                     (always make the first answer the correct one... the system will shuffle the answers)<br />
                 </em></small> 
-                @if($course->quiz->questions && $course->quiz->questions->count() > 0)
+                @if($course->quiz && $course->quiz->questions->count() > 0)
                 @foreach($course->quiz->questions as $question)
                 <div class="mt-3 mb-3 p-3" style="border:1px solid #ccc">
                         <label>Question</label>
