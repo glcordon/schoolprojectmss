@@ -242,6 +242,7 @@
                     'lesson_title' => $item, 
                     'lesson_description' => $request->lesson_description[$key],
                     'lesson_video' => $request->lesson_video[$key],
+                    'embed_url' => $request->embed_url[$key],
                     'lesson_video_upload' => $request->lesson_video_upload[$key]
                 ];
             });

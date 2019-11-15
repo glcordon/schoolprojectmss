@@ -104,6 +104,7 @@
                                         {{--  <input type="file" id="upload_lesson_video" placeholder="Lesson Video"  value="https://mysporsshare.com" name="lesson_video_upload[]" class="my-2 col-12">  --}}
                                         <label>Lesson Video </label>
                                         <input type="text" placeholder="Lesson Video" id="embed_lesson_video" value="{{ $lesson->embed_url ?? '' }}" name="lesson_video[]" class="form-control my-2 col-12">
+                                        {{ $lesson->lesson }}
                                         Lesson Description
                                         <textarea name="lesson_description[]" class="form-control">{{ $lesson->lesson_description ?? '' }}</textarea>
                                     </div>
