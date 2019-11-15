@@ -66,7 +66,7 @@
             </div>
           @endforeach
         @endif
-        @if($course->quiz->questions->count())
+        @if($course->quiz && $course->quiz->questions->count())
         <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
         <h2>Quiz</h2>
         
