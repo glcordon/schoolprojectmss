@@ -185,7 +185,7 @@
 							<span class="price-month">$xx/Mo.</span> --}}
 						  </div>
 						  <div class="course-bottom-content">
-							<h3 class="s-title">Nick Duffy Golf</h3>
+							<h3 class="s-title">{{ $site->site_name }}</h3>
 							<div class="review">
 							  <i class="icon-star"></i>
 							  <i class="icon-star"></i>
@@ -201,10 +201,126 @@
 						</div>
 					  </div>
 					  @endforeach
+					  {{-- <div class="col-lg-4 col-sm-6">
+						<div class="course-box p-r wow zoomIn" data-wow-delay="0.6s" data-wow-duration="1s">
+						  <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+						  <div class="course-top-content">
+							<span class="category-name">Sports</span>
+							<span class="price-month">$xx/Mo.</span>
+						  </div>
+						  <div class="course-bottom-content">
+							<h3 class="s-title">Ground Up Baseball</h3>
+							<div class="review">
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							</div>
+						  </div> 
+						  <div class="card-btn-holder">
+							<a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+							<a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+						  </div>
+						</div>
+					  </div>
+					  <div class="col-lg-4 col-sm-6">
+						<div class="course-box p-r wow zoomIn" data-wow-delay="0.9s" data-wow-duration="1s">
+						  <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+						  <div class="course-top-content">
+							<span class="category-name">Sports</span>
+							<span class="price-month">$xx/Mo.</span>
+						  </div>
+						  <div class="course-bottom-content">
+							<h3 class="s-title">Wise Basketball Training</h3>
+							<div class="review">
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-star"></i>
+							</div>
+						  </div> 
+						  <div class="card-btn-holder">
+							<a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+							<a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+						  </div>
+						</div>
+					  </div>
+					  <div class="col-lg-4 col-sm-6">
+						<div class="course-box p-r wow zoomIn" data-wow-delay="1.2s" data-wow-duration="1s">
+						  <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+						  <div class="course-top-content">
+							<span class="category-name">Sports</span>
+							<span class="price-month">$xx/Mo.</span>
+						  </div>
+						  <div class="course-bottom-content">
+							<h3 class="s-title">Prospeak</h3>
+							<div class="review">
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							</div>
+						  </div>
+						  <div class="card-btn-holder">
+							<a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+							<a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+						  </div> 
+						</div>
+					  </div>
+					  <div class="col-lg-4 col-sm-6">
+						<div class="course-box p-r wow zoomIn" data-wow-delay="1.5s" data-wow-duration="1s">
+						  <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+						  <div class="course-top-content">
+							<span class="category-name">Sports</span>
+							<span class="price-month">$xx/Mo.</span>
+						  </div>
+						  <div class="course-bottom-content">
+							<h3 class="s-title">Transition Performance</h3>
+							<div class="review">
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							</div>
+						  </div> 
+						  <div class="card-btn-holder">
+							<a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+							<a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+						  </div>
+						</div>
+					  </div>
+					  <div class="col-lg-4 col-sm-6">
+						<div class="course-box p-r wow zoomIn" data-wow-delay="1.8s" data-wow-duration="1s">
+						  <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+						  <div class="course-top-content">
+							<span class="category-name">Sports</span>
+							<span class="price-month">$xx/Mo.</span>
+						  </div>
+						  <div class="course-bottom-content">
+							<h3 class="s-title">Real Training Focus</h3>
+							<div class="review">
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							</div>
+						  </div> 
+						  <div class="card-btn-holder">
+							<a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+							<a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+						  </div>
+						</div>
+					  </div> --}}
 					</div>
 				  </div>
 				</section>
 				<!--/ Section choose course/-->
+			   
 				@endif
 			
 		</div>
