@@ -158,7 +158,7 @@
 							@endforeach 
 				@else
 				<!--/ Section choose course /-->
-				<section id="choose-course" class="choose-course route p-r section-padding-80">
+				<section id="choose-course" class="choose-course route p-r section-padding-80 col-12">
 				  <div class="container">
 					<div class="row">
 					  <div class="col-sm-10 offset-md-1 text-left">
