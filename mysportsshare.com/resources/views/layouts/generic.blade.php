@@ -185,20 +185,392 @@
             
          </div>
         </div></div>
-         <footer style="width:100%; min-height:20vh; background-color:black; margin-bottom:0; margin-top:80px; color:#fff">
-                
-        </footer>
-</body>
-<script src="/js/app.js"></script>
-<script>
-        function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-        </script>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>My Sports Share</title>
+          <meta content="width=device-width, initial-scale=1.0" name="viewport">
+          <meta content="" name="keywords">
+          <meta content="" name="description">
         
-</html>
+          <!-- Favicons -->
+          <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+          <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+        
+          <!-- Bootstrap CSS File -->
+          <link href="{{ asset('assets/lib/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+        
+          <!-- Libraries CSS Files -->
+          <link href="{{ asset('assets/lib/animate/css/animate.min.css') }}" rel="stylesheet">
+          <link href="{{ asset('assets/lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+          <link href="{{ asset('assets/lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+          <link href="{{ asset('assets/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+        
+          <!-- Main Stylesheet File -->
+          <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+        
+          <!-- =======================================================
+            Theme Name: DevFolio
+            Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+            Author: BootstrapMade.com
+            License: https://bootstrapmade.com/license/
+          ======================================================= -->
+        </head>
+        
+        <body id="page-top">
+        
+          <!--/ Nav Star /-->
+          <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+            <div class="container p-r">
+              <a class="navbar-brand js-scroll" href="index.html">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="" class="img-fluid">
+              </a>
+              <div class="menu-item">
+                <ul>
+                  <li><a href="course-name.html" class="js-scroll">Courses</a></li>
+                  <li><a href="subscribed-partner.html">Login</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!--/ Nav End /-->
+        
+          <!--/ Intro Skew Star /-->
+          <section id="home">
+            <div class="home-banner">
+                <div class="intro route" style="background-image: url({{ asset('assets/img/vienna-reyes-qCrKTET_09o-unsplash.jpg') }})">
+                  <div class="overlay-itro"></div>
+                  <div class="intro-content display-table">
+                    <div class="table-cell">
+                      <div class="container">
+                        <div class="banner-container">
+                          <p class="Courses-avilability wow fadeInDown" data-wow-delay=".25s" data-wow-duration="1s">Available Now</p>
+                          <h1 class="intro-title wow fadeInDown" data-wow-delay=".80s" data-wow-duration="1s">Elite Sports Training, <span>Mentorship</span> & Events</h1>
+                          <div class="banner-slider-content">
+                            <a class="btn btn-primary wow zoomIn" data-wow-delay="1.50s" data-wow-duration="2s" href="elite-program.html">Learn More <i class="icon-right-arrow1"></i></a>
+                            <span class="wow fadeInRight" data-wow-delay="3s" data-wow-duration="1s">New Content Monthly</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="intro route" style="background-image: url({{ asset('assets/img/court-prather-Nka1wVAQWa4-unsplash.jpg') }})">
+                  <div class="overlay-itro"></div>
+                  <div class="intro-content display-table">
+                    <div class="table-cell">
+                      <div class="container">
+                        <div class="banner-container">
+                          <p class="Courses-avilability">Available Now</p>
+                          <h1 class="intro-title">Elite Sports Training, <span>Mentorship</span> & Events</h1>
+                          <div class="banner-slider-content">
+                            <a class="btn btn-primary" href="elite-program.html">Learn More <i class="icon-right-arrow1"></i></a>
+                            <span>New Content Monthly</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="intro route" style="background-image: url(assets/img/vienna-reyes-qCrKTET_09o-unsplash.jpg)">
+                  <div class="overlay-itro"></div>
+                  <div class="intro-content display-table">
+                    <div class="table-cell">
+                      <div class="container">
+                        <div class="banner-container">
+                          <p class="Courses-avilability">Available Now</p>
+                          <h1 class="intro-title">Elite Sports Training, <span>Mentorship</span> & Events</h1>
+                          <div class="banner-slider-content">
+                            <a class="btn btn-primary" href="elite-program.html">Learn More <i class="icon-right-arrow1"></i></a>
+                            <span>New Content Monthly</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </section>
+          <!--/ Intro Skew End /-->
+        
+        
+          <!--/ Section Road to pro /-->
+          <section id="service" class="services-mf route p-r section-padding-80">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="title-box text-center">
+                    <h3 class="title-a wow zoomIn" data-wow-delay="2s" data-wow-duration="1s">
+                      Road to Pro
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="service-box wow zoomIn" data-wow-delay="1s" data-wow-duration="1s">
+                    <div class="service-ico">
+                      <span class="ico-circle"><i class="icon-coach"></i></span>
+                    </div>
+                    <div class="service-content">
+                      <h2 class="s-title">Elite Training Courses</h2>
+                      <p class="s-description text-center">
+                        We have identified the best and most enthusiastic trainers around the country bringing you the same information that have taken hundreds of athletes pro.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="service-box wow zoomIn" data-wow-delay="1.3s" data-wow-duration="1s">
+                    <div class="service-ico">
+                      <span class="ico-circle"><i class="icon-online"></i></span>
+                    </div>
+                    <div class="service-content">
+                      <h2 class="s-title">Pro Mentors</h2>
+                      <p class="s-description text-center">
+                        We have brought a unique and exclusive opportunity to be mentored directly by professional athletes through live streams and conference calls. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="service-box wow zoomIn" data-wow-delay="1.6s" data-wow-duration="1s">
+                    <div class="service-ico">
+                      <span class="ico-circle"><i class="icon-calendar"></i></span>
+                    </div>
+                    <div class="service-content">
+                      <h2 class="s-title">Exclusive Camps & Events</h2>
+                      <p class="s-description text-center">
+                        We have partnered with camps, tournaments, and professional exposure events to make sure you always know your next opportunity near you to grow or be seen. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--/ Section Road to pro/-->
+        
+        
+            <!--/ Section choose course /-->
+          <section id="choose-course" class="choose-course route p-r section-padding-80">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-10 offset-md-1 text-left">
+                  <div class="title-box text-center mb-0">
+                    <h3 class="title-a wow fadeInDown transform-up animated" data-wow-delay="1s" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 1s; animation-name: fadeInDown;">
+                      Choose Your Course
+                    </h3>
+                  </div>
+                </div>
+                <div class="search-course-box">
+                  <form>
+                    <input type="text" name="" placeholder="I am looking for...">
+                    <button><i class="icon-magnifying-glass"></i></button>
+                  </form>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                  <div class="course-box p-r wow zoomIn" data-wow-delay="0.3s" data-wow-duration="1s">
+                    <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+                    <div class="course-top-content">
+                      <span class="category-name">Sports</span>
+                      <span class="price-month">$xx/Mo.</span>
+                    </div>
+                    <div class="course-bottom-content">
+                      <h3 class="s-title">Nick Duffy Golf</h3>
+                      <div class="review">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </div>
+                    </div> 
+                    <div class="card-btn-holder">
+                      <a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+                      <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="course-box p-r wow zoomIn" data-wow-delay="0.6s" data-wow-duration="1s">
+                    <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+                    <div class="course-top-content">
+                      <span class="category-name">Sports</span>
+                      <span class="price-month">$xx/Mo.</span>
+                    </div>
+                    <div class="course-bottom-content">
+                      <h3 class="s-title">Ground Up Baseball</h3>
+                      <div class="review">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </div>
+                    </div> 
+                    <div class="card-btn-holder">
+                      <a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+                      <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="course-box p-r wow zoomIn" data-wow-delay="0.9s" data-wow-duration="1s">
+                    <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+                    <div class="course-top-content">
+                      <span class="category-name">Sports</span>
+                      <span class="price-month">$xx/Mo.</span>
+                    </div>
+                    <div class="course-bottom-content">
+                      <h3 class="s-title">Wise Basketball Training</h3>
+                      <div class="review">
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-star"></i>
+                      </div>
+                    </div> 
+                    <div class="card-btn-holder">
+                      <a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+                      <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="course-box p-r wow zoomIn" data-wow-delay="1.2s" data-wow-duration="1s">
+                    <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+                    <div class="course-top-content">
+                      <span class="category-name">Sports</span>
+                      <span class="price-month">$xx/Mo.</span>
+                    </div>
+                    <div class="course-bottom-content">
+                      <h3 class="s-title">Prospeak</h3>
+                      <div class="review">
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </div>
+                    </div>
+                    <div class="card-btn-holder">
+                      <a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+                      <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+                    </div> 
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="course-box p-r wow zoomIn" data-wow-delay="1.5s" data-wow-duration="1s">
+                    <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+                    <div class="course-top-content">
+                      <span class="category-name">Sports</span>
+                      <span class="price-month">$xx/Mo.</span>
+                    </div>
+                    <div class="course-bottom-content">
+                      <h3 class="s-title">Transition Performance</h3>
+                      <div class="review">
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                      </div>
+                    </div> 
+                    <div class="card-btn-holder">
+                      <a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+                      <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="course-box p-r wow zoomIn" data-wow-delay="1.8s" data-wow-duration="1s">
+                    <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
+                    <div class="course-top-content">
+                      <span class="category-name">Sports</span>
+                      <span class="price-month">$xx/Mo.</span>
+                    </div>
+                    <div class="course-bottom-content">
+                      <h3 class="s-title">Real Training Focus</h3>
+                      <div class="review">
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-ui"><span class="path1"></span><span class="path2"></span></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </div>
+                    </div> 
+                    <div class="card-btn-holder">
+                      <a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+                      <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--/ Section choose course/-->
+         
+          <!--/ Footer Star /-->
+            <footer>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="copyright-box">
+                      <span class="copyright">&copy; Copyright My Sport Share. All Rights Reserved</span>
+                      </div>
+                    </div>
+                  <div class="col-sm-6 text-right">
+                    <div class="footer-links">
+                      <ul>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Press</a></li>
+                        <li><a href="">Become a Partner</a></li>
+                      </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          <!--/ footer End /-->
+        
+          <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> -->
+        <!--   <div id="preloader">
+            <div class="words words-1">
+              <span>M</span>
+              <span>Y</span>
+              <span>S</span>
+              <span>p</span>
+              <span>o</span>
+              <span>r</span>
+              <span>t</span>
+              <span>s</span>
+              <span>h</span>
+              <span>a</span>
+              <span>r</span>
+              <span>e</span>
+            </div>
+          </div> -->
+        
+          <!-- JavaScript Libraries -->
+          <script src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
+          <script src="{{ asset('assets/lib/jquery/jquery-migrate.min.js') }}"></script>
+          <script src="{{ asset('assets/lib/popper/popper.min.js') }}"></script>
+          <script src="{{ asset('assets/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+          <script src="{{ asset('assets/lib/easing/easing.min.js') }}"></script>
+          <script src="{{ asset('assets/lib/lightbox/js/lightbox.min.js') }}"></script>
+          <script src="{{ asset('assets/lib/animate/js/wow.min.js') }}"></script>
+          <script src="{{ asset('assets/lib/slick/slick.min.js') }}"></script>
+        
+          <!-- Template Main Javascript File -->
+          <script src="{{ asset('assets/js/main.js') }}"></script>
+        
+        </body>
+        </html>
+        

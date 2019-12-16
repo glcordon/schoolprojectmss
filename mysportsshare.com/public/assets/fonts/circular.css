@@ -1,0 +1,23 @@
+/*--------------------------------
+
+hermes-dashboard-icons Web Font - built using nucleoapp.com
+License - nucleoapp.com/license/
+
+-------------------------------- */
+@font-face {
+    font-family: "Circular Std";
+    font-weight: normal;
+    src: url("CircularStd-Medium.woff") format("woff"),
+    url("CircularStd-Medium.woff2") format("woff2"),
+    url("CircularStd-Medium.eot") format("embedded-opentype"),
+    url("CircularStd-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Circular Std";
+    font-weight: bold;
+    src: url("CircularStd-Bold.woff") format("woff"),
+    url("CircularStd-Bold.woff2") format("woff2"),
+    url("CircularStd-Bold.eot") format("embedded-opentype"),
+    url("CircularStd-Bold.ttf") format("truetype");
+}
