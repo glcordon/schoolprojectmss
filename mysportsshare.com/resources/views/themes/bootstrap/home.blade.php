@@ -190,6 +190,8 @@
 </div>
 
 
+@if(Auth::guest())
+<!-- PRICING -->
 
 <div id="pricing" >
 	<div class="container">
