@@ -189,37 +189,4 @@
 	</div>
 </div>
 
-
-@if(Auth::guest())
-<!-- PRICING -->
-
-<div id="pricing" >
-	<div class="container">
-		<h2>Get Started Now!</h2>
-		<p class="text-center mb-5 mt-3">Join Now</p>
-
-		@php $plans = Wave\Plan::all() @endphp
-		<div class="card-deck">
-			@foreach($plans as $plan)
-				@php $features = explode(',', $plan->features); @endphp
-				<div class="card mb-4 shadow-sm">
-					<div class="card-header">
-						<h4 class="my-0 font-weight-normal">{{ $plan->name }}</h4>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title pricing-card-title">{{ $plan->price }}</h5>
-						<ul class="list-unstyled mt-3 mb-4">
-							@foreach($features as $feature)
-			            		<li><i class="fa fa-check"></i> {{ $feature }}</li>
-			            	@endforeach
-						</ul>
-						<a href="/register" class="btn btn-lg btn-block btn-dark">Sign Up</a>
-					</div>
-				</div>
-			@endforeach
-		</div>
-
-	</div>
-</div>
-@endif
 @endsection
