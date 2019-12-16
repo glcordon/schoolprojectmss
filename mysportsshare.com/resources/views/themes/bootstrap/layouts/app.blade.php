@@ -256,6 +256,7 @@
                 </div>
               </div>
               <div class="row">
+                    @foreach($sites as $site)
                 <div class="col-lg-4 col-sm-6">
                   <div class="course-box p-r wow zoomIn" data-wow-delay="0.3s" data-wow-duration="1s">
                     <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
@@ -279,7 +280,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                @endforeach
+                {{-- <div class="col-lg-4 col-sm-6">
                   <div class="course-box p-r wow zoomIn" data-wow-delay="0.6s" data-wow-duration="1s">
                     <div class="couse-bg-thumb" style="background-image: url(assets/img/chris-chow-BhwRQr08PcM-unsplash.jpg)"></div>
                     <div class="course-top-content">
@@ -393,7 +395,7 @@
                       <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
                     </div>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
           </section>
