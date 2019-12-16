@@ -157,31 +157,54 @@
 								@endif
 							@endforeach 
 				@else
-					@foreach($sites as $site)
-					<div class="col-sm-4 my-4">
-						<div class="card shadow-sm overlay" 
-							style="text-align:left; height:15rem; background-image:url({{ Storage::url($site->user_cover) }}); background-size:cover;">
-							{{--  {{ dd($courses) }}  --}}
-							<a href="http://{{ $site->site_slug }}.mysportsshare.com" class="text-white" style="display:block; background-color:rgba(0,0,0,0.4); height:100%; width:100%;">
-								<div class="card-body" style="position:absolute; bottom:0;">
-									<h6 class="card-title text-white">{{ $site->site_name }}</h6>
-								</div>
-							</a>
-						</div>  
-					</div>
-					{{--  <div class="col-3">
-						<div class="card bg-dark text-white">
-							<img src="{{ Storage::url($site->user_cover) }}"> 
-							<a href="http://{{ $site->site_slug }}.mysportsshare.com">
-								<div class="card-img-overlay">
-									<div class="card-text border-0 bg-semitransparent text-center text-white">
-										{{ $site->site_name }}
-									</div>
-								</div>
-							</a>
+				<!--/ Section choose course /-->
+				<section id="choose-course" class="choose-course route p-r section-padding-80">
+				  <div class="container">
+					<div class="row">
+					  <div class="col-sm-10 offset-md-1 text-left">
+						<div class="title-box text-center mb-0">
+						  <h3 class="title-a wow fadeInDown transform-up animated" data-wow-delay="1s" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 1s; animation-name: fadeInDown;">
+							Choose Your Course
+						  </h3>
 						</div>
-					</div>  --}}
-					@endforeach
+					  </div>
+					  <div class="search-course-box">
+						<form>
+						  <input type="text" name="" placeholder="I am looking for...">
+						  <button><i class="icon-magnifying-glass"></i></button>
+						</form>
+					  </div>
+					</div>
+					<div class="row">
+						  @foreach($sites as $site)
+					  <div class="col-lg-4 col-sm-6">
+						<div class="course-box p-r wow zoomIn" data-wow-delay="0.3s" data-wow-duration="1s">
+						  <div class="couse-bg-thumb" style="background-image:url({{ Storage::url($site->user_cover) }});"></div>
+						  <div class="course-top-content">
+							{{-- <span class="category-name">Sports</span>
+							<span class="price-month">$xx/Mo.</span> --}}
+						  </div>
+						  <div class="course-bottom-content">
+							<h3 class="s-title">Nick Duffy Golf</h3>
+							<div class="review">
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							  <i class="icon-star"></i>
+							</div>
+						  </div> 
+						  <div class="card-btn-holder">
+							<a href="http://{{ $site->site_slug }}.mysportsshare.com" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
+							<a href="http://{{ $site->site_slug }}.mysportsshare.com" class="more-info-btn">More Info</a>
+						  </div>
+						</div>
+					  </div>
+					  @endforeach
+					</div>
+				  </div>
+				</section>
+				<!--/ Section choose course/-->
 				@endif
 			
 		</div>
