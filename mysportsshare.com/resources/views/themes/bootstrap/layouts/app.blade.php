@@ -173,7 +173,7 @@
         </style>
     </head>
     <body>
-            @include('partials.menu')
+            {{-- @include('partials.menu') --}}
              
         <div class="flex-center position-ref hero">
            
